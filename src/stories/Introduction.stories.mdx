@@ -1,0 +1,374 @@
+[comment]: <> (import { Meta } from '@storybook/addon-docs';)
+
+[comment]: <> (import Code from './assets/code-brackets.svg';)
+
+[comment]: <> (import Colors from './assets/colors.svg';)
+
+[comment]: <> (import Comments from './assets/comments.svg';)
+
+[comment]: <> (import Direction from './assets/direction.svg';)
+
+[comment]: <> (import Flow from './assets/flow.svg';)
+
+[comment]: <> (import Plugin from './assets/plugin.svg';)
+
+[comment]: <> (import Repo from './assets/repo.svg';)
+
+[comment]: <> (import StackAlt from './assets/stackalt.svg';)
+
+[comment]: <> (<Meta title="Example/Introduction" />)
+
+[comment]: <> (<style>{`)
+
+[comment]: <> (  .subheading {)
+
+[comment]: <> (    --mediumdark: '#999999';)
+
+[comment]: <> (    font-weight: 900;)
+
+[comment]: <> (    font-size: 13px;)
+
+[comment]: <> (    color: #999;)
+
+[comment]: <> (    letter-spacing: 6px;)
+
+[comment]: <> (    line-height: 24px;)
+
+[comment]: <> (    text-transform: uppercase;)
+
+[comment]: <> (    margin-bottom: 12px;)
+
+[comment]: <> (    margin-top: 40px;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-list {)
+
+[comment]: <> (    display: grid;)
+
+[comment]: <> (    grid-template-columns: 1fr;)
+
+[comment]: <> (    grid-template-rows: 1fr 1fr;)
+
+[comment]: <> (    row-gap: 10px;)
+
+[comment]: <> (  })
+
+[comment]: <> (  @media &#40;min-width: 620px&#41; {)
+
+[comment]: <> (    .link-list {)
+
+[comment]: <> (      row-gap: 20px;)
+
+[comment]: <> (      column-gap: 20px;)
+
+[comment]: <> (      grid-template-columns: 1fr 1fr;)
+
+[comment]: <> (    })
+
+[comment]: <> (  })
+
+[comment]: <> (  @media all and &#40;-ms-high-contrast:none&#41; {)
+
+[comment]: <> (  .link-list {)
+
+[comment]: <> (      display: -ms-grid;)
+
+[comment]: <> (      -ms-grid-columns: 1fr 1fr;)
+
+[comment]: <> (      -ms-grid-rows: 1fr 1fr;)
+
+[comment]: <> (    })
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-item {)
+
+[comment]: <> (    display: block;)
+
+[comment]: <> (    padding: 20px 30px 20px 15px;)
+
+[comment]: <> (    border: 1px solid #00000010;)
+
+[comment]: <> (    border-radius: 5px;)
+
+[comment]: <> (    transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;)
+
+[comment]: <> (    color: #333333;)
+
+[comment]: <> (    display: flex;)
+
+[comment]: <> (    align-items: flex-start;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-item:hover {)
+
+[comment]: <> (    border-color: #1EA7FD50;)
+
+[comment]: <> (    transform: translate3d&#40;0, -3px, 0&#41;;)
+
+[comment]: <> (    box-shadow: rgba&#40;0, 0, 0, 0.08&#41; 0 3px 10px 0;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-item:active {)
+
+[comment]: <> (    border-color: #1EA7FD;)
+
+[comment]: <> (    transform: translate3d&#40;0, 0, 0&#41;;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-item strong {)
+
+[comment]: <> (    font-weight: 700;)
+
+[comment]: <> (    display: block;)
+
+[comment]: <> (    margin-bottom: 2px;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-item img {)
+
+[comment]: <> (    height: 40px;)
+
+[comment]: <> (    width: 40px;)
+
+[comment]: <> (    margin-right: 15px;)
+
+[comment]: <> (    flex: none;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .link-item span {)
+
+[comment]: <> (    font-size: 14px;)
+
+[comment]: <> (    line-height: 20px;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .tip {)
+
+[comment]: <> (    display: inline-block;)
+
+[comment]: <> (    border-radius: 1em;)
+
+[comment]: <> (    font-size: 11px;)
+
+[comment]: <> (    line-height: 12px;)
+
+[comment]: <> (    font-weight: 700;)
+
+[comment]: <> (    background: #E7FDD8;)
+
+[comment]: <> (    color: #66BF3C;)
+
+[comment]: <> (    padding: 4px 12px;)
+
+[comment]: <> (    margin-right: 10px;)
+
+[comment]: <> (    vertical-align: top;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .tip-wrapper {)
+
+[comment]: <> (    font-size: 13px;)
+
+[comment]: <> (    line-height: 20px;)
+
+[comment]: <> (    margin-top: 40px;)
+
+[comment]: <> (    margin-bottom: 40px;)
+
+[comment]: <> (  })
+
+[comment]: <> (  .tip-wrapper code {)
+
+[comment]: <> (    font-size: 12px;)
+
+[comment]: <> (    display: inline-block;)
+
+[comment]: <> (  })
+
+
+[comment]: <> (`}</style>)
+
+[comment]: <> (# Welcome to Storybook)
+
+[comment]: <> (Storybook helps you build UI components in isolation from your app's business logic, data, and context.)
+
+[comment]: <> (That makes it easy to develop hard-to-reach states. Save these UI states as **stories** to revisit during development, testing, or QA.)
+
+[comment]: <> (Browse example stories now by navigating to them in the sidebar.)
+
+[comment]: <> (View their code in the `src/stories` directory to learn how they work.)
+
+[comment]: <> (We recommend building UIs with a [**component-driven**]&#40;https://componentdriven.org&#41; process starting with atomic components and ending with pages.)
+
+[comment]: <> (<div className="subheading">Configure</div>)
+
+[comment]: <> (<div className="link-list">)
+
+[comment]: <> (  <a)
+
+[comment]: <> (    className="link-item")
+
+[comment]: <> (    href="https://storybook.js.org/docs/react/addons/addon-types")
+
+[comment]: <> (    target="_blank")
+
+[comment]: <> (  >)
+
+[comment]: <> (    <img src={Plugin} alt="plugin" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>Presets for popular tools</strong>)
+
+[comment]: <> (      Easy setup for TypeScript, SCSS and more.)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (  <a)
+
+[comment]: <> (    className="link-item")
+
+[comment]: <> (    href="https://storybook.js.org/docs/react/configure/webpack")
+
+[comment]: <> (    target="_blank")
+
+[comment]: <> (  >)
+
+[comment]: <> (    <img src={StackAlt} alt="Build" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>Build configuration</strong>)
+
+[comment]: <> (      How to customize webpack and Babel)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (  <a)
+
+[comment]: <> (    className="link-item")
+
+[comment]: <> (    href="https://storybook.js.org/docs/react/configure/styling-and-css")
+
+[comment]: <> (    target="_blank")
+
+[comment]: <> (  >)
+
+[comment]: <> (    <img src={Colors} alt="colors" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>Styling</strong>)
+
+[comment]: <> (      How to load and configure CSS libraries)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (  <a)
+
+[comment]: <> (    className="link-item")
+
+[comment]: <> (    href="https://storybook.js.org/docs/react/get-started/setup#configure-storybook-for-your-stack")
+
+[comment]: <> (    target="_blank")
+
+[comment]: <> (  >)
+
+[comment]: <> (    <img src={Flow} alt="flow" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>Data</strong>)
+
+[comment]: <> (      Providers and mocking for data libraries)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (</div>)
+
+[comment]: <> (<div className="subheading">Learn</div>)
+
+[comment]: <> (<div className="link-list">)
+
+[comment]: <> (  <a className="link-item" href="https://storybook.js.org/docs" target="_blank">)
+
+[comment]: <> (    <img src={Repo} alt="repo" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>Storybook documentation</strong>)
+
+[comment]: <> (      Configure, customize, and extend)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (  <a className="link-item" href="https://storybook.js.org/tutorials/" target="_blank">)
+
+[comment]: <> (    <img src={Direction} alt="direction" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>In-depth guides</strong>)
+
+[comment]: <> (      Best practices from leading teams)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (  <a className="link-item" href="https://github.com/storybookjs/storybook" target="_blank">)
+
+[comment]: <> (    <img src={Code} alt="code" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>GitHub project</strong>)
+
+[comment]: <> (      View the source and add issues)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (  <a className="link-item" href="https://discord.gg/storybook" target="_blank">)
+
+[comment]: <> (    <img src={Comments} alt="comments" />)
+
+[comment]: <> (    <span>)
+
+[comment]: <> (      <strong>Discord chat</strong>)
+
+[comment]: <> (      Chat with maintainers and the community)
+
+[comment]: <> (    </span>)
+
+[comment]: <> (  </a>)
+
+[comment]: <> (</div>)
+
+[comment]: <> (<div className="tip-wrapper">)
+
+[comment]: <> (  <span className="tip">Tip</span>Edit the Markdown in{' '})
+
+[comment]: <> (  <code>src/stories/Introduction.stories.mdx</code>)
+
+[comment]: <> (</div>)
