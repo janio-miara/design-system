@@ -17,7 +17,8 @@ const PlaygroundContent: ComponentStory<typeof Card> = args => {
 export const Playground = PlaygroundContent.bind({})
 
 Playground.args = {
-  color: 'primary',
+  color: 'white',
   height: '200px',
   children: 'Height 200px',
+  effect: true,
 }

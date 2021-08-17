@@ -30,8 +30,8 @@ const shades = {
 }
 
 const red = {
-  red60: '#DC2626',
-  red50: '#EF4444',
+  red60: '#c73737',
+  red50: '#DC2626',
   red40: '#F87171',
   red30: '#FCA5A5',
   red20: '#FECACA',
@@ -49,7 +49,7 @@ const honey = {
 
 const mint = {
   mint60: '#15803D',
-  mint50: '#43A047',
+  mint50: '#449647',
   mint40: '#4ADE80',
   mint30: '#86EFAC',
   mint20: '#BBF7D0',

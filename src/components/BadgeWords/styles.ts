@@ -18,7 +18,7 @@ export const Container = styled.div<BadgeWordProps>`
   font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.t1)};
 
   button {
-    ${({ color, outlined }) => (!outlined ? 'white' : changeColor[color || 'primary'])};
+    ${({ color, outlined }) => (!outlined ? changeColor.white : changeColor[color || 'primary'])};
     border: none;
     background-color: transparent;
     transform: scale(1.03);

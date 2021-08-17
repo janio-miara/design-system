@@ -37,7 +37,6 @@ export const ContainerFilter = styled.div`
 
   .wrapper-heading {
     display: flex;
-    width: 100%;
     padding: ${theme.spacing.space3};
     height: 80px;
     background-color: ${theme.colors.blue50};

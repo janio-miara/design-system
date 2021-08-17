@@ -1,7 +1,8 @@
 import { css } from 'styled-components'
 import { theme } from '../components/Themes'
+import { colorTypes } from '../types/colorTypes'
 
-export const changeBackground = {
+const changeBackground = {
   primary: css`
     background: ${theme.colors.blue50};
     color: ${theme.colors.white};
@@ -40,7 +41,7 @@ export const changeBackground = {
   `,
 }
 
-export const changeColorOutlined = {
+const changeColorOutlined = {
   primary: css`
     border-color: ${theme.colors.blue50};
     background-color: ${theme.colors.blue10};
@@ -88,7 +89,7 @@ export const changeColorOutlined = {
   `,
 }
 
-export const changeColor = {
+const changeColor = {
   primary: css`
     color: ${theme.colors.blue50};
   `,
@@ -147,3 +148,36 @@ export const changePaletaColor = {
     ${theme.colors.black};
   `,
 }
+
+const handleColor = (color: colorTypes) => {
+  if (color === 'primary') {
+    return theme.colors.blue50
+  }
+  if (color === 'white') {
+    return 'white'
+  }
+  if (color === 'default') {
+    return theme.colors.shade50
+  }
+  if (color === 'secondary') {
+    return theme.colors.cyan50
+  }
+  if (color === 'success') {
+    return theme.colors.mint50
+  }
+  if (color === 'error') {
+    return theme.colors.red50
+  }
+  if (color === 'warning') {
+    return theme.colors.honey50
+  }
+  if (color === 'lightDark') {
+    return theme.colors.shade50
+  }
+  if (color === 'dark') {
+    return 'black'
+  }
+  return theme.colors.shade50
+}
+
+export { handleColor, changeColor, changeColorOutlined, changeBackground }
