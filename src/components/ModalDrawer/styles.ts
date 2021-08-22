@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { theme } from '../Themes'
+import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
 export const Container = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ export const Container = styled.div`
   }
 `
 
-export const ContainerFilter = styled.div`
+export const ContainerFilter = styled.div<ModalDrawerProps>`
   position: absolute;
   top: 0;
   right: ${props => (props.side === 'right' ? '0' : 'unset')};
@@ -33,7 +34,7 @@ export const ContainerFilter = styled.div`
   width: 450px;
   height: 100%;
   box-shadow: 0px -4px 6px 1px #0000004a;
-  animation: ${(props: { side: string }) => handleAnimation(props.side)} 1s;
+  animation: ${({ side }) => handleAnimation(side)} 1s;
 
   .wrapper-heading {
     display: flex;
@@ -69,7 +70,7 @@ export const ContainerFilter = styled.div`
   }
 `
 
-const handleAnimation = (side: string) => {
+const handleAnimation = (side: any) => {
   const keyframesData = side === 'left' ? animationLeftStart : animationStart
 
   return keyframes(keyframesData)

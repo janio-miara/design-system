@@ -55,7 +55,7 @@ const changeColorOutlined = {
   default: css`
     border-color: ${theme.colors.shade50};
     background-color: ${theme.colors.shade10};
-    color: ${theme.colors.blue50};
+    color: ${theme.colors.blue60};
   `,
   secondary: css`
     border-color: ${theme.colors.cyan50};

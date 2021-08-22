@@ -13,3 +13,13 @@ export interface ButtonProps {
   icon?: any
   props?: any
 }
+
+export interface ButtonRadiusProps {
+  outlined?: boolean
+  color?: colorTypes
+  onClick?: () => void
+  disabled?: boolean
+  size?: sizeBasic
+  icon?: any
+  props?: any
+}

@@ -1,14 +1,12 @@
 import React from 'react'
-import * as S from './styles'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IButton } from '../../Types/buttonTypes'
+import * as Style from './styles'
+import { ButtonRadiusProps } from '../../types/buttonTypes'
 
-const ButtonWrapper: React.FC<IButton> = ({ disabled, icon, variant, color, size, ...props }) => {
+export const ButtonRadius = (props: ButtonRadiusProps) => {
+  const { disabled, icon } = props
   return (
-    <S.ButtonRadius disabled={disabled} variant={variant} color={color} size={size} {...props}>
-      <FontAwesomeIcon icon={icon} />
-    </S.ButtonRadius>
+    <Style.ButtonRadius disabled={disabled} {...props}>
+      {icon}
+    </Style.ButtonRadius>
   )
 }
-
-export { ButtonWrapper as ButtonRadius }

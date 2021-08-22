@@ -17,7 +17,7 @@ const PlaygroundContent: ComponentStory<typeof Divisor> = args => {
 export const Playground = PlaygroundContent.bind({})
 
 Playground.args = {
-  color: false,
+  color: 'primary',
   size: '1px',
   orientation: 'vertical',
 }

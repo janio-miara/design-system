@@ -15,10 +15,4 @@ export const Playground = PlaygroundContent.bind({})
 Playground.args = {
   element: 'p',
   children: 'Texto Janio',
-  argTypes: {
-    propertyA: {
-      options: ['Item One', 'Item Two', 'Item Three'],
-      control: { type: 'select' }, // Automatically inferred when 'options' is defined
-    },
-  },
 }
