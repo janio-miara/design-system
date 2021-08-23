@@ -6,17 +6,8 @@ import { Text } from '../Text'
 import * as Style from './styles'
 import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
-export const ModalDrawer: React.FC<ModalDrawerProps> = ({
-  open,
-  close,
-  title,
-  subTitle,
-  icon,
-  children,
-  side,
-  action,
-  ...props
-}) => {
+export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
+  const { open, close, title, subTitle, icon, children, action } = props
   const ref: any = useRef()
 
   useOnClickOutside(ref, close)
@@ -25,7 +16,7 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = ({
     ? ReactDOM.createPortal(
         <Style.Container {...props}>
           <div ref={ref}>
-            <Style.ContainerFilter side={side}>
+            <Style.ContainerFilter {...props}>
               <div className="wrapper-heading">
                 {icon && <span className="icon">{icon}</span>}
                 <div>
@@ -37,9 +28,7 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = ({
                   </Text>
                 </div>
               </div>
-
               <div className="content">{children}</div>
-
               <div className="button-wrapp">
                 {action && action()}
                 <Button size="small" outlined color="primary" onClick={close}>

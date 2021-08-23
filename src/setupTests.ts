@@ -10,7 +10,7 @@ Object.defineProperty(window.document, 'cookie', {
   value: '',
 })
 
-const localSotrageMock = {
+export const localSotrageMock = {
   getItem: jest.fn(),
   setItem: jest.fn(),
   removeItem: jest.fn(),

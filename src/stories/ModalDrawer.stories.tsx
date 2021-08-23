@@ -28,7 +28,7 @@ Playground.args = {
     'sdifhiushdfiuh sdifhiusdf sidufhiusdfhsdiufh iusdfhiusdf  jsdfjh skdjfhjksd sdkfjksd sdkjfhkjsd sdkjkjsd kjsdfkj sdkjfhkjsdf skdjhf ksdhkj  kjsdfkj kjshdf ',
   subTitle: 'Teste subtitle',
   action: () => (
-    <Button size="small" color="primary" onClick={() => alert('Sergio')}>
+    <Button size="small" color="primary">
       Salvar
     </Button>
   ),
