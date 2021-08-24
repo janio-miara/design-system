@@ -27,6 +27,7 @@ const shades = {
   shade30: '#E5E7EB',
   shade20: '#F0F1F2',
   shade10: '#F0F1F2',
+  shade05: '#f8f8f8',
 }
 
 const red = {

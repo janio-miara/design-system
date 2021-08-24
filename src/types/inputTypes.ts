@@ -1,4 +1,3 @@
-import React from 'react'
 import { sizeBasic } from './sizeTypes'
 
 export interface IInput {
@@ -21,12 +20,7 @@ export interface IInput {
   size?: sizeBasic
 }
 
-export interface ILabel {
-  icon?: React.ReactNode | React.Component
-  validate?: boolean
-  autoClear?: boolean
-  onClickClear?: boolean | any
-  spacing?: string
-  autocomplete?: string
-  size?: sizeBasic
+export interface InputProps {
+  variant?: sizeBasic
+  icon?: any
 }

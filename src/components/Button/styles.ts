@@ -22,7 +22,7 @@ export const ContainerButton = styled.button<ButtonProps>`
   color: white;
   font-family: ${theme.fonts.join()};
   font-weight: 700;
-  border-radius: 3em;
+  border-radius: 8px;
   cursor: pointer;
   display: inline-block;
   justify-content: center;
