@@ -25,7 +25,7 @@ Playground.args = {
   side: 'right',
   icon: <BiHelpCircle />,
   children:
-    'sdifhiushdfiuh sdifhiusdf sidufhiusdfhsdiufh iusdfhiusdf  jsdfjh skdjfhjksd sdkfjksd sdkjfhkjsd sdkjkjsd kjsdfkj sdkjfhkjsdf skdjhf ksdhkj  kjsdfkj kjshdf ',
+    ' sdifhiushdfiuh sdifhiusdf sidufhiusdfhsdiufh iusdfhiusdf  jsdfjh skdjfhjksd sdkfjksd sdkjfhkjsd sdkjkjsd kjsdfkj sdkjfhkjsdf skdjhf ksdhkj  kjsdfkj kjshdf ',
   subTitle: 'Teste subtitle',
   action: () => (
     <Button size="small" color="primary">

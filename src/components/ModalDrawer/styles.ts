@@ -39,7 +39,7 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
   .wrapper-heading {
     display: flex;
     padding: ${theme.spacing.space3};
-    height: 80px;
+    height: 50px;
     background-color: ${theme.colors.blue50};
     color: ${theme.colors.white};
 
@@ -57,8 +57,10 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
   }
 
   .content {
+    overflow: auto;
     padding: ${theme.spacing.space3};
-    height: calc(100% - 200px);
+    height: calc(100% - 170px);
+    border-bottom: 1px solid ${theme.colors.blue30};
   }
 
   .button-wrapp {

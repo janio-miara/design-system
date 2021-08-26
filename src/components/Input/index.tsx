@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { ContainerInput, WrapperInput, WrapperLabel } from './styles'
+import { ContainerInput, WrapperInput } from './styles'
 import { InputProps } from '../../types/inputTypes'
 
 export const Input = ({ ...props }: InputProps) => {
