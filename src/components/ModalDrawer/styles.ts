@@ -40,7 +40,7 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
     display: flex;
     padding: ${theme.spacing.space3};
     height: 50px;
-    background-color: ${theme.colors.blue50};
+    background-color: ${theme.colors.blue40};
     color: ${theme.colors.white};
 
     h3 {

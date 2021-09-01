@@ -1,21 +1,17 @@
 import { rem } from 'polished'
 
-const purple = {
-  purple60: '#1565C0',
-  purple50: '#1E88E5',
-  purple40: '#42A5F5',
-  purple30: '#90CAF9',
-  purple20: '#BBDEFB',
-  purple10: '#E3F2FD',
+const blue = {
+  blue40: '#3A566E',
+  blue30: '#61788B',
+  blue20: '#A0AEB9',
+  blue10: '#EFF1F3',
 }
 
-const blue = {
-  blue60: '#1E293B',
-  blue50: '#475569',
-  blue40: '#94A3B8',
-  blue30: '#CBD5E1',
-  blue20: '#E2E8F0',
-  blue10: '#F8FAFC',
+const cyan = {
+  cyan40: '#0055B8',
+  cyan30: '#3377C6',
+  cyan20: '#99BBE3',
+  cyan10: '#E5EEF8',
 }
 
 const shades = {
@@ -31,39 +27,24 @@ const shades = {
 }
 
 const red = {
-  red60: '#c73737',
-  red50: '#DC2626',
-  red40: '#F87171',
-  red30: '#FCA5A5',
-  red20: '#FECACA',
-  red10: '#FEF2F2',
+  red40: '#BA0000',
+  red30: '#DC8080',
+  red20: '#F1CCCC',
+  red10: '#FCF5F5',
 }
 
 const honey = {
-  honey60: '#B45309',
-  honey50: '#F97316',
-  honey40: '#FB923C',
+  honey40: '#F97316',
   honey30: '#FDBA74',
-  honey20: '#FED7AA',
+  honey20: '#eee2d9',
   honey10: '#FFF7ED',
 }
 
 const mint = {
-  mint60: '#15803D',
-  mint50: '#449647',
-  mint40: '#4ADE80',
-  mint30: '#86EFAC',
-  mint20: '#BBF7D0',
-  mint10: '#F0FDF4',
-}
-
-const cyan = {
-  cyan60: '#0369A1',
-  cyan50: '#2196F3',
-  cyan40: '#60A5FA',
-  cyan30: '#93C5FD',
-  cyan20: '#BFDBFE',
-  cyan10: '#EFF6FF',
+  mint40: '#19A60D',
+  mint30: '#8CD286',
+  mint20: '#D1EDCF',
+  mint10: '#F1FFF4',
 }
 
 const white = '#FFFFFF'
@@ -104,7 +85,6 @@ export const theme = {
   colors: {
     ...blue,
     ...shades,
-    ...purple,
     ...red,
     ...honey,
     ...mint,

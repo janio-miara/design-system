@@ -3,24 +3,92 @@ import { theme } from '../../Themes'
 
 interface PropsContainer {
   open: boolean
-  active: boolean
+  active?: boolean
+  activeLink?: boolean
+  activePaiLink?: boolean
 }
 
 export const Container = styled.div<PropsContainer>`
   display: flex;
-  justify-content: ${({ open }) => (!open ? 'center' : 'left')};
-  height: ${({ active }) => (active ? '100px' : '20px')};
-
+  align-items: center;
+  min-height: 35px;
+  margin: 4px 0;
   border-radius: 8px;
   cursor: pointer;
-  background-color: ${({ active }) => (active ? '#5a7090' : 'transparent')};
-  padding: ${theme.spacing.space2};
-  opacity: ${({ active }) => (active ? 1 : 0.7)};
+  justify-content: ${({ open }) => (!open ? 'center' : 'left')};
+  background-color: ${({ active }) => (active ? theme.colors.cyan30 : 'transparent')};
+  opacity: ${({ active }) => (active ? 1 : 0.9)};
+
+  .wrapper {
+    padding: 12px 16px;
+  }
+
   &:hover {
     opacity: 1;
-    background-color: #5a7090;
+    background-color: ${({ active }) => (active ? theme.colors.cyan30 : '#275881')};
+  }
+
+  .title {
+    margin-left: 8px;
+  }
+`
+
+export const ContainerLink = styled.div<PropsContainer>`
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: ${({ activeLink, activePaiLink }) => (activeLink || activePaiLink ? '#275881' : 'transparent')};
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  :hover {
+    background-color: #275881;
+  }
+
+  .wrapperTitle {
+    min-height: 42px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: ${({ open }) => (!open ? 'center' : 'space-between')};
+    svg {
+      width: 20px;
+    }
   }
   .title {
     margin-left: 8px;
+  }
+`
+
+export const WrapperLink = styled.div<PropsContainer>`
+  display: flex;
+  align-items: center;
+  min-height: 35px;
+  margin: 4px;
+  border-radius: 8px;
+  justify-content: ${({ open }) => (!open ? 'center' : 'left')};
+  background-color: ${({ active }) => (active ? theme.colors.cyan30 : 'transparent')};
+
+  .titleLink {
+    margin-left: 12px;
+    font-size: 13px;
+  }
+
+  :hover {
+    background-color: ${theme.colors.cyan30};
+  }
+  :active {
+    background-color: ${theme.colors.cyan30};
+    opacity: 0.8;
+  }
+
+  .wrapper {
+    margin-left: ${({ open }) => (!open ? '0' : '12px')};
+
+    svg {
+      font-size: 15px;
+    }
   }
 `
