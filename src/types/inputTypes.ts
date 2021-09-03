@@ -21,6 +21,11 @@ export interface IInput {
 }
 
 export interface InputProps {
+  id?: string
   variant?: sizeBasic
+  value: string | number
+  name?: string
   icon?: any
+  onClear?: boolean
+  onChange: (text: any) => any
 }

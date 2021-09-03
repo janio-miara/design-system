@@ -17,7 +17,7 @@ export const changeSize = {
   `,
 }
 
-export const ContainerInput = styled.div<InputProps>`
+export const ContainerInput = styled.div`
   font-family: ${theme.fonts.join()};
   width: 100%;
   position: relative;
@@ -54,7 +54,7 @@ export const ContainerInput = styled.div<InputProps>`
     left: 0;
     position: absolute;
     padding-left: ${theme.spacing.space3};
-    color: ${theme.colors.blue50};
+    color: ${theme.colors.blue40};
   }
 `
 
@@ -67,8 +67,7 @@ export const WrapperLabel = styled.label`
   color: rgb(114, 119, 128);
   text-transform: none;
   left: ${theme.spacing.space2};
-  z-index: 2;
-
+  z-index: ${theme.zIndex.z1};
   position: relative;
   padding: 0 ${theme.spacing.space2};
   width: auto;
@@ -85,10 +84,11 @@ export const WrapperInput = styled.input<InputProps>`
   box-shadow: ${theme.colors.shade40} 0 0 0 1.2px inset;
   color: ${theme.colors.shade60};
   ${({ variant }) => variant && changeSize[variant || 'medium']}
+  padding-left: ${({ icon }) => icon && '40px'};
 
   &:focus {
     outline: none;
-    border-color: ${theme.colors.blue50};
-    box-shadow: 0 0 2px ${theme.colors.blue50};
+    border-color: ${theme.colors.blue40};
+    box-shadow: 0 0 2px ${theme.colors.blue40};
   }
 `

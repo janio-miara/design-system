@@ -9,7 +9,7 @@ export const Container = styled.div<BadgeWordProps>`
   margin: ${theme.spacing.space1} 0;
   width: fit-content;
   margin-right: ${theme.spacing.space2};
-  padding: ${theme.spacing.space1} ${theme.spacing.space2};
+  padding: 6px ${theme.spacing.space3};
   height: fit-content;
   ${({ outlined, color }) =>
     outlined ? changeColorOutlined[color || 'primary'] : changeBackground[color || 'primary']};

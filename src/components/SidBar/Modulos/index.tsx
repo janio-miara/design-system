@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 import { Container, ContainerLink, WrapperLink } from './styles'
@@ -70,18 +69,16 @@ const Modulo = ({ side, open, active, setActive }: any) => {
           </div>
           {activeLink &&
             subLink.map((link: any) => (
-              <Link to={link.link}>
-                <WrapperLink
-                  open={open}
-                  active={link.link === active}
-                  onClick={(event: any) => handleActive(event, link.link)}
-                >
-                  <div className="wrapper">
-                    <FontAwesomeIcon icon={link.icon} size="lg" />
-                    {newOpen && <span className="titleLink">{link.title}</span>}
-                  </div>
-                </WrapperLink>
-              </Link>
+              <WrapperLink
+                open={open}
+                active={link.link === active}
+                onClick={(event: any) => handleActive(event, link.link)}
+              >
+                <div className="wrapper">
+                  <FontAwesomeIcon icon={link.icon} size="lg" />
+                  {newOpen && <span className="titleLink">{link.title}</span>}
+                </div>
+              </WrapperLink>
             ))}
         </ContainerLink>
       )}

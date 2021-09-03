@@ -1,29 +1,34 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import { ContainerInput, WrapperInput } from './styles'
+import * as Style from './styles'
 import { InputProps } from '../../types/inputTypes'
 
 export const Input = ({ ...props }: InputProps) => {
-  const [value, setValue] = useState('')
+  const { icon, onChange, value, id, onClear } = props
+
   const [active, setActive] = useState(false)
   return (
-    <ContainerInput onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
+    <Style.ContainerInput onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
       <span className="wrapper-label">{(active || value) && 'Nome'}</span>
-      <WrapperInput
+      <Style.WrapperInput
         {...props}
+        id={id}
         placeholder={!active ? 'Nome' : ''}
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={(e: any) => onChange(e.target)}
       />
-      <span className="wrapper-icon">
-        <FontAwesomeIcon icon={faTimesCircle} />
-      </span>
-      {value && (
-        <span className="wrapper-icon-close">
-          <FontAwesomeIcon icon={faTimesCircle} onClick={() => setValue('')} />
+      {icon && (
+        <span className="wrapper-icon">
+          <FontAwesomeIcon icon={icon} />
         </span>
       )}
-    </ContainerInput>
+
+      {value && onClear && (
+        <span className="wrapper-icon-close">
+          <FontAwesomeIcon icon={faTimesCircle} onClick={() => onChange({ id, value: '' })} />
+        </span>
+      )}
+    </Style.ContainerInput>
   )
 }
