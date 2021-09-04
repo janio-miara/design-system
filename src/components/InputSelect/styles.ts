@@ -1,6 +1,17 @@
 import styled, { css } from 'styled-components'
 import { theme } from '../Themes'
 import { InputProps } from '../../types/inputTypes'
+import { changeBackground } from '../../utils/changeColorTheme'
+
+interface status {
+  status: boolean
+  ref: any
+}
+
+interface IColor {
+  key?: number
+  color: string
+}
 
 export const changeSize = {
   small: css`
@@ -90,4 +101,43 @@ export const WrapperInput = styled.input<InputProps>`
 export const WrapperMessage = styled.div`
   margin-top: -${theme.spacing.space2};
   margin-left: ${theme.spacing.space1};
+`
+
+export const ContainerPoper = styled.div<status>`
+  display: ${({ status }) => !status && 'none'};
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+`
+
+export const ValueSelector = styled.div`
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  color: ${theme.colors.shade70};
+  transition: transform, background 0.3s;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    font-weight: 600;
+    background: ${theme.colors.blue40};
+  }
+  div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  div {
+    &:hover {
+      font-weight: bold;
+    }
+  }
 `
