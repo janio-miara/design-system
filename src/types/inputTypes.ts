@@ -24,6 +24,7 @@ export interface InputProps {
   id?: string
   variant?: sizeBasic
   value: string | number
+  placeholder?: string
   name?: string
   icon?: any
   onClear?: boolean

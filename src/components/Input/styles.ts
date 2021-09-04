@@ -54,25 +54,8 @@ export const ContainerInput = styled.div`
     left: 0;
     position: absolute;
     padding-left: ${theme.spacing.space3};
-    color: ${theme.colors.blue40};
+    color: ${theme.colors.shade40};
   }
-`
-
-export const WrapperLabel = styled.label`
-  text-align: left;
-  font-size: 12px;
-  line-height: ${theme.spacing.space3};
-  letter-spacing: 0;
-  font-weight: normal;
-  color: rgb(114, 119, 128);
-  text-transform: none;
-  left: ${theme.spacing.space2};
-  z-index: ${theme.zIndex.z1};
-  position: relative;
-  padding: 0 ${theme.spacing.space2};
-  width: auto;
-  white-space: nowrap;
-  background: linear-gradient(transparent 43%, rgb(250, 250, 251) 43%, rgb(250, 250, 251) 100%);
 `
 
 export const WrapperInput = styled.input<InputProps>`
@@ -90,5 +73,16 @@ export const WrapperInput = styled.input<InputProps>`
     outline: none;
     border-color: ${theme.colors.blue40};
     box-shadow: 0 0 2px ${theme.colors.blue40};
+  }
+
+  &:-webkit-autofill {
+    background: -internal-light-dark(black, white) !important;
+    -webkit-box-shadow: 0 0 0 30px ${theme.colors.shade05} inset;
+    -webkit-text-fill-color: ${theme.colors.shade80} !important;
+  }
+
+  ::placeholder {
+    color: ${theme.colors.shade40};
+    font-weight: lighter;
   }
 `

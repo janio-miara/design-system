@@ -8,7 +8,7 @@ export default {
   component: Input,
 } as ComponentMeta<typeof Input>
 
-const PlaygroundContent: ComponentStory<typeof Input> = args => {
+const PlaygroundContent: ComponentStory<typeof Input> = () => {
   const [inputValue, setInputValue] = useState({ name: '' })
 
   const handleValues = (target: any) => {
@@ -24,9 +24,10 @@ const PlaygroundContent: ComponentStory<typeof Input> = args => {
         onChange={handleValues}
         icon={faUser}
         id="name"
-        name="name"
+        name="Primeiro Nome"
         onClear
         variant="medium"
+        placeholder="Primeiro nome"
       />
     </div>
   )
