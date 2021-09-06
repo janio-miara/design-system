@@ -42,8 +42,9 @@ export const InputSelect = ({ ...props }: InputPropsSelect) => {
         <span className="wrapper-icon-close">
           <FontAwesomeIcon icon={faCaretDown} />
         </span>
-      </Style.ContainerInput>
-      <Style.ContainerPoper status={active} ref={ref}>
+        
+        
+            <Style.ContainerPoper status={active} ref={ref}>
         <Popover ref={ref}>
           {object.map((item: any) => (
             <Style.ValueSelector onClick={() => handleChangeActive(item)}>
@@ -52,6 +53,9 @@ export const InputSelect = ({ ...props }: InputPropsSelect) => {
           ))}
         </Popover>
       </Style.ContainerPoper>
+        
+      </Style.ContainerInput>
+  
     </>
   )
 }
