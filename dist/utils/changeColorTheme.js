@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { theme } from '../components/Themes';
 const changeBackground = {
     primary: css `
-    background: ${theme.colors.blue50};
+    background: ${theme.colors.blue40};
     color: ${theme.colors.white};
   `,
     white: css `
@@ -14,19 +14,19 @@ const changeBackground = {
     color: ${theme.colors.white};
   `,
     secondary: css `
-    background: ${theme.colors.cyan50};
+    background: ${theme.colors.cyan40};
     color: ${theme.colors.white};
   `,
     success: css `
-    background: ${theme.colors.mint50};
+    background: ${theme.colors.mint40};
     color: ${theme.colors.white};
   `,
     error: css `
-    background: ${theme.colors.red50};
+    background: ${theme.colors.red40};
     color: ${theme.colors.white};
   `,
     warning: css `
-    background: ${theme.colors.honey50};
+    background: ${theme.colors.honey40};
     color: ${theme.colors.white};
   `,
     lightDark: css `
@@ -40,9 +40,9 @@ const changeBackground = {
 };
 const changeColorOutlined = {
     primary: css `
-    border-color: ${theme.colors.blue50};
+    border-color: ${theme.colors.blue40};
     background-color: ${theme.colors.blue10};
-    color: ${theme.colors.blue60};
+    color: ${theme.colors.blue40};
   `,
     white: css `
     border-color: ${theme.colors.shade20};
@@ -52,27 +52,27 @@ const changeColorOutlined = {
     default: css `
     border-color: ${theme.colors.shade50};
     background-color: ${theme.colors.shade10};
-    color: ${theme.colors.blue60};
+    color: ${theme.colors.blue40};
   `,
     secondary: css `
-    border-color: ${theme.colors.cyan50};
+    border-color: ${theme.colors.cyan40};
     background-color: ${theme.colors.cyan10};
-    color: ${theme.colors.cyan60};
+    color: ${theme.colors.cyan40};
   `,
     success: css `
-    border-color: ${theme.colors.mint50};
+    border-color: ${theme.colors.mint40};
     background-color: ${theme.colors.mint10};
-    color: ${theme.colors.mint60};
+    color: ${theme.colors.mint40};
   `,
     error: css `
-    border-color: ${theme.colors.red50};
+    border-color: ${theme.colors.red40};
     background-color: ${theme.colors.red10};
-    color: ${theme.colors.red60};
+    color: ${theme.colors.red40};
   `,
     warning: css `
-    border-color: ${theme.colors.honey50};
+    border-color: ${theme.colors.honey40};
     background-color: ${theme.colors.honey10};
-    color: ${theme.colors.honey60};
+    color: ${theme.colors.honey40};
   `,
     lightDark: css `
     border-color: ${theme.colors.shade50};
@@ -81,13 +81,13 @@ const changeColorOutlined = {
   `,
     dark: css `
     border-color: ${theme.colors.black};
-    background-color: ${theme.colors.shade20};
+    background-color: ${theme.colors.shade10};
     color: ${theme.colors.black};
   `,
 };
 const changeColor = {
     primary: css `
-    color: ${theme.colors.blue50};
+    color: ${theme.colors.blue40};
   `,
     white: css `
     color: ${theme.colors.white};
@@ -96,16 +96,16 @@ const changeColor = {
     color: ${theme.colors.shade50};
   `,
     secondary: css `
-    color: ${theme.colors.cyan50};
+    color: ${theme.colors.cyan40};
   `,
     success: css `
-    color: ${theme.colors.mint50};
+    color: ${theme.colors.mint40};
   `,
     error: css `
-    color: ${theme.colors.red50};
+    color: ${theme.colors.red40};
   `,
     warning: css `
-    color: ${theme.colors.honey50};
+    color: ${theme.colors.honey40};
   `,
     lightDark: css `
     color: ${theme.colors.shade50};
@@ -116,7 +116,7 @@ const changeColor = {
 };
 export const changePaletaColor = {
     primary: css `
-    ${theme.colors.blue50};
+    ${theme.colors.blue40};
   `,
     white: css `
     ${theme.colors.white};
@@ -125,16 +125,16 @@ export const changePaletaColor = {
     ${theme.colors.shade50};
   `,
     secondary: css `
-    ${theme.colors.cyan50};
+    ${theme.colors.cyan40};
   `,
     success: css `
-    ${theme.colors.mint50};
+    ${theme.colors.mint40};
   `,
     error: css `
-    ${theme.colors.red50};
+    ${theme.colors.red40};
   `,
     warning: css `
-    ${theme.colors.honey50};
+    ${theme.colors.honey40};
   `,
     lightDark: css `
     color: ${theme.colors.shade50};
@@ -145,7 +145,7 @@ export const changePaletaColor = {
 };
 const handleColor = (color) => {
     if (color === 'primary') {
-        return theme.colors.blue50;
+        return theme.colors.blue40;
     }
     if (color === 'white') {
         return 'white';
@@ -154,16 +154,16 @@ const handleColor = (color) => {
         return theme.colors.shade50;
     }
     if (color === 'secondary') {
-        return theme.colors.cyan50;
+        return theme.colors.cyan40;
     }
     if (color === 'success') {
-        return theme.colors.mint50;
+        return theme.colors.mint40;
     }
     if (color === 'error') {
-        return theme.colors.red50;
+        return theme.colors.red40;
     }
     if (color === 'warning') {
-        return theme.colors.honey50;
+        return theme.colors.honey40;
     }
     if (color === 'lightDark') {
         return theme.colors.shade50;

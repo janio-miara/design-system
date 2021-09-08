@@ -13,15 +13,15 @@ describe('Testing button', () => {
     test('testing the props of button contanded and colors props', () => {
         render(React.createElement(Button, { color: "primary", "data-test-id": "button" }, titleButton));
         const element = screen.getByTestId('button');
-        expect(element).toHaveStyle({ background: theme.colors.blue50, color: theme.colors.white });
+        expect(element).toHaveStyle({ background: theme.colors.blue40, color: theme.colors.white });
     });
     test('testing the props of button outlined and colors props', () => {
         render(React.createElement(Button, { color: "primary", outlined: true, "data-test-id": "button" }, titleButton));
         const element = screen.getByTestId('button');
         expect(element).toHaveStyle({
-            color: theme.colors.blue60,
+            color: theme.colors.blue40,
             background: theme.colors.blue10,
-            borderColor: theme.colors.blue50,
+            borderColor: theme.colors.blue40,
         });
     });
     test('testing the props of button contanded and size small props', () => {

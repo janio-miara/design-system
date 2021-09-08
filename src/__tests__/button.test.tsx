@@ -23,7 +23,7 @@ describe('Testing button', () => {
       </Button>,
     )
     const element = screen.getByTestId('button')
-    expect(element).toHaveStyle({ background: theme.colors.blue50, color: theme.colors.white })
+    expect(element).toHaveStyle({ background: theme.colors.blue40, color: theme.colors.white })
   })
   test('testing the props of button outlined and colors props', () => {
     render(
@@ -33,9 +33,9 @@ describe('Testing button', () => {
     )
     const element = screen.getByTestId('button')
     expect(element).toHaveStyle({
-      color: theme.colors.blue60,
+      color: theme.colors.blue40,
       background: theme.colors.blue10,
-      borderColor: theme.colors.blue50,
+      borderColor: theme.colors.blue40,
     })
   })
 

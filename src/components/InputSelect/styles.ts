@@ -4,8 +4,8 @@ import { InputProps } from '../../types/inputTypes'
 import { changeBackground } from '../../utils/changeColorTheme'
 
 interface status {
-  status: boolean
-  ref: any
+  status?: boolean
+  ref?: any
 }
 
 interface IColor {
@@ -28,7 +28,7 @@ export const changeSize = {
   `,
 }
 
-export const ContainerInput = styled.div`
+export const ContainerInput = styled.div<status>`
   font-family: ${theme.fonts.join()};
   width: 100%;
   position: relative;
@@ -48,12 +48,12 @@ export const ContainerInput = styled.div`
     font-weight: normal;
   }
 
-  .wrapper-icon-close {
+  .wrapper-icon-selector {
     transition: transform 0.3s;
     right: 0;
     position: absolute;
     padding-right: ${theme.spacing.space3};
-    color: ${theme.colors.shade40};
+    color: ${({ status }) => (status ? theme.colors.blue40 : theme.colors.shade40)};
     :hover {
       color: ${theme.colors.blue40};
       cursor: pointer;
@@ -67,6 +67,10 @@ export const ContainerInput = styled.div`
     padding-left: ${theme.spacing.space3};
     color: ${theme.colors.shade40};
   }
+
+  input {
+    box-shadow: ${({ status }) => (status ? theme.colors.blue40 : theme.colors.shade40)} 0 0 0 1.2px inset;
+  }
 `
 
 export const WrapperInput = styled.input<InputProps>`
@@ -76,7 +80,7 @@ export const WrapperInput = styled.input<InputProps>`
   background: white;
   border: 1px solid transparent;
   box-shadow: ${({ error }) => (!error ? theme.colors.shade40 : theme.colors.red40)} 0 0 0 1.2px inset;
-  color: ${theme.colors.shade60};
+  color: ${theme.colors.shade80};
   ${({ variant }) => variant && changeSize[variant || 'medium']}
   padding-left: ${({ icon }) => icon && '40px'};
 
@@ -106,38 +110,25 @@ export const WrapperMessage = styled.div`
 export const ContainerPoper = styled.div<status>`
   display: ${({ status }) => !status && 'none'};
   position: absolute;
+  top: 45px;
   width: 100%;
   z-index: 10;
 `
 
 export const ValueSelector = styled.div`
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  color: ${theme.colors.shade70};
-  transition: transform, background 0.3s;
-  display: flex;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  border-radius: 8px;
-  margin-bottom: 2px;
   cursor: pointer;
-
-  &:hover {
+  font-size: ${theme.fontSizes.t2};
+  margin: 0;
+  border-radius: ${theme.spacing.space1};
+  color: ${theme.colors.shade60};
+  padding: 12px ${theme.spacing.space3};
+  border-bottom: 1px solid ${theme.colors.shade20};
+  :hover {
+    font-weight: bold;
+    background-color: ${theme.colors.shade20};
+  }
+  :active {
     color: white;
-    font-weight: 600;
-    background: ${theme.colors.blue40};
-  }
-  div {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-  }
-
-  div {
-    &:hover {
-      font-weight: bold;
-    }
+    background-color: ${theme.colors.cyan20};
   }
 `

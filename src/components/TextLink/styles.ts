@@ -14,7 +14,7 @@ export const Container = styled.a<TextLinkProps>`
   display: flex;
 
   :hover {
-    color: ${({ disabled }) => !disabled && theme.colors.cyan60};
+    color: ${({ disabled }) => !disabled && theme.colors.cyan40};
   }
   :active {
     color: ${({ disabled }) => !disabled && theme.colors.cyan40};

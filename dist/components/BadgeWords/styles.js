@@ -7,7 +7,7 @@ export const Container = styled.div `
   margin: ${theme.spacing.space1} 0;
   width: fit-content;
   margin-right: ${theme.spacing.space2};
-  padding: ${theme.spacing.space1} ${theme.spacing.space2};
+  padding: 6px ${theme.spacing.space3};
   height: fit-content;
   ${({ outlined, color }) => outlined ? changeColorOutlined[color || 'primary'] : changeBackground[color || 'primary']};
   border: 1px solid ${({ color, outlined }) => outlined && changePaletaColor[color || 'primary']};

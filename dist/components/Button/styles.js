@@ -19,7 +19,7 @@ export const ContainerButton = styled.button `
   color: white;
   font-family: ${theme.fonts.join()};
   font-weight: 700;
-  border-radius: 3em;
+  border-radius: 8px;
   cursor: pointer;
   display: inline-block;
   justify-content: center;
@@ -27,7 +27,7 @@ export const ContainerButton = styled.button `
   justify-items: center;
   line-height: 1;
   ${({ size }) => changeSize[size || 'medium']};
-  border: ${({ outlined }) => (outlined ? '1px solid' : '0')};
+  border: ${({ outlined }) => (outlined ? '0px solid' : '0')};
   ${({ outlined, color }) => outlined && changeColorOutlined[color || 'primary']};
   ${({ color, outlined }) => !outlined && changeBackground[color || 'primary']};
   transition: transform 0.2s;

@@ -26,7 +26,7 @@ const InputSelectContent: ComponentStory<typeof InputSelect> = () => {
         onChange={setInputValue}
         icon={faUser}
         id="name"
-        name="Primeiro Nome"
+        label="Primeiro Nome"
         onClear
         variant="medium"
         placeholder="Primeiro nome"

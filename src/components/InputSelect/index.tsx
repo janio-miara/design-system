@@ -7,11 +7,12 @@ import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 export const InputSelect = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, name, keyValue, defaultValue, object } = props
+  const { icon, id, placeholder, label, keyValue, defaultValue, object } = props
   const [active, setActive] = useState(false)
   const [value, setValue] = useState(defaultValue || '')
   const ref = useRef()
-  const handleChangeActive = (item: any) => {
+  const handleChangeActive = (event: any, item: any) => {
+    event.stopPropagation()
     setValue(item)
     setActive(false)
   }
@@ -19,43 +20,37 @@ export const InputSelect = ({ ...props }: InputPropsSelect) => {
   useOnClickOutside(ref, () => setActive(false))
 
   return (
-    <>
-      <Style.ContainerInput onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
-        <span className="wrapper-label">{(active || value) && name}</span>
-        <Style.WrapperInput
-          {...props}
-          id={id}
-          disabled
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          type="select"
-          value={value[keyValue]}
-          placeholder={!active ? placeholder : ''}
-          onChange={() => console.log()}
-        />
-        {icon && (
-          <span className="wrapper-icon">
-            <FontAwesomeIcon icon={icon} />
-          </span>
-        )}
-        <span className="wrapper-icon-close">
-          <FontAwesomeIcon icon={faCaretDown} />
+    <Style.ContainerInput status={active} onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
+      <span className="wrapper-label">{(active || value) && label}</span>
+      <Style.WrapperInput
+        {...props}
+        id={id}
+        disabled
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        value={value[keyValue]}
+        placeholder={!active ? placeholder : ''}
+        onChange={() => console.log()}
+      />
+      {icon && (
+        <span className="wrapper-icon">
+          <FontAwesomeIcon icon={icon} />
         </span>
-        
-        
-            <Style.ContainerPoper status={active} ref={ref}>
+      )}
+      <span className="wrapper-icon-selector">
+        <FontAwesomeIcon icon={faCaretDown} />
+      </span>
+
+      <Style.ContainerPoper status={active} ref={ref}>
         <Popover ref={ref}>
           {object.map((item: any) => (
-            <Style.ValueSelector onClick={() => handleChangeActive(item)}>
-              <div>{item[keyValue]}</div>
+            <Style.ValueSelector onClick={(event: any) => handleChangeActive(event, item)}>
+              {item[keyValue]}
             </Style.ValueSelector>
           ))}
         </Popover>
       </Style.ContainerPoper>
-        
-      </Style.ContainerInput>
-  
-    </>
+    </Style.ContainerInput>
   )
 }

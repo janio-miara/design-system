@@ -17,7 +17,7 @@ export interface InputPropsSelect {
   id?: string
   variant?: sizeBasic
   placeholder?: string
-  name?: string
+  label?: string
   icon?: any
   onClear?: boolean
   onChange?: (text: any) => any

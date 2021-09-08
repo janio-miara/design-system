@@ -21,11 +21,11 @@ export const Container = styled.div`
 
     .blue60 {
       color: white;
-      background-color: ${theme.colors.blue60};
+      background-color: ${theme.colors.blue40};
     }
 
     .blue50 {
-      background-color: ${theme.colors.blue50};
+      background-color: ${theme.colors.blue40};
     }
 
     .blue40 {
@@ -47,11 +47,11 @@ export const Container = styled.div`
     
     .cyan60 {
       color: white;
-      background-color: ${theme.colors.cyan60};
+      background-color: ${theme.colors.cyan40};
     }
 
     .cyan50 {
-      background-color: ${theme.colors.cyan50};
+      background-color: ${theme.colors.cyan40};
     }
 
     .cyan40 {
@@ -72,11 +72,11 @@ export const Container = styled.div`
   
      .mint60 {
       color: white;
-      background-color: ${theme.colors.mint60};
+      background-color: ${theme.colors.mint40};
     }
 
     .mint50 {
-      background-color: ${theme.colors.mint50};
+      background-color: ${theme.colors.mint40};
     }
 
     .mint40 {
@@ -97,11 +97,11 @@ export const Container = styled.div`
   
        .red60 {
       color: white;
-      background-color: ${theme.colors.red60};
+      background-color: ${theme.colors.red40};
     }
 
     .red50 {
-      background-color: ${theme.colors.red50};
+      background-color: ${theme.colors.red40};
     }
 
     .red40 {
@@ -122,11 +122,11 @@ export const Container = styled.div`
   
     .honey60 {
       color: white;
-      background-color: ${theme.colors.honey60};
+      background-color: ${theme.colors.honey40};
     }
 
     .honey50 {
-      background-color: ${theme.colors.honey50};
+      background-color: ${theme.colors.honey40};
     }
 
     .honey40 {

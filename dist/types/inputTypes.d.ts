@@ -1,30 +1,26 @@
-import React from 'react';
 import { sizeBasic } from './sizeTypes';
-export interface IInput {
-    mensagem?: string;
-    name?: string;
-    value: string;
-    type?: string;
-    color?: string;
-    placeholder?: string;
-    icon?: any;
-    onClickClear?: any;
-    autoClear?: any;
-    spacing?: string;
-    validate?: boolean | any;
-    onChange: (text: any) => any;
-    mensage?: string;
+export interface InputProps {
     id?: string;
-    props?: any;
-    size?: sizeBasic;
+    variant?: sizeBasic;
+    value: string | number;
+    placeholder?: string;
+    name?: string;
+    icon?: any;
+    onClear?: boolean;
+    onChange: (text: any) => any;
+    error?: boolean;
+    messageError?: string;
 }
-export interface ILabel {
-    icon?: React.ReactNode | React.Component;
-    validate?: boolean;
-    autoClear?: boolean;
-    onClickClear?: boolean | any;
-    spacing?: string;
-    autocomplete?: string;
-    size?: sizeBasic;
+export interface InputPropsSelect {
+    id?: string;
+    variant?: sizeBasic;
+    placeholder?: string;
+    label?: string;
+    icon?: any;
+    onClear?: boolean;
+    onChange?: (text: any) => any;
+    object?: any;
+    defaultValue?: any;
+    keyValue?: any;
 }
 //# sourceMappingURL=inputTypes.d.ts.map

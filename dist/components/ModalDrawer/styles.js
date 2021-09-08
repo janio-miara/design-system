@@ -36,8 +36,8 @@ export const ContainerFilter = styled.div `
   .wrapper-heading {
     display: flex;
     padding: ${theme.spacing.space3};
-    height: 80px;
-    background-color: ${theme.colors.blue50};
+    height: 50px;
+    background-color: ${theme.colors.blue40};
     color: ${theme.colors.white};
 
     h3 {
@@ -54,8 +54,10 @@ export const ContainerFilter = styled.div `
   }
 
   .content {
+    overflow: auto;
     padding: ${theme.spacing.space3};
-    height: calc(100% - 200px);
+    height: calc(100% - 170px);
+    border-bottom: 1px solid ${theme.colors.blue30};
   }
 
   .button-wrapp {

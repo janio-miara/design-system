@@ -1,0 +1,1 @@
+{"version":3,"file":"styles.d.ts","sourceRoot":"","sources":["../../../../src/components/SidBar/Modulos/styles.ts"],"names":[],"mappings":"AAGA,UAAU,cAAc;IACtB,IAAI,EAAE,OAAO,CAAA;IACb,MAAM,CAAC,EAAE,OAAO,CAAA;IAChB,UAAU,CAAC,EAAE,OAAO,CAAA;IACpB,aAAa,CAAC,EAAE,OAAO,CAAA;CACxB;AAED,eAAO,MAAM,SAAS,gFAuBrB,CAAA;AAED,eAAO,MAAM,aAAa,gFA2BzB,CAAA;AAED,eAAO,MAAM,WAAW,gFA6BvB,CAAA"}
