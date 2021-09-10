@@ -25,7 +25,6 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
         id="name"
         name="Primeiro Nome"
         onClear
-        variant="medium"
         placeholder="Primeiro nome"
       />
     </div>
@@ -47,6 +46,7 @@ const InputIconErrorContent: ComponentStory<typeof Input> = () => {
         value={inputValue.name}
         onChange={handleValues}
         icon={faUser}
+        type="text"
         id="name"
         name="Primeiro Nome"
         onClear

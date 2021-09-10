@@ -8,7 +8,6 @@ export { Card } from './Card/index';
 export { Divisor } from './Divisor/index';
 export { ButtonRadius } from './ButtonRadius/index';
 export { Input } from './Input/index';
-export { SidBar } from './SidBar/index';
 export { Avatar } from './Avatar/index';
 export { InputSelect } from './InputSelect/index';
 export { InputSelectOutline } from './InputSelectOutline/index';

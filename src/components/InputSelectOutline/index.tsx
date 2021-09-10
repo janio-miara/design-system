@@ -5,16 +5,17 @@ import * as Style from './styles'
 import { InputPropsSelect } from '../../types/inputTypes'
 import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
-import { WrapperMessage } from './styles'
 
 export const InputSelectOutline = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, label, keyValue, defaultValue, object } = props
+  const { icon, id, placeholder, keyValue, defaultValue, object, onChange } = props
   const [active, setActive] = useState(false)
   const [value, setValue] = useState(defaultValue || '')
   const ref = useRef()
+
   const handleChangeActive = (event: any, item: any) => {
     event.stopPropagation()
     setValue(item)
+    onChange(item)
     setActive(false)
   }
 

@@ -2,16 +2,16 @@ import styled, { css } from 'styled-components';
 import { theme } from '../Themes';
 export const changeSize = {
     small: css `
-    padding: ${theme.spacing.space2};
-    font-size: ${theme.fontSizes.t2};
+    padding: 10px;
+    font-size: ${theme.fontSizes.p3};
   `,
     medium: css `
     padding: 14px;
-    font-size: ${theme.fontSizes.t2};
+    font-size: ${theme.fontSizes.p2};
   `,
     large: css `
     padding: ${theme.spacing.space3};
-    font-size: ${theme.fontSizes.t3};
+    font-size: ${theme.fontSizes.p2};
   `,
 };
 export const ContainerInput = styled.div `
@@ -66,7 +66,7 @@ export const WrapperInput = styled.input `
   border: 1px solid transparent;
   box-shadow: ${({ error }) => (!error ? theme.colors.shade40 : theme.colors.red40)} 0 0 0 1.2px inset;
   color: ${theme.colors.shade80};
-  ${({ variant }) => variant && changeSize[variant || 'medium']}
+  ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
   padding-left: ${({ icon }) => icon && '40px'};
 
   &:focus {
@@ -99,7 +99,7 @@ export const ContainerPoper = styled.div `
 `;
 export const ValueSelector = styled.div `
   cursor: pointer;
-  font-size: ${theme.fontSizes.t2};
+  font-size: ${theme.fontSizes.p2};
   margin: 0;
   border-radius: ${theme.spacing.space1};
   color: ${theme.colors.shade60};

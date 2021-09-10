@@ -4,16 +4,16 @@ import { InputProps } from '../../types/inputTypes'
 
 export const changeSize = {
   small: css`
-    padding: ${theme.spacing.space2};
-    font-size: ${theme.fontSizes.t2};
+    padding: 10px;
+    font-size: ${theme.fontSizes.p3};
   `,
   medium: css`
     padding: 14px;
-    font-size: ${theme.fontSizes.t2};
+    font-size: ${theme.fontSizes.p2};
   `,
   large: css`
     padding: ${theme.spacing.space3};
-    font-size: ${theme.fontSizes.t3};
+    font-size: ${theme.fontSizes.p3};
   `,
 }
 
@@ -65,8 +65,8 @@ export const WrapperInput = styled.input<InputProps>`
   background: white;
   border: 1px solid transparent;
   box-shadow: ${({ error }) => (!error ? theme.colors.shade40 : theme.colors.red40)} 0 0 0 1.2px inset;
-  color: ${theme.colors.shade60};
-  ${({ variant }) => variant && changeSize[variant || 'medium']}
+  color: ${theme.colors.shade70};
+  ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
   padding-left: ${({ icon }) => icon && '40px'};
 
   &:focus {

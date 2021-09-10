@@ -16,7 +16,7 @@ export const ModalDrawer = props => {
                         icon && React.createElement("span", { className: "icon" }, icon),
                         React.createElement("div", null,
                             React.createElement(Text, { element: "h3", bold: true, color: "white" }, title),
-                            React.createElement(Text, { element: "span", size: "t2", color: "default" }, subTitle && subTitle))),
+                            React.createElement(Text, { element: "span", size: "p3", color: "default" }, subTitle && subTitle))),
                     React.createElement("div", { className: "content" }, children),
                     React.createElement("div", { className: "button-wrapp" },
                         action && action(),

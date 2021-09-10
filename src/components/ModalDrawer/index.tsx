@@ -23,7 +23,7 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
                   <Text element="h3" bold color="white">
                     {title}
                   </Text>
-                  <Text element="span" size="t2" color="default">
+                  <Text element="span" size="p3" color="default">
                     {subTitle && subTitle}
                   </Text>
                 </div>

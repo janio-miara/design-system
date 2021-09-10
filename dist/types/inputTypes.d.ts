@@ -7,8 +7,9 @@ export interface InputProps {
     name?: string;
     icon?: any;
     onClear?: boolean;
-    onChange: (text: any) => any;
+    onChange: any;
     error?: boolean;
+    type?: string;
     messageError?: string;
 }
 export interface InputPropsSelect {
@@ -18,7 +19,7 @@ export interface InputPropsSelect {
     label?: string;
     icon?: any;
     onClear?: boolean;
-    onChange?: (text: any) => any;
+    onChange?: any;
     object?: any;
     defaultValue?: any;
     keyValue?: any;

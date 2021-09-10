@@ -6,7 +6,7 @@ import * as Style from './styles'
 import { InputProps } from '../../types/inputTypes'
 
 export const Input = ({ ...props }: InputProps) => {
-  const { icon, onChange, value, id, onClear, placeholder, name, messageError, error } = props
+  const { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type } = props
   const [active, setActive] = useState(false)
 
   const handleClearValue = (event: any) => {
@@ -22,6 +22,7 @@ export const Input = ({ ...props }: InputProps) => {
         <Style.WrapperInput
           {...props}
           id={id}
+          type={type || 'text'}
           placeholder={!active ? placeholder : ''}
           value={value}
           onChange={(e: any) => onChange(e.target)}
@@ -39,7 +40,7 @@ export const Input = ({ ...props }: InputProps) => {
       </Style.ContainerInput>
       {error && (
         <Style.WrapperMessage>
-          <Text color="error" size="t0" element="p">
+          <Text color="error" size="p3" element="p">
             {messageError}
           </Text>
         </Style.WrapperMessage>

@@ -73,12 +73,16 @@ export declare const theme: {
         small: string;
         medium: string;
         large: string;
-        t0: string;
-        t1: string;
-        t2: string;
-        t3: string;
-        t4: string;
-        t5: string;
+        h1: string;
+        h2: string;
+        h3: string;
+        h4: string;
+        h5: string;
+        p0: string;
+        p1: string;
+        p2: string;
+        p3: string;
+        p4: string;
     };
 };
 //# sourceMappingURL=index.d.ts.map

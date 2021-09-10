@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { InputSelectOutline } from '../components'
@@ -17,8 +17,12 @@ const InputSelectContent: ComponentStory<typeof InputSelectOutline> = () => {
     { id: 3, value: 'Joao', sobrenome: 'Martins' },
   ]
 
+  useEffect(() => {
+    console.log(inputValue)
+  }, [inputValue])
+
   return (
-    <div style={{ width: '500px', height: '500px', padding: '50px' }}>
+    <div style={{ width: '200px', height: '500px', padding: '50px' }}>
       <InputSelectOutline
         keyValue="sobrenome"
         object={object}

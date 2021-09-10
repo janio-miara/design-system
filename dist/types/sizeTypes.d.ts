@@ -1,3 +1,3 @@
 export declare type sizeBasic = 'large' | 'medium' | 'small';
-export declare type sizeText = 't0' | 't1' | 't2' | 't3' | 't4' | 't5';
+export declare type sizeText = 'p0' | 'p1' | 'p2' | 'p3' | 'p4';
 //# sourceMappingURL=sizeTypes.d.ts.map

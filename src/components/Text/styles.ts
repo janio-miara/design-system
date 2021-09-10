@@ -1,17 +1,27 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme } from '../Themes'
 import { changeColor } from '../../utils/changeColorTheme'
 import { TextPros } from '../../types/textTypes'
 
+const changeStyle = (bold: any, lighter: any) => {
+  if (bold) {
+    return 'bold'
+  }
+  if (lighter) {
+    return 'lighter'
+  }
+  return 'normal'
+}
+
 export const Container = styled.span<TextPros>`
   font-family: ${theme.fonts.join()};
-  font-weight: normal;
   ${({ color }) => changeColor[color || 'dark']};
   p,
   span {
-    font-weight: ${({ bold }) => bold && 'bold'};
+    ${({ color }) => changeColor[color || 'dark']};
+    font-weight: ${({ bold, lighter }) => changeStyle(bold, lighter)};
     text-transform: ${({ transform }) => transform && transform};
-    font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.t1)};
+    font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.p3)};
   }
   h1,
   h2,

@@ -17,13 +17,14 @@ import { Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 export const InputSelect = (_a) => {
     var props = __rest(_a, []);
-    const { icon, id, placeholder, label, keyValue, defaultValue, object } = props;
+    const { icon, id, placeholder, label, keyValue, defaultValue, object, onChange } = props;
     const [active, setActive] = useState(false);
     const [value, setValue] = useState(defaultValue || '');
     const ref = useRef();
     const handleChangeActive = (event, item) => {
         event.stopPropagation();
         setValue(item);
+        onChange(item);
         setActive(false);
     };
     useOnClickOutside(ref, () => setActive(false));

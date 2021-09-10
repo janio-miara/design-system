@@ -5,7 +5,7 @@ export const Container = styled.a `
   font-family: ${theme.fonts.join()};
   ${({ disabled }) => (!disabled ? changeColor.secondary : changeColor.lightDark)};
   font-weight: bold;
-  font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.t1)};
+  font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.p3)};
   text-transform: ${({ transform }) => transform && transform};
   cursor: ${({ disabled }) => !disabled && 'pointer'};
   text-decoration: underline;

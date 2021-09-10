@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { InputSelectOutline } from '../components';
 export default {
@@ -12,7 +12,10 @@ const InputSelectContent = () => {
         { id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' },
         { id: 3, value: 'Joao', sobrenome: 'Martins' },
     ];
-    return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
+    useEffect(() => {
+        console.log(inputValue);
+    }, [inputValue]);
+    return (React.createElement("div", { style: { width: '200px', height: '500px', padding: '50px' } },
         React.createElement(InputSelectOutline, { keyValue: "sobrenome", object: object, defaultValue: inputValue, onChange: setInputValue, icon: faUser, id: "name", label: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome" })));
 };
 export const InputSelectOutli = InputSelectContent.bind({});

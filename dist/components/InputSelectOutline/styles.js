@@ -2,16 +2,16 @@ import styled, { css } from 'styled-components';
 import { theme } from '../Themes';
 export const changeSize = {
     small: css `
-    padding: ${theme.spacing.space2};
-    font-size: ${theme.fontSizes.t2};
+    padding: 10px;
+    font-size: ${theme.fontSizes.p3};
   `,
     medium: css `
     padding: 14px;
-    font-size: ${theme.fontSizes.t2};
+    font-size: ${theme.fontSizes.p2};
   `,
     large: css `
     padding: ${theme.spacing.space3};
-    font-size: ${theme.fontSizes.t3};
+    font-size: ${theme.fontSizes.p2};
   `,
 };
 export const ContainerInput = styled.div `
@@ -50,6 +50,7 @@ export const ContainerInput = styled.div `
     transition: transform 0.3s;
     left: 0;
     position: absolute;
+    margin-top: ${({ status }) => (!status ? theme.spacing.space3 : 0)};
     padding-left: ${theme.spacing.space3};
     color: ${theme.colors.shade40};
   }
@@ -59,6 +60,7 @@ export const ContainerInput = styled.div `
   }
 `;
 export const WrapperInput = styled.input `
+  cursor: pointer;
   width: 100%;
   min-width: 65px;
   border-radius: ${theme.spacing.space2};
@@ -67,8 +69,13 @@ export const WrapperInput = styled.input `
   border: 1px solid transparent;
   box-shadow: ${theme.colors.shade40} 0 0 0 1.2px inset;
   color: ${theme.colors.shade80};
-  ${({ variant }) => variant && changeSize[variant || 'medium']};
+  ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
   padding-left: ${({ icon }) => icon && '40px'};
+  padding-right: 40px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 export const WrapperMessage = styled.div `
   width: 100%;
@@ -88,7 +95,7 @@ export const ContainerPoper = styled.div `
 `;
 export const ValueSelector = styled.div `
   cursor: pointer;
-  font-size: ${theme.fontSizes.t2};
+  font-size: ${theme.fontSizes.p3};
   margin: 0;
   border-radius: ${theme.spacing.space1};
   color: ${theme.colors.shade60};

@@ -16,7 +16,7 @@ import { Text } from '../Text';
 import * as Style from './styles';
 export const Input = (_a) => {
     var props = __rest(_a, []);
-    const { icon, onChange, value, id, onClear, placeholder, name, messageError, error } = props;
+    const { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type } = props;
     const [active, setActive] = useState(false);
     const handleClearValue = (event) => {
         event.stopPropagation();
@@ -26,12 +26,12 @@ export const Input = (_a) => {
     return (React.createElement(React.Fragment, null,
         React.createElement(Style.ContainerInput, { onBlur: () => active && setActive(false), onClick: () => setActive(true) },
             React.createElement("span", { className: "wrapper-label" }, (active || value) && name),
-            React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) })),
+            React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, type: type || 'text', placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) })),
             icon && (React.createElement("span", { className: "wrapper-icon" },
                 React.createElement(FontAwesomeIcon, { icon: icon }))),
             value && onClear && (React.createElement("span", { className: "wrapper-icon-close" },
                 React.createElement(FontAwesomeIcon, { icon: faTimesCircle, onClick: (event) => handleClearValue(event) })))),
         error && (React.createElement(Style.WrapperMessage, null,
-            React.createElement(Text, { color: "error", size: "t0", element: "p" }, messageError)))));
+            React.createElement(Text, { color: "error", size: "p3", element: "p" }, messageError)))));
 };
 //# sourceMappingURL=index.js.map

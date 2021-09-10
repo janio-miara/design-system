@@ -7,13 +7,14 @@ import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 export const InputSelect = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, label, keyValue, defaultValue, object } = props
+  const { icon, id, placeholder, label, keyValue, defaultValue, object, onChange } = props
   const [active, setActive] = useState(false)
   const [value, setValue] = useState(defaultValue || '')
   const ref = useRef()
   const handleChangeActive = (event: any, item: any) => {
     event.stopPropagation()
     setValue(item)
+    onChange(item)
     setActive(false)
   }
 

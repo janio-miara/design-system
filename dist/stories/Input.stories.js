@@ -12,7 +12,7 @@ const InputIconContent = () => {
         setInputValue(Object.assign(Object.assign({}, inputValue), { [id]: value }));
     };
     return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
-        React.createElement(Input, { value: inputValue.name, onChange: handleValues, icon: faUser, id: "name", name: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome" })));
+        React.createElement(Input, { value: inputValue.name, onChange: handleValues, icon: faUser, id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" })));
 };
 export const InputIcon = InputIconContent.bind({});
 const InputIconErrorContent = () => {
@@ -22,7 +22,7 @@ const InputIconErrorContent = () => {
         setInputValue(Object.assign(Object.assign({}, inputValue), { [id]: value }));
     };
     return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
-        React.createElement(Input, { value: inputValue.name, onChange: handleValues, icon: faUser, id: "name", name: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome", error: true, messageError: "Nome Invalido" })));
+        React.createElement(Input, { value: inputValue.name, onChange: handleValues, icon: faUser, type: "text", id: "name", name: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome", error: true, messageError: "Nome Invalido" })));
 };
 export const InputIconError = InputIconErrorContent.bind({});
 //# sourceMappingURL=Input.stories.js.map

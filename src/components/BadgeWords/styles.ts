@@ -15,7 +15,7 @@ export const Container = styled.div<BadgeWordProps>`
     outlined ? changeColorOutlined[color || 'primary'] : changeBackground[color || 'primary']};
   border: 1px solid ${({ color, outlined }) => outlined && changePaletaColor[color || 'primary']};
   ${({ color, outlined }) => (!outlined ? 'white' : changeColor[color || 'primary'])};
-  font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.t1)};
+  font-size: ${({ size }) => (size ? theme.fontSizes[size] : theme.fontSizes.p4)};
 
   button {
     ${({ color, outlined }) => (!outlined ? changeColor.white : changeColor[color || 'primary'])};

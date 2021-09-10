@@ -10,6 +10,7 @@ export interface TextPros {
   size?: sizeText
   transform?: 'uppercase' | 'lowercase' | 'capitalize'
   bold?: boolean
+  lighter?: boolean
 }
 
 export interface TextLinkProps {
