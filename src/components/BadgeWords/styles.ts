@@ -25,7 +25,7 @@ export const Container = styled.div<BadgeWordProps>`
     height: 100%;
     cursor: pointer;
     font-weight: bold;
-    margin-left: ${theme.spacing.space1};
+    margin-left: ${theme.spacing.space2};
     transition: transform 0.3s;
     opacity: 0.8;
     &:hover {

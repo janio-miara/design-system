@@ -11,5 +11,8 @@ const TextLinkContent = args => {
 export const TextLinks = TextLinkContent.bind({});
 TextLinks.args = {
     icon: React.createElement(RiUserFill, null),
+    children: 'Texto Link',
+    href: 'www.globo.com.br',
+    target: '_blank',
 };
 //# sourceMappingURL=TextLink.stories.js.map

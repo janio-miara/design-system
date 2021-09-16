@@ -15,4 +15,7 @@ export const TextLinks = TextLinkContent.bind({})
 
 TextLinks.args = {
   icon: <RiUserFill />,
+  children: 'Texto Link',
+  href: 'www.globo.com.br',
+  target: '_blank',
 }
