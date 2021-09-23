@@ -12,4 +12,6 @@ export { Avatar } from './components/Avatar/index';
 export { InputSelect } from './components/InputSelect/index';
 export { InputSelectOutline } from './components/InputSelectOutline/index';
 export { Popover } from './components/Popover/index';
+export { Highlight } from './components/Highlight/index';
+export { theme } from './components/Themes/index';
 //# sourceMappingURL=index.js.map

@@ -12,4 +12,5 @@ export { Avatar } from './Avatar/index';
 export { InputSelect } from './InputSelect/index';
 export { InputSelectOutline } from './InputSelectOutline/index';
 export { Popover } from './Popover/index';
+export { Highlight } from './Highlight/index';
 //# sourceMappingURL=index.d.ts.map
