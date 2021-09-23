@@ -13,6 +13,6 @@ const PlaygroundContent: ComponentStory<typeof Avatar> = args => {
 export const Playground: any = PlaygroundContent.bind({})
 
 Playground.args = {
-  name: 'Janio Miara',
+  name: 'Janio Vinicius',
   active: true,
 }
