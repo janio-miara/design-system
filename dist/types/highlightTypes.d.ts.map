@@ -1,1 +1,0 @@
-{"version":3,"file":"highlightTypes.d.ts","sourceRoot":"","sources":["../../src/types/highlightTypes.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,QAAQ,EAAE,MAAM,aAAa,CAAA;AACtC,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAA;AAEzC,MAAM,WAAW,cAAc;IAC7B,IAAI,EAAE,MAAM,CAAA;IACZ,WAAW,EAAE,MAAM,EAAE,CAAA;IACrB,KAAK,CAAC,EAAE,UAAU,CAAA;IAClB,IAAI,CAAC,EAAE,QAAQ,CAAA;CAChB"}
