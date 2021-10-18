@@ -14,7 +14,7 @@ const PlaygroundCont: ComponentStory<typeof Modal> = args => {
     <>
       <Button onClick={() => setOpen(true)}>Open side filter</Button>
       <Modal open={open} close={() => setOpen(false)} icon={<BiHelpCircle />} title="Modal criado by Thaynar">
-        kjshdfgklhsdfkjlghk sdkjfhkjsdfhki sidghfkjshdfg lisdghklsdhfi iusdhfiuhsdf ihsiudf Thaynar
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, amet!
       </Modal>
     </>
   )
