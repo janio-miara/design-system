@@ -10,11 +10,7 @@ export default {
 } as ComponentMeta<typeof Button>
 
 const PlaygroundContent: ComponentStory<typeof Button> = args => {
-  return (
-    <>
-      <Button color="primary" {...args} />
-    </>
-  )
+  return <Button color="primary" {...args} />
 }
 export const Playground = PlaygroundContent.bind({})
 

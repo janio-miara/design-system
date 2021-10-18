@@ -1,7 +1,14 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-import { IFullScreen, IContainer } from './index'
 import { theme } from '../Themes'
+
+export interface IFullScreen {
+  open: boolean
+}
+
+export interface IContainer {
+  size?: 'small' | 'medium' | 'large' | 'auto'
+}
 
 export const FullScreen = styled.div<IFullScreen>`
   width: 100%;
@@ -15,7 +22,6 @@ export const FullScreen = styled.div<IFullScreen>`
   display: ${props => (props.open ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
-
   animation: 0.5s fadeIn ease-in-out forwards;
 
   @keyframes fadeIn {
@@ -28,24 +34,29 @@ export const FullScreen = styled.div<IFullScreen>`
   }
 `
 
-const sizeWidth = (size: string) => {
-  switch (size) {
-    case 'small':
-      return '40%'
-    case 'medium':
-      return '70%'
-    case 'large':
-      return '95%'
-    default:
-      return 'auto'
-  }
+export const changeSize = {
+  small: css`
+    width: 40%;
+    height: 40%;
+  `,
+  medium: css`
+    width: 70%;
+    height: 70%;
+  `,
+  large: css`
+    width: 95%;
+    height: 95%;
+  `,
+  auto: css`
+    width: auto;
+    height: auto;
+  `,
 }
 
 export const Container = styled.div<IContainer>`
   display: flex;
   background-color: #fff;
-  width: ${({ size }) => sizeWidth(size)};
-  height: ${({ size }) => sizeWidth(size)};
+  ${({ size }) => changeSize[size || 'auto']};
   border-radius: 0 0 8px 8px;
   flex-direction: column;
 
@@ -63,7 +74,7 @@ export const Container = styled.div<IContainer>`
     justify-content: space-between;
     align-items: center;
     background-color: ${theme.colors.blue40};
-    height: ${theme.spacing.space6};
+    height: ${theme.spacing.space2};
 
     .close {
       span {
@@ -92,8 +103,7 @@ export const Container = styled.div<IContainer>`
   }
 
   footer {
-    padding: ${theme.spacing.space3};
-    width: 100%;
+    padding: 0 ${theme.spacing.space3};
     height: 60px;
     display: flex;
     flex-flow: row;
@@ -101,7 +111,7 @@ export const Container = styled.div<IContainer>`
     justify-content: flex-end;
 
     button {
-      margin-left: ${theme.spacing.space2};
+      margin-left: ${theme.spacing.space1};
     }
 
     .cancel {
@@ -117,7 +127,6 @@ export const Container = styled.div<IContainer>`
   }
 
   @media (max-width: 820px) {
-    width: ${({ size }) => sizeWidth(size)};
-    min-height: ${({ size }) => sizeWidth(size)};
+    ${({ size }) => changeSize[size || 'auto']};
   }
 `

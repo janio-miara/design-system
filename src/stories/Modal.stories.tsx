@@ -13,8 +13,8 @@ const PlaygroundCont: ComponentStory<typeof Modal> = args => {
   return (
     <>
       <Button onClick={() => setOpen(true)}>Open side filter</Button>
-      <Modal open={open} close={() => setOpen(false)}>
-        Thaynar
+      <Modal open={open} close={() => setOpen(false)} icon={<BiHelpCircle />} title="Modal criado by Thaynar">
+        kjshdfgklhsdfkjlghk sdkjfhkjsdfhki sidghfkjshdfg lisdghklsdhfi iusdhfiuhsdf ihsiudf Thaynar
       </Modal>
     </>
   )

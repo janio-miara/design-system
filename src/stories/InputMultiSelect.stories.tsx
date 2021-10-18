@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { icon } from '@fortawesome/fontawesome-svg-core'
 import { InputMultiSelect } from '../components'
 
 export default {
@@ -23,7 +22,7 @@ const InputSelectContent: ComponentStory<typeof InputMultiSelect> = () => {
       value: 'Janio',
       sobrenome: 'Miara Tadeu Ribeiro Fernando Suares',
     },
-    { id: 2, check: true, value: 'Marcelo', sobrenome: 'Ribeiro' },
+    { id: 2, check: false, disabled: true, value: 'Marcelo', sobrenome: 'Ribeiro' },
     { id: 3, check: true, value: 'Joao', sobrenome: 'Martins' },
   ]
 

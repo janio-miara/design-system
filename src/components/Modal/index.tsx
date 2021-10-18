@@ -7,10 +7,10 @@ import { Text } from '../Text'
 import { Button } from '../Button'
 import { ButtonRadius } from '../ButtonRadius'
 
-export interface Props {
+export interface ModalProps {
   open: boolean
   title?: string
-  size?: string
+  size?: 'small' | 'medium' | 'large' | 'auto'
   close: () => void
   textAction?: string
   actionClick?: () => void
@@ -18,37 +18,19 @@ export interface Props {
   children?: any
 }
 
-export interface IFullScreen {
-  open: boolean
-}
-
-export interface IContainer {
-  size: string
-}
-
-export const Modal: React.FC<any> = ({
-  icon,
-  actionClick,
-  textAction,
-  open,
-  title,
-  size,
-  close,
-  children,
-  ...props
-}) => {
+export const Modal = ({ icon, actionClick, textAction, open, title, size, close, children, ...props }: ModalProps) => {
   return ReactDOM.createPortal(
     <S.FullScreen open={open}>
       <S.Container size={size || 'auto'} {...props}>
         <header>
           <div className="logo">
-            <FontAwesomeIcon icon={icon || faInfoCircle} />
-            <Text element="p" bold size="p3" color="white">
+            {icon}
+            <Text element="p" bold size="p2" color="white">
               {title}
             </Text>
           </div>
           <div className="close">
-            <ButtonRadius onClick={close} size="small" icon={faTimes} />
+            <ButtonRadius onClick={close} size="small" icon={<FontAwesomeIcon icon={faTimes} />} />
           </div>
         </header>
 
@@ -56,11 +38,11 @@ export const Modal: React.FC<any> = ({
 
         <footer>
           {actionClick && (
-            <Button color="primary" size="small" onClick={actionClick}>
+            <Button color="primary" size="small" outlined onClick={actionClick}>
               {textAction || 'Salvar'}
             </Button>
           )}
-          <Button size="small" color="default" onClick={close}>
+          <Button size="small" color="primary" outlined onClick={close}>
             Fechar
           </Button>
         </footer>
