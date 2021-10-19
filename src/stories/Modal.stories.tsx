@@ -13,19 +13,20 @@ const PlaygroundCont: ComponentStory<typeof Modal> = args => {
   return (
     <>
       <Button onClick={() => setOpen(true)}>Open side filter</Button>
-      <Modal open={open} close={() => setOpen(false)} icon={<BiHelpCircle />} title="Modal criado by Thaynar">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, amet!
-      </Modal>
+      <Modal {...args} open={open} close={() => setOpen(false)} />
     </>
   )
 }
 export const Playground = PlaygroundCont.bind({})
 
-// icon,
-//   actionClick,
-//   textAction,
-//   open,
-//   title,
-//   size,
-//   close,
-//   children,
+Playground.args = {
+  title: 'Modal Title',
+  open: true,
+  icon: <BiHelpCircle />,
+  children: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptas.',
+  actionClick: () => (
+    <Button size="small" color="primary">
+      Salvar
+    </Button>
+  ),
+}
