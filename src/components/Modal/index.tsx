@@ -6,17 +6,7 @@ import * as S from './styles'
 import { Text } from '../Text'
 import { Button } from '../Button'
 import { ButtonRadius } from '../ButtonRadius'
-
-export interface ModalProps {
-  open: boolean
-  title?: string
-  size?: 'small' | 'medium' | 'large' | 'auto'
-  close: () => void
-  textAction?: string
-  actionClick?: () => void
-  icon?: any
-  children?: any
-}
+import { ModalProps } from '../../types/ModalTypes'
 
 export const Modal = ({ icon, actionClick, textAction, open, title, size, close, children, ...props }: ModalProps) => {
   return ReactDOM.createPortal(

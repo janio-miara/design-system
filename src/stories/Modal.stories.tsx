@@ -22,6 +22,7 @@ export const Playground = PlaygroundCont.bind({})
 Playground.args = {
   title: 'Modal Title',
   open: true,
+  size: 'small',
   icon: <BiHelpCircle />,
   children: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptas.',
   actionClick: () => (
