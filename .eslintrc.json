@@ -19,17 +19,11 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks",
-    "prettier",
-    "jest"
-  ],
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier", "jest"],
   "rules": {
     "react/require-default-props": "off",
     "no-unused-vars": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-props-no-spreading": "off",
     "no-console": 0,
     "@typescript-eslint/no-explicit-any": "off",
@@ -38,21 +32,22 @@
     "camelcase": "off",
     "no-undef:": ["off", { "typeof": "false" }],
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".tsx"
-        ]
+        "extensions": [".tsx"]
       }
     ],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": [
-      "off"
-    ],
+    "@typescript-eslint/no-use-before-define": ["off"],
     "react/react-in-jsx-scope": "off",
     "import/extensions": [
       "error",
