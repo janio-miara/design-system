@@ -7,4 +7,5 @@ export interface ModalProps {
   actionClick?: () => void
   icon?: any
   children?: any
+  offClose: boolean
 }

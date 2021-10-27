@@ -23,11 +23,13 @@ Playground.args = {
   title: 'Modal Title',
   open: true,
   size: 'small',
+  offClose: false,
   icon: <BiHelpCircle />,
   children: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptas.',
+  textAction: 'janio',
   actionClick: () => (
-    <Button size="small" color="primary">
-      Salvar
+    <Button size="small" color="primary" outlined>
+      Salvarddd
     </Button>
   ),
 }
