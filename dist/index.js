@@ -15,4 +15,6 @@ export { Popover } from './components/Popover/index';
 export { Highlight } from './components/Highlight/index';
 export { Modal } from './components/Modal/index';
 export { theme } from './components/Themes/index';
+export { InputMultiSelect } from './components/InputMultiSelect';
+export { Heading } from './components/Heading/index';
 //# sourceMappingURL=index.js.map

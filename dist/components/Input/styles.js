@@ -2,11 +2,11 @@ import styled, { css } from 'styled-components';
 import { theme } from '../Themes';
 export const changeSize = {
     small: css `
-    padding: 10px;
+    padding: 8px;
     font-size: ${theme.fontSizes.p3};
   `,
     medium: css `
-    padding: 14px;
+    padding: 12px;
     font-size: ${theme.fontSizes.p2};
   `,
     large: css `
@@ -63,7 +63,7 @@ export const WrapperInput = styled.input `
   box-shadow: ${({ error }) => (!error ? theme.colors.shade40 : theme.colors.red40)} 0 0 0 1.2px inset;
   color: ${theme.colors.shade70};
   ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
-  padding-left: ${({ icon }) => icon && '40px'};
+  padding-left: ${({ icon }) => (icon ? '40px' : '16px')};
 
   &:focus {
     outline: none;
@@ -78,7 +78,7 @@ export const WrapperInput = styled.input `
   }
 
   ::placeholder {
-    color: ${theme.colors.shade40};
+    color: ${theme.colors.shade50};
     font-weight: lighter;
   }
 `;

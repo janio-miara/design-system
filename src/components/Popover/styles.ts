@@ -1,7 +1,13 @@
 import styled from 'styled-components'
 import { theme } from '../Themes'
 
-export const Container = styled.div`
+interface propsContainer {
+  height?: string
+}
+
+export const Container = styled.div<propsContainer>`
+  height: ${({ height }) => height || 'auto'};
+  overflow-y: auto;
   font-family: ${theme.fonts.join()};
   z-index: ${theme.zIndex.z4};
   margin-top: ${theme.spacing.space1};

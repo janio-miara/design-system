@@ -12,7 +12,9 @@ const InputIconContent = () => {
         setInputValue(Object.assign(Object.assign({}, inputValue), { [id]: value }));
     };
     return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
-        React.createElement(Input, { value: inputValue.name, onChange: handleValues, icon: faUser, id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" })));
+        React.createElement(Input, { value: inputValue.name, onChange: handleValues, 
+            // icon={faUser}
+            id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" })));
 };
 export const InputIcon = InputIconContent.bind({});
 const InputIconErrorContent = () => {

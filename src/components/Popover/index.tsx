@@ -1,6 +1,10 @@
 import React from 'react'
 import { Container } from './styles'
 
-export const Popover = ({ children, ref }: any) => {
-  return <Container ref={ref}>{children}</Container>
+export const Popover = ({ children, ref, height }: any) => {
+  return (
+    <Container ref={ref} height={height}>
+      {children}
+    </Container>
+  )
 }

@@ -17,4 +17,5 @@ export { Highlight } from './Highlight/index';
 export { Checkbox } from './Checkbox/index';
 export { Badge } from './Badge/index';
 export { Modal } from './Modal/index';
+export { Heading } from './Heading/index';
 //# sourceMappingURL=index.js.map

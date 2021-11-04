@@ -112,7 +112,7 @@ const changeColor = {
     color: ${theme.colors.honey40};
   `,
   lightDark: css`
-    color: ${theme.colors.shade50};
+    color: ${theme.colors.shade60};
   `,
   dark: css`
     color: ${theme.colors.black};

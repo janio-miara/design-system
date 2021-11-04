@@ -17,7 +17,7 @@ import { Badge, Checkbox, Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 export const InputMultiSelect = (_a) => {
     var props = __rest(_a, []);
-    const { icon, id, placeholder, label, keyValue, object } = props;
+    const { icon, id, placeholder, label, keyValue, object, height } = props;
     const [active, setActive] = useState(false);
     const [activeAll, setActiveAll] = useState(false);
     const [value, setValue] = useState(object);
@@ -53,9 +53,9 @@ export const InputMultiSelect = (_a) => {
         React.createElement("span", { className: "wrapper-icon-selector" },
             React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
         React.createElement(Style.ContainerPoper, { status: active, ref: ref },
-            React.createElement(Popover, null,
+            React.createElement(Popover, { height: height },
                 React.createElement(Style.ValueSelector, { onClick: () => handleSelectAll() },
-                    React.createElement(Checkbox, { checked: activeAll, disabled: true }),
+                    React.createElement(Checkbox, { checked: activeAll }),
                     React.createElement("b", null, "Selecionar Todos")),
                 value.map((item) => (React.createElement(Style.ValueSelector, { onClick: (event) => !(item === null || item === void 0 ? void 0 : item.disabled) && handleChangeActive(event, item) },
                     React.createElement(Checkbox, { disabled: item === null || item === void 0 ? void 0 : item.disabled, checked: item.check }),

@@ -13,8 +13,8 @@ export const Label = styled.label<props>`
 
   span {
     cursor: pointer;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     display: block;
     margin-right: 8px;
     border-radius: 2px;

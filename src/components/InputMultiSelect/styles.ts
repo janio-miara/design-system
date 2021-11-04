@@ -123,11 +123,11 @@ export const ContainerPoper = styled.div<status>`
 export const ValueSelector = styled.div`
   display: flex;
   cursor: pointer;
-  font-size: ${theme.fontSizes.p2};
+  font-size: ${theme.fontSizes.p3};
   margin: 0;
   border-radius: ${theme.spacing.space1};
   color: ${theme.colors.shade60};
-  padding: 12px ${theme.spacing.space3};
+  padding: 8px ${theme.spacing.space2};
   border-bottom: 1px solid ${theme.colors.shade20};
   :hover {
     font-weight: bold;

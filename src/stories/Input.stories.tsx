@@ -21,7 +21,7 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
       <Input
         value={inputValue.name}
         onChange={handleValues}
-        icon={faUser}
+        // icon={faUser}
         id="name"
         name="Primeiro Nome"
         onClear

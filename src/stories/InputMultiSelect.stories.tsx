@@ -11,10 +11,6 @@ export default {
 const InputSelectContent: ComponentStory<typeof InputMultiSelect> = () => {
   const [inputValue, setInputValue] = useState({ id: 3, value: 'Joao', sobrenome: 'Martins' })
 
-  useEffect(() => {
-    console.log(inputValue, inputValue)
-  }, [inputValue])
-
   const object = [
     {
       id: 1,

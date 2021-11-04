@@ -25,4 +25,5 @@ export interface InputPropsSelect {
   object?: any
   defaultValue?: any
   keyValue?: any
+  height?: string
 }

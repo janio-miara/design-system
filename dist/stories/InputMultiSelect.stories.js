@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { InputMultiSelect } from '../components';
 export default {
@@ -7,9 +7,6 @@ export default {
 };
 const InputSelectContent = () => {
     const [inputValue, setInputValue] = useState({ id: 3, value: 'Joao', sobrenome: 'Martins' });
-    useEffect(() => {
-        console.log(inputValue, inputValue);
-    }, [inputValue]);
     const object = [
         {
             id: 1,

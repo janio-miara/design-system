@@ -19,7 +19,7 @@ const shades = {
   shade70: '#4A4F58',
   shade60: '#727780',
   shade50: '#ABB0BA',
-  shade40: '#CFD2D9',
+  shade40: '#d2d4da',
   shade30: '#E5E7EB',
   shade20: '#F0F1F2',
   shade10: '#F0F1F2',
