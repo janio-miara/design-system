@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { RiUserFill } from 'react-icons/ri'
 import { InputSelect } from '../components'
+import logo from '../assets/logoBrasil.jpeg'
 
 export default {
   title: 'Example/InputSelect ',
@@ -12,9 +14,9 @@ const InputSelectContent: ComponentStory<typeof InputSelect> = () => {
   const [inputValue, setInputValue] = useState({ id: 3, value: 'Joao', sobrenome: 'Martins' })
 
   const object = [
-    { id: 1, value: 'Janio', sobrenome: 'Miara Tadeu Ribeiro Fernando Suares' },
+    { id: 1, value: 'Janio', sobrenome: 'Miara Tadeu Ribeiro Fernando Suares', icon: <RiUserFill />, image: logo },
     { id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' },
-    { id: 3, value: 'Joao', sobrenome: 'Martins' },
+    { id: 3, value: 'Joao', sobrenome: 'Martins', icon: <RiUserFill />, image: logo },
   ]
 
   return (

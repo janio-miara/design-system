@@ -47,7 +47,11 @@ export const InputSelect = ({ ...props }: InputPropsSelect) => {
         <Popover ref={ref}>
           {object.map((item: any) => (
             <Style.ValueSelector onClick={(event: any) => handleChangeActive(event, item)}>
-              {item[keyValue]}
+              <>
+                {item.icon && item.icon}
+                {item.image && <img src={item.image} alt="loading" />}
+                {item[keyValue]}
+              </>
             </Style.ValueSelector>
           ))}
         </Popover>

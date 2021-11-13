@@ -117,6 +117,20 @@ export const ValueSelector = styled.div`
   color: ${theme.colors.shade60};
   padding: 12px ${theme.spacing.space3};
   border-bottom: 1px solid ${theme.colors.shade20};
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 8px;
+    text-align: center;
+    width: 20px;
+    border-radius: 50%;
+  }
+
+  svg {
+    margin-right: 8px;
+    width: 20px;
+  }
   :hover {
     font-weight: bold;
     background-color: ${theme.colors.shade20};

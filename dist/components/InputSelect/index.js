@@ -36,6 +36,10 @@ export const InputSelect = (_a) => {
         React.createElement("span", { className: "wrapper-icon-selector" },
             React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
         React.createElement(Style.ContainerPoper, { status: active, ref: ref },
-            React.createElement(Popover, { ref: ref }, object.map((item) => (React.createElement(Style.ValueSelector, { onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))));
+            React.createElement(Popover, { ref: ref }, object.map((item) => (React.createElement(Style.ValueSelector, { onClick: (event) => handleChangeActive(event, item) },
+                React.createElement(React.Fragment, null,
+                    item.icon && item.icon,
+                    item.image && React.createElement("img", { src: item.image, alt: "loading" }),
+                    item[keyValue]))))))));
 };
 //# sourceMappingURL=index.js.map

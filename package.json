@@ -1,6 +1,6 @@
 {
   "name": "wave-design-system-plus",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
