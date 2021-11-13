@@ -50,6 +50,8 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
           name="Primeiro Nome"
           onClear
           placeholder="Primeiro nome"
+          error
+          messageError="Nome Invalido"
         />
         <Input
           value={inputValue.name}
@@ -60,6 +62,8 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
           name="Primeiro Nome"
           onClear
           placeholder="Primeiro nome"
+          error
+          messageError="Nome Invalido"
         />
       </div>
     </div>

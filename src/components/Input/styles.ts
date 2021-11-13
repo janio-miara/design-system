@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { theme } from '../Themes'
 import { InputProps } from '../../types/inputTypes'
+import { sizeBasic } from '../../types/sizeTypes'
 
 export const changeSize = {
   small: css`
@@ -46,10 +47,13 @@ export const changeScapingWidth = {
     margin-right: ${theme.spacing.space5};
   `,
 }
-//
-// interface propsInput {}
 
-export const ContainerInput = styled.div<InputProps>`
+interface propsInput {
+  scapingHeight?: sizeBasic
+  scapingWidth?: sizeBasic
+}
+
+export const ContainerInput = styled.div<propsInput>`
   font-family: ${theme.fonts.join()};
   width: 100%;
   height: 40px;
@@ -125,6 +129,7 @@ export const WrapperInput = styled.input<InputProps>`
 `
 
 export const WrapperMessage = styled.div`
-  margin-top: -${theme.spacing.space2};
-  margin-left: ${theme.spacing.space1};
+  height: 5px;
+  margin-top: -${theme.spacing.space3};
+  margin-left: ${theme.spacing.space2};
 `

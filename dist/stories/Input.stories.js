@@ -11,10 +11,12 @@ const InputIconContent = () => {
         const { id, value } = target;
         setInputValue(Object.assign(Object.assign({}, inputValue), { [id]: value }));
     };
-    return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
-        React.createElement(Input, { value: inputValue.name, onChange: handleValues, 
-            // icon={faUser}
-            id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" })));
+    return (React.createElement("div", { style: { display: 'flex', width: '700px', height: '500px', padding: '50px' } },
+        React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" }),
+        React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" }),
+        React.createElement("div", null,
+            React.createElement(Input, { value: inputValue.name, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome", error: true, messageError: "Nome Invalido" }),
+            React.createElement(Input, { value: inputValue.name, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome", error: true, messageError: "Nome Invalido" }))));
 };
 export const InputIcon = InputIconContent.bind({});
 const InputIconErrorContent = () => {

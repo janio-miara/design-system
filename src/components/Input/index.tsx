@@ -35,7 +35,6 @@ export const Input = ({ ...props }: InputProps) => {
         onClick={() => setActive(true)}
         scapingWidth={scapingWidth}
         scapingHeight={scapingHeight}
-        icon={icon}
       >
         <span className="wrapper-label">{(active || value) && name}</span>
         <Style.WrapperInput
@@ -59,7 +58,7 @@ export const Input = ({ ...props }: InputProps) => {
       </Style.ContainerInput>
       {error && (
         <Style.WrapperMessage>
-          <Text color="error" size="p3" element="p">
+          <Text color="error" size="p4" element="p">
             {messageError}
           </Text>
         </Style.WrapperMessage>
