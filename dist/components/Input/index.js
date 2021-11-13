@@ -24,9 +24,9 @@ export const Input = (_a) => {
         setActive(false);
     };
     return (React.createElement(React.Fragment, null,
-        React.createElement(Style.ContainerInput, { onBlur: () => active && setActive(false), onClick: () => setActive(true) },
+        React.createElement(Style.ContainerInput, Object.assign({ onBlur: () => active && setActive(false), onClick: () => setActive(true) }, props),
             React.createElement("span", { className: "wrapper-label" }, (active || value) && name),
-            React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, type: type || 'text', placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) })),
+            React.createElement(Style.WrapperInput, { id: id, type: type || 'text', placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) }),
             icon && (React.createElement("span", { className: "wrapper-icon" },
                 React.createElement(FontAwesomeIcon, { icon: icon }))),
             value && onClear && (React.createElement("span", { className: "wrapper-icon-close" },

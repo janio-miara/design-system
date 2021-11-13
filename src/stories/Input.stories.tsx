@@ -17,16 +17,51 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
   }
 
   return (
-    <div style={{ width: '500px', height: '500px', padding: '50px' }}>
+    <div style={{ display: 'flex', width: '700px', height: '500px', padding: '50px' }}>
       <Input
         value={inputValue.name}
+        icon={faUser}
         onChange={handleValues}
-        // icon={faUser}
+        scapingHeight="small"
+        scapingWidth="small"
         id="name"
         name="Primeiro Nome"
         onClear
         placeholder="Primeiro nome"
       />
+      <Input
+        value={inputValue.name}
+        icon={faUser}
+        onChange={handleValues}
+        scapingHeight="small"
+        scapingWidth="small"
+        id="name"
+        name="Primeiro Nome"
+        onClear
+        placeholder="Primeiro nome"
+      />
+      <div>
+        <Input
+          value={inputValue.name}
+          onChange={handleValues}
+          scapingHeight="small"
+          scapingWidth="small"
+          id="name"
+          name="Primeiro Nome"
+          onClear
+          placeholder="Primeiro nome"
+        />
+        <Input
+          value={inputValue.name}
+          onChange={handleValues}
+          scapingHeight="small"
+          scapingWidth="small"
+          id="name"
+          name="Primeiro Nome"
+          onClear
+          placeholder="Primeiro nome"
+        />
+      </div>
     </div>
   )
 }

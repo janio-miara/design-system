@@ -17,12 +17,46 @@ export const changeSize = {
   `,
 }
 
-export const ContainerInput = styled.div`
+export const changeScapingHeight = {
+  small: css`
+    margin-top: ${theme.spacing.space3};
+    margin-bottom: ${theme.spacing.space3};
+  `,
+  medium: css`
+    margin-top: ${theme.spacing.space4};
+    margin-bottom: ${theme.spacing.space4};
+  `,
+  large: css`
+    margin-top: ${theme.spacing.space5};
+    margin-bottom: ${theme.spacing.space5};
+  `,
+}
+
+export const changeScapingWidth = {
+  small: css`
+    margin-left: ${theme.spacing.space2};
+    margin-right: ${theme.spacing.space2};
+  `,
+  medium: css`
+    margin-left: ${theme.spacing.space3};
+    margin-right: ${theme.spacing.space3};
+  `,
+  large: css`
+    margin-left: ${theme.spacing.space5};
+    margin-right: ${theme.spacing.space5};
+  `,
+}
+//
+// interface propsInput {}
+
+export const ContainerInput = styled.div<InputProps>`
   font-family: ${theme.fonts.join()};
   width: 100%;
-  position: relative;
+  height: 40px;
   display: flex;
-  align-items: center;
+  position: relative;
+  ${({ scapingWidth }) => scapingWidth && changeScapingWidth[scapingWidth]};
+  ${({ scapingHeight }) => scapingHeight && changeScapingHeight[scapingHeight]}
 
   .wrapper-label {
     position: absolute;
@@ -38,10 +72,10 @@ export const ContainerInput = styled.div`
   }
 
   .wrapper-icon-close {
-    transition: transform 0.3s;
-    right: 0;
     position: absolute;
-    padding-right: ${theme.spacing.space3};
+    right: 10px;
+    top: 12px;
+    transition: transform 0.3s;
     color: ${theme.colors.shade40};
     :hover {
       color: ${theme.colors.blue40};
@@ -50,8 +84,10 @@ export const ContainerInput = styled.div`
     }
   }
   .wrapper-icon {
+    position: absolute;
     transition: transform 0.3s;
     left: 0;
+    top: 12px;
     position: absolute;
     padding-left: ${theme.spacing.space3};
     color: ${theme.colors.shade40};
@@ -68,6 +104,7 @@ export const WrapperInput = styled.input<InputProps>`
   color: ${theme.colors.shade70};
   ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
   padding-left: ${({ icon }) => (icon ? '40px' : '16px')};
+  padding-right: ${({ onClear }) => (onClear ? '40px' : '16px')};
 
   &:focus {
     outline: none;

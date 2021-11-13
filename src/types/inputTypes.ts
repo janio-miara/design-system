@@ -12,6 +12,8 @@ export interface InputProps {
   error?: boolean
   type?: string
   messageError?: string
+  scapingHeight?: sizeBasic
+  scapingWidth?: sizeBasic
 }
 
 export interface InputPropsSelect {

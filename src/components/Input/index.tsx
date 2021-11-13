@@ -6,7 +6,20 @@ import * as Style from './styles'
 import { InputProps } from '../../types/inputTypes'
 
 export const Input = ({ ...props }: InputProps) => {
-  const { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type } = props
+  const {
+    icon,
+    onChange,
+    value,
+    id,
+    onClear,
+    placeholder,
+    name,
+    messageError,
+    error,
+    type,
+    scapingWidth,
+    scapingHeight,
+  } = props
   const [active, setActive] = useState(false)
 
   const handleClearValue = (event: any) => {
@@ -17,7 +30,13 @@ export const Input = ({ ...props }: InputProps) => {
 
   return (
     <>
-      <Style.ContainerInput onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
+      <Style.ContainerInput
+        onBlur={() => active && setActive(false)}
+        onClick={() => setActive(true)}
+        scapingWidth={scapingWidth}
+        scapingHeight={scapingHeight}
+        icon={icon}
+      >
         <span className="wrapper-label">{(active || value) && name}</span>
         <Style.WrapperInput
           {...props}
