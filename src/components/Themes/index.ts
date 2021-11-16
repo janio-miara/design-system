@@ -17,9 +17,9 @@ const cyan = {
 const shades = {
   shade80: '#262930',
   shade70: '#4A4F58',
-  shade60: '#727780',
-  shade50: '#ABB0BA',
-  shade40: '#d2d4da',
+  shade60: '#626262',
+  shade50: '#737373',
+  shade40: '#a2a2a2',
   shade30: '#E5E7EB',
   shade20: '#F0F1F2',
   shade10: '#F0F1F2',
