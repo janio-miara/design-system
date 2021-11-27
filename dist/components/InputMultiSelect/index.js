@@ -17,7 +17,7 @@ import { Badge, Checkbox, Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 export const InputMultiSelect = (_a) => {
     var props = __rest(_a, []);
-    const { icon, id, placeholder, label, keyValue, object, height } = props;
+    const { icon, id, placeholder, label, keyValue, object, height, onChange } = props;
     const [active, setActive] = useState(false);
     const [activeAll, setActiveAll] = useState(false);
     const [value, setValue] = useState(object);
@@ -37,6 +37,8 @@ export const InputMultiSelect = (_a) => {
         setActiveAll(!activeAll);
     };
     const handleTratamentoValue = () => {
+        const dados = value.filter((object) => object.check);
+        onChange(dados);
         return value
             .filter((object) => object.check)
             .map((el) => el[keyValue])
@@ -45,7 +47,7 @@ export const InputMultiSelect = (_a) => {
     useOnClickOutside(ref, () => setActive(false));
     return (React.createElement(Style.ContainerInput, { ref: ref, status: active, onClick: () => setActive(true) },
         React.createElement("span", { className: "wrapper-label" }, (active || value) && label),
-        React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, disabled: true, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: handleTratamentoValue(), placeholder: !active ? placeholder : '', onChange: () => console.log() })),
+        React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, disabled: true, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: handleTratamentoValue(), placeholder: !active ? placeholder : '', onChange: onChange })),
         icon && (React.createElement("span", { className: "wrapper-icon" },
             React.createElement(FontAwesomeIcon, { icon: icon }))),
         handleCount() >= 2 && (React.createElement("div", { className: "wrapper-badge-selector" },

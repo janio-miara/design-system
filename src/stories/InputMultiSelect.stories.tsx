@@ -27,7 +27,7 @@ const InputSelectContent: ComponentStory<typeof InputMultiSelect> = () => {
       <InputMultiSelect
         keyValue="sobrenome"
         object={object}
-        onChange={setInputValue}
+        onChange={(e: any) => console.log(e)}
         icon={faUser}
         id="name"
         label="Primeiro Nome"

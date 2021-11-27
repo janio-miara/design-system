@@ -7,7 +7,7 @@ import { Badge, Checkbox, Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, label, keyValue, object, height } = props
+  const { icon, id, placeholder, label, keyValue, object, height, onChange } = props
   const [active, setActive] = useState(false)
   const [activeAll, setActiveAll] = useState(false)
   const [value, setValue] = useState(object)
@@ -30,6 +30,8 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   }
 
   const handleTratamentoValue = () => {
+    const dados = value.filter((object: any) => object.check)
+    onChange(dados)
     return value
       .filter((object: any) => object.check)
       .map((el: any) => el[keyValue])
@@ -50,7 +52,7 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
         autoCapitalize="off"
         value={handleTratamentoValue()}
         placeholder={!active ? placeholder : ''}
-        onChange={() => console.log()}
+        onChange={onChange}
       />
       {icon && (
         <span className="wrapper-icon">
