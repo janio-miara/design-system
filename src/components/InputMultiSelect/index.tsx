@@ -30,15 +30,19 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   }
 
   const handleTratamentoValue = () => {
-    const dados = value.filter((object: any) => object.check)
-    onChange(dados)
     return value
       .filter((object: any) => object.check)
       .map((el: any) => el[keyValue])
       .join(', ')
   }
 
-  useOnClickOutside(ref, () => setActive(false))
+  const closeInput = () => {
+    const dados = value.filter((object: any) => object.check)
+    onChange(dados)
+    setActive(false)
+  }
+
+  useOnClickOutside(ref, closeInput)
 
   return (
     <Style.ContainerInput ref={ref} status={active} onClick={() => setActive(true)}>

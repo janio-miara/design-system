@@ -37,14 +37,17 @@ export const InputMultiSelect = (_a) => {
         setActiveAll(!activeAll);
     };
     const handleTratamentoValue = () => {
-        const dados = value.filter((object) => object.check);
-        onChange(dados);
         return value
             .filter((object) => object.check)
             .map((el) => el[keyValue])
             .join(', ');
     };
-    useOnClickOutside(ref, () => setActive(false));
+    const closeInput = () => {
+        const dados = value.filter((object) => object.check);
+        onChange(dados);
+        setActive(false);
+    };
+    useOnClickOutside(ref, closeInput);
     return (React.createElement(Style.ContainerInput, { ref: ref, status: active, onClick: () => setActive(true) },
         React.createElement("span", { className: "wrapper-label" }, (active || value) && label),
         React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, disabled: true, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: handleTratamentoValue(), placeholder: !active ? placeholder : '', onChange: onChange })),
