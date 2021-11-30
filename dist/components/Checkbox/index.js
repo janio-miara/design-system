@@ -7,7 +7,7 @@ export const Checkbox = ({ checked, onClick, disabled }) => {
             setStatus(checked || false);
         }
     }, [checked]);
-    return (React.createElement(Label, { disabled: disabled, onClick: () => disabled && setStatus(!status) },
+    return (React.createElement(Label, { disabled: disabled, onClick: () => onClick(!status) },
         React.createElement("input", { type: "checkbox", checked: status }),
         React.createElement("span", null)));
 };

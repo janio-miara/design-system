@@ -16,7 +16,7 @@ export const Checkbox = ({ checked, onClick, disabled }: props) => {
   }, [checked])
 
   return (
-    <Label disabled={disabled} onClick={() => disabled && setStatus(!status)}>
+    <Label disabled={disabled} onClick={() => onClick(!status)}>
       <input type="checkbox" checked={status} />
       <span />
     </Label>
