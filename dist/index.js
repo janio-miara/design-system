@@ -17,4 +17,5 @@ export { Modal } from './components/Modal/index';
 export { theme } from './components/Themes/index';
 export { InputMultiSelect } from './components/InputMultiSelect';
 export { Heading } from './components/Heading/index';
+export { Checkbox } from './components/Checkbox/index';
 //# sourceMappingURL=index.js.map
