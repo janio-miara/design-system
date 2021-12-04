@@ -111,7 +111,7 @@ export const WrapperInput = styled.input `
   }
 
   ::placeholder {
-    color: ${theme.colors.shade50};
+    color: ${theme.colors.shade40};
     font-weight: lighter;
   }
 `;

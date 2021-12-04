@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import * as Style from './styles'
@@ -7,11 +7,22 @@ import { Badge, Checkbox, Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, label, keyValue, object, height, onChange } = props
+  const { icon, id, placeholder, label, keyValue, object, height, onChange, defaultValue } = props
   const [active, setActive] = useState(false)
   const [activeAll, setActiveAll] = useState(false)
   const [value, setValue] = useState(object)
   const ref = useRef()
+
+  useEffect(() => {
+    if (defaultValue) {
+      setValue(
+        value.map((el: any) => {
+          return { ...el, check: !!defaultValue.find((ell: any) => el.id === ell) }
+        }),
+      )
+    }
+  }, [])
+
   const handleChangeActive = (event: any, item: any) => {
     event.stopPropagation()
     if (activeAll) {

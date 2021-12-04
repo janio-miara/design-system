@@ -9,7 +9,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import * as Style from './styles';
@@ -17,11 +17,18 @@ import { Badge, Checkbox, Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 export const InputMultiSelect = (_a) => {
     var props = __rest(_a, []);
-    const { icon, id, placeholder, label, keyValue, object, height, onChange } = props;
+    const { icon, id, placeholder, label, keyValue, object, height, onChange, defaultValue } = props;
     const [active, setActive] = useState(false);
     const [activeAll, setActiveAll] = useState(false);
     const [value, setValue] = useState(object);
     const ref = useRef();
+    useEffect(() => {
+        if (defaultValue) {
+            setValue(value.map((el) => {
+                return Object.assign(Object.assign({}, el), { check: !!defaultValue.find((ell) => el.id === ell) });
+            }));
+        }
+    }, []);
     const handleChangeActive = (event, item) => {
         event.stopPropagation();
         if (activeAll) {

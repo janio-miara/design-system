@@ -18,7 +18,7 @@ const InputSelectContent = () => {
         { id: 3, check: true, value: 'Joao', sobrenome: 'Martins' },
     ];
     return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
-        React.createElement(InputMultiSelect, { keyValue: "sobrenome", object: object, onChange: (e) => console.log(e), icon: faUser, id: "name", label: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome" })));
+        React.createElement(InputMultiSelect, { keyValue: "sobrenome", object: object, defaultValue: [1, 2], onChange: (e) => console.log(e), icon: faUser, id: "name", label: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome" })));
 };
 export const InputSelectContentPlay = InputSelectContent.bind({});
 //# sourceMappingURL=InputMultiSelect.stories.js.map

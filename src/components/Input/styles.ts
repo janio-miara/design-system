@@ -123,7 +123,7 @@ export const WrapperInput = styled.input<InputProps>`
   }
 
   ::placeholder {
-    color: ${theme.colors.shade50};
+    color: ${theme.colors.shade40};
     font-weight: lighter;
   }
 `
