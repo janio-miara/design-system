@@ -13,6 +13,7 @@ export interface InputProps {
     messageError?: string;
     scapingHeight?: sizeBasic;
     scapingWidth?: sizeBasic;
+    autocomplete?: string;
 }
 export interface InputPropsSelect {
     id?: string;

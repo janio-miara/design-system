@@ -39,6 +39,7 @@ export const Input = ({ ...props }: InputProps) => {
         <span className="wrapper-label">{(active || value) && name}</span>
         <Style.WrapperInput
           {...props}
+          autocomplete="off"
           id={id}
           type={type || 'text'}
           placeholder={!active ? placeholder : ''}
