@@ -18,4 +18,5 @@ export { theme } from './components/Themes/index';
 export { InputMultiSelect } from './components/InputMultiSelect';
 export { Heading } from './components/Heading/index';
 export { Checkbox } from './components/Checkbox/index';
+export { Switch } from './components/Switch/index';
 //# sourceMappingURL=index.d.ts.map

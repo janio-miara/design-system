@@ -1,5 +1,6 @@
 import { Checkbox } from './Checkbox'
 
+export { Switch } from './Switch/index'
 export { Button } from './Button/index'
 export { Text } from './Text/index'
 export { ColorPalette } from './ColorPalette/index'
