@@ -87,12 +87,12 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
       <Style.ContainerPoper status={active} ref={ref}>
         <Popover height={height}>
           <Style.ValueSelector onClick={() => handleSelectAll()}>
-            <Checkbox checked={activeAll} />
+            <Checkbox checked={activeAll} onClick={() => console.log('')} />
             <b>Selecionar Todos</b>
           </Style.ValueSelector>
           {value.map((item: any) => (
             <Style.ValueSelector onClick={(event: any) => !item?.disabled && handleChangeActive(event, item)}>
-              <Checkbox disabled={item?.disabled} checked={item.check} />
+              <Checkbox disabled={item?.disabled} checked={item.check} onClick={() => console.log('')} />
               {item[keyValue]}
             </Style.ValueSelector>
           ))}

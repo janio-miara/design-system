@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { theme } from '../Themes';
 export const Label = styled.label `
   input {
+    cursor: pointer;
     position: absolute;
     opacity: 0;
   }

@@ -7,6 +7,7 @@ interface props {
 
 export const Label = styled.label<props>`
   input {
+    cursor: pointer;
     position: absolute;
     opacity: 0;
   }

@@ -4,7 +4,7 @@ import { Label } from './styles'
 interface props {
   disabled?: boolean
   checked?: boolean
-  onClick?: any
+  onClick: any
 }
 
 export const Checkbox = ({ checked, onClick, disabled }: props) => {
@@ -16,7 +16,7 @@ export const Checkbox = ({ checked, onClick, disabled }: props) => {
   }, [checked])
 
   return (
-    <Label disabled={disabled} onClick={() => onClick(!status)}>
+    <Label disabled={disabled} onClick={() => onClick && onClick(!status)}>
       <input type="checkbox" checked={status} />
       <span />
     </Label>

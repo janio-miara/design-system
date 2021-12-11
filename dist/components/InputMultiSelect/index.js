@@ -67,10 +67,10 @@ export const InputMultiSelect = (_a) => {
         React.createElement(Style.ContainerPoper, { status: active, ref: ref },
             React.createElement(Popover, { height: height },
                 React.createElement(Style.ValueSelector, { onClick: () => handleSelectAll() },
-                    React.createElement(Checkbox, { checked: activeAll }),
+                    React.createElement(Checkbox, { checked: activeAll, onClick: () => console.log('') }),
                     React.createElement("b", null, "Selecionar Todos")),
                 value.map((item) => (React.createElement(Style.ValueSelector, { onClick: (event) => !(item === null || item === void 0 ? void 0 : item.disabled) && handleChangeActive(event, item) },
-                    React.createElement(Checkbox, { disabled: item === null || item === void 0 ? void 0 : item.disabled, checked: item.check }),
+                    React.createElement(Checkbox, { disabled: item === null || item === void 0 ? void 0 : item.disabled, checked: item.check, onClick: () => console.log('') }),
                     item[keyValue])))))));
 };
 //# sourceMappingURL=index.js.map
