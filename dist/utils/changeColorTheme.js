@@ -40,47 +40,47 @@ const changeBackground = {
 };
 const changeColorOutlined = {
     primary: css `
-    border-color: ${theme.colors.blue40};
+    border-color: ${theme.colors.blue10};
     background-color: ${theme.colors.blue10};
     color: ${theme.colors.blue40};
   `,
     white: css `
-    border-color: ${theme.colors.shade20};
+    border-color: ${theme.colors.shade10};
     background-color: ${theme.colors.white};
     color: ${theme.colors.shade20};
   `,
     default: css `
-    border-color: ${theme.colors.shade50};
+    border-color: ${theme.colors.shade10};
     background-color: ${theme.colors.shade10};
     color: ${theme.colors.blue40};
   `,
     secondary: css `
-    border-color: ${theme.colors.cyan40};
+    border-color: ${theme.colors.cyan10};
     background-color: ${theme.colors.cyan10};
     color: ${theme.colors.cyan40};
   `,
     success: css `
-    border-color: ${theme.colors.mint40};
+    border-color: ${theme.colors.mint10};
     background-color: ${theme.colors.mint10};
     color: ${theme.colors.mint40};
   `,
     error: css `
-    border-color: ${theme.colors.red40};
+    border-color: ${theme.colors.red10};
     background-color: ${theme.colors.red10};
     color: ${theme.colors.red40};
   `,
     warning: css `
-    border-color: ${theme.colors.honey40};
+    border-color: ${theme.colors.honey10};
     background-color: ${theme.colors.honey10};
     color: ${theme.colors.honey40};
   `,
     lightDark: css `
-    border-color: ${theme.colors.shade50};
+    border-color: ${theme.colors.shade10};
     background-color: ${theme.colors.shade10};
     color: ${theme.colors.shade60};
   `,
     dark: css `
-    border-color: ${theme.colors.black};
+    border-color: ${theme.colors.shade20};
     background-color: ${theme.colors.shade10};
     color: ${theme.colors.black};
   `,

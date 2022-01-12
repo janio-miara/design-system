@@ -24,6 +24,8 @@ export const Container = styled.div `
 `;
 export const ContainerFilter = styled.div `
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 0;
   right: ${props => (props.side === 'right' ? '0' : 'unset')};
   left: ${props => (props.side === 'left' ? '0' : 'unset')};
@@ -56,7 +58,7 @@ export const ContainerFilter = styled.div `
   .content {
     overflow: auto;
     padding: ${theme.spacing.space3};
-    height: calc(100vh - 192px);
+    height: inherit;
     border-bottom: 1px solid ${theme.colors.blue30};
   }
 
