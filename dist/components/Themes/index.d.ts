@@ -63,6 +63,7 @@ export declare const theme: {
         shade20: string;
         shade10: string;
         shade05: string;
+        blue50: string;
         blue40: string;
         blue30: string;
         blue20: string;

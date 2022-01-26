@@ -1,4 +1,5 @@
 const blue = {
+    blue50: '#3A566E',
     blue40: '#3A566E',
     blue30: '#61788B',
     blue20: '#A0AEB9',
