@@ -6,5 +6,6 @@ export interface ModalDrawerProps {
     side?: 'left' | 'right';
     icon?: any;
     subTitle?: string;
+    notHeader?: boolean;
 }
 //# sourceMappingURL=ModalDrawerTypes.d.ts.map

@@ -11,8 +11,8 @@ const PlaygroundContent = args => {
 export const Playground = PlaygroundContent.bind({});
 Playground.args = {
     size: 'p3',
-    color: 'success',
-    fontWeight: 'lighter',
+    color: 'primary',
     searchWords: ['Prezado', 'margem'],
+    text: 'Janio Vinicius Miara, margem',
 };
 //# sourceMappingURL=Highlight.stories.js.map

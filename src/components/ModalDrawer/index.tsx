@@ -7,7 +7,7 @@ import * as Style from './styles'
 import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
 export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
-  const { open, close, title, subTitle, icon, children, action } = props
+  const { open, close, title, subTitle, icon, children, action, notHeader } = props
   const ref: any = useRef()
 
   useOnClickOutside(ref, close)
@@ -17,17 +17,19 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
         <Style.Container {...props}>
           <div ref={ref}>
             <Style.ContainerFilter {...props}>
-              <div className="wrapper-heading">
-                {icon && <span className="icon">{icon}</span>}
-                <div>
-                  <Text element="h3" bold color="white">
-                    {title}
-                  </Text>
-                  <Text element="span" size="p3" color="white">
-                    {subTitle && subTitle}
-                  </Text>
+              {!notHeader && (
+                <div className="wrapper-heading">
+                  {icon && <span className="icon">{icon}</span>}
+                  <div>
+                    <Text element="h3" bold color="white">
+                      {title}
+                    </Text>
+                    <Text element="span" size="p3" color="white">
+                      {subTitle && subTitle}
+                    </Text>
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="content">{children}</div>
               <div className="button-wrapp">
                 {action && action()}

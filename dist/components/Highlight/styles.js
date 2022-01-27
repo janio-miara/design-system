@@ -12,6 +12,12 @@ export const changeFontWeight = {
     font-weight: normal;
   `,
 };
+const changeBackgroundNew = {
+    lightDark: css `
+    background: ${theme.colors.shade40};
+    color: ${theme.colors.white};
+  `,
+};
 export const Container = styled.div `
   font-family: ${theme.fonts.join()};
   ${({ fontWeight }) => changeFontWeight[fontWeight || 'normal']};
@@ -19,7 +25,7 @@ export const Container = styled.div `
   .highlight {
     border-radius: 4px;
     padding: 2px 6px;
-    ${({ color }) => changeBackground[color || 'primary']};
+    ${({ color }) => (color === 'lightDark' ? changeBackgroundNew.lightDark : changeBackground[color || 'primary'])};
     color: white;
   }
 `;

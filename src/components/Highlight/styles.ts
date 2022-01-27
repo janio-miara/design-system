@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import { darken } from 'polished'
 import { theme } from '../Themes'
 import { colorTypes } from '../../types/colorTypes'
 import { sizeText } from '../../types/sizeTypes'
@@ -22,6 +23,13 @@ export const changeFontWeight = {
   `,
 }
 
+const changeBackgroundNew = {
+  lightDark: css`
+    background: ${theme.colors.shade40};
+    color: ${theme.colors.white};
+  `,
+}
+
 export const Container = styled.div<PropsHighlight>`
   font-family: ${theme.fonts.join()};
   ${({ fontWeight }) => changeFontWeight[fontWeight || 'normal']};
@@ -29,7 +37,7 @@ export const Container = styled.div<PropsHighlight>`
   .highlight {
     border-radius: 4px;
     padding: 2px 6px;
-    ${({ color }) => changeBackground[color || 'primary']};
+    ${({ color }) => (color === 'lightDark' ? changeBackgroundNew.lightDark : changeBackground[color || 'primary'])};
     color: white;
   }
 `
