@@ -54,17 +54,23 @@ export const ContainerFilter = styled.div `
       height: ${theme.spacing.space4};
     }
   }
+  .content-not-header {
+    overflow: auto;
+
+    height: inherit;
+  }
 
   .content {
     overflow: auto;
     padding: ${theme.spacing.space3};
     height: inherit;
-    border-bottom: 1px solid ${theme.colors.blue30};
   }
 
   .button-wrapp {
+    border-top: 1px solid ${theme.colors.shade30};
+    background-color: ${theme.colors.shade10};
     text-align: end;
-    height: 80px;
+    min-height: 20px;
     padding: ${theme.spacing.space3};
     button {
       margin-left: ${theme.spacing.space2};

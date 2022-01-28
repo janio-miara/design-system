@@ -16,6 +16,7 @@ Playground.args = {
     title: 'Modal Title',
     open: true,
     side: 'right',
+    notHeader: true,
     icon: React.createElement(BiHelpCircle, null),
     children: ' sdifhiushdfiuh sdifhiusdf sidufhiusdfhsdiufh iusdfhiusdf  jsdfjh skdjfhjksd sdkfjksd sdkjfhkjsd sdkjkjsd kjsdfkj sdkjfhkjsdf skdjhf ksdhkj  kjsdfkj kjshdf ',
     subTitle: 'Teste subtitle',

@@ -23,6 +23,7 @@ Playground.args = {
   title: 'Modal Title',
   open: true,
   side: 'right',
+  notHeader: true,
   icon: <BiHelpCircle />,
   children:
     ' sdifhiushdfiuh sdifhiusdf sidufhiusdfhsdiufh iusdfhiusdf  jsdfjh skdjfhjksd sdkfjksd sdkjfhkjsd sdkjkjsd kjsdfkj sdkjfhkjsdf skdjhf ksdhkj  kjsdfkj kjshdf ',
