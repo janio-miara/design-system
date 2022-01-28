@@ -30,6 +30,7 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
                       </Text>
                     </div>
                   </div>
+                  <div className="content">{children}</div>
                 </>
               )}
               <div className="content-not-header">{children}</div>

@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { lighten } from 'polished'
 import { theme } from '../Themes'
 import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
@@ -59,7 +60,6 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
   }
   .content-not-header {
     overflow: auto;
-
     height: inherit;
   }
 
@@ -71,7 +71,7 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
 
   .button-wrapp {
     border-top: 1px solid ${theme.colors.shade30};
-    background-color: ${theme.colors.shade10};
+    background-color: ${lighten(0.33, theme.colors.shade40)};
     text-align: end;
     min-height: 20px;
     padding: ${theme.spacing.space3};

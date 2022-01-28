@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { lighten } from 'polished';
 import { theme } from '../Themes';
 export const Container = styled.div `
   display: flex;
@@ -56,7 +57,6 @@ export const ContainerFilter = styled.div `
   }
   .content-not-header {
     overflow: auto;
-
     height: inherit;
   }
 
@@ -68,7 +68,7 @@ export const ContainerFilter = styled.div `
 
   .button-wrapp {
     border-top: 1px solid ${theme.colors.shade30};
-    background-color: ${theme.colors.shade10};
+    background-color: ${lighten(0.33, theme.colors.shade40)};
     text-align: end;
     min-height: 20px;
     padding: ${theme.spacing.space3};
