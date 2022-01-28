@@ -14,7 +14,7 @@ export const changeFontWeight = {
 };
 const changeBackgroundNew = {
     lightDark: css `
-    background: ${theme.colors.shade30};
+    background: ${theme.colors.shade40};
     color: ${theme.colors.white};
   `,
 };

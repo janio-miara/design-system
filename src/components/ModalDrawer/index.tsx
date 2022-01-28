@@ -17,7 +17,7 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
         <Style.Container {...props}>
           <div ref={ref}>
             <Style.ContainerFilter {...props}>
-              {!notHeader && (
+              {!notHeader ? (
                 <>
                   <div className="wrapper-heading">
                     {icon && <span className="icon">{icon}</span>}
@@ -32,8 +32,10 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
                   </div>
                   <div className="content">{children}</div>
                 </>
+              ) : (
+                <div className="content-not-header">{children}</div>
               )}
-              <div className="content-not-header">{children}</div>
+
               <div className="button-wrapp">
                 {action && action()}
                 <Button size="small" outlined color="primary" onClick={close}>
