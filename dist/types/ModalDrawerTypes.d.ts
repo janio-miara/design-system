@@ -7,5 +7,6 @@ export interface ModalDrawerProps {
     icon?: any;
     subTitle?: string;
     notHeader?: boolean;
+    refScroll?: any;
 }
 //# sourceMappingURL=ModalDrawerTypes.d.ts.map

@@ -8,7 +8,5 @@ export interface TabsTypes {
     colorDefault?: colorTypes;
     size?: sizeText;
     props?: any;
-    tabActive?: string;
-    onClickTab?: (tab: string) => void;
 }
 //# sourceMappingURL=tabsTypes.d.ts.map

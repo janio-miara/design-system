@@ -19,4 +19,8 @@ export { Checkbox } from './Checkbox/index';
 export { Badge } from './Badge/index';
 export { Modal } from './Modal/index';
 export { Heading } from './Heading/index';
+export { Loading } from './Loading/index';
+export { Tabs } from './Tabs/index';
+export { Table } from './Table/index';
+export { TextArea } from './TextArea/index';
 //# sourceMappingURL=index.d.ts.map

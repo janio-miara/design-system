@@ -19,4 +19,8 @@ export { InputMultiSelect } from './components/InputMultiSelect';
 export { Heading } from './components/Heading/index';
 export { Checkbox } from './components/Checkbox/index';
 export { Switch } from './components/Switch/index';
+export { Loading } from './components/Loading/index';
+export { Tabs } from './components/Tabs/index';
+export { Table } from './components/Table/index';
+export { TextArea } from './components/TextArea/index';
 //# sourceMappingURL=index.js.map

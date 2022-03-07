@@ -9,7 +9,7 @@ import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal'
 
 export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
-  const { open, close, title, subTitle, icon, children, action, notHeader, side } = props
+  const { open, close, title, subTitle, icon, children, action, notHeader, side, refScroll } = props
   const ref: any = useRef()
 
   const closeModal = async () => {
@@ -35,10 +35,14 @@ export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
                     </Text>
                   </div>
                 </div>
-                <div className="content">{children}</div>
+                <div className="content" ref={refScroll}>
+                  {children}
+                </div>
               </>
             ) : (
-              <div className="content-not-header">{children}</div>
+              <div className="content-not-header" ref={refScroll}>
+                {children}
+              </div>
             )}
 
             <div className="button-wrapp">

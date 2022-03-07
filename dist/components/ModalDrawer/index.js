@@ -15,7 +15,7 @@ import { Text } from '../Text';
 import * as Style from './styles';
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal';
 export const ModalDrawer = props => {
-    const { open, close, title, subTitle, icon, children, action, notHeader, side } = props;
+    const { open, close, title, subTitle, icon, children, action, notHeader, side, refScroll } = props;
     const ref = useRef();
     const closeModal = () => __awaiter(void 0, void 0, void 0, function* () {
         yield animationCloseSideModal(ref.current, side);
@@ -32,7 +32,7 @@ export const ModalDrawer = props => {
                         React.createElement("div", null,
                             React.createElement(Text, { element: "h3", bold: true, color: "white" }, title),
                             React.createElement(Text, { element: "span", size: "p3", color: "white" }, subTitle && subTitle))),
-                    React.createElement("div", { className: "content" }, children))) : (React.createElement("div", { className: "content-not-header" }, children)),
+                    React.createElement("div", { className: "content", ref: refScroll }, children))) : (React.createElement("div", { className: "content-not-header", ref: refScroll }, children)),
                 React.createElement("div", { className: "button-wrapp" },
                     action && action(),
                     React.createElement(Button, { size: "small", outlined: true, color: "primary", onClick: closeModal }, "Fechar")))), document.body)
