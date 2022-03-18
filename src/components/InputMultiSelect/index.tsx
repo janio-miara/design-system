@@ -36,7 +36,11 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   }
 
   const handleSelectAll = () => {
-    setValue(value?.map((el: any) => (!el.disabled ? { ...el, check: !activeAll } : el)))
+    const newValue = value?.map((el: any) => (!el.disabled ? { ...el, check: !activeAll } : el))
+    setValue(newValue)
+
+    const dados = newValue.filter((object: any) => object.check)
+    onChange(dados)
     setActiveAll(!activeAll)
   }
 
@@ -48,9 +52,13 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   }
 
   const closeInput = () => {
-    const dados = value.filter((object: any) => object.check)
-    onChange(dados)
     setActive(false)
+  }
+
+  const handleInput = (item: any) => {
+    const newValue = value?.map((el: any) => (el.id === item.id ? { ...el, check: !item.check } : el))
+    const dados = newValue.filter((object: any) => object.check)
+    onChange(dados)
   }
 
   useOnClickOutside(ref, closeInput)
@@ -92,7 +100,7 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
           </Style.ValueSelector>
           {value.map((item: any) => (
             <Style.ValueSelector onClick={(event: any) => !item?.disabled && handleChangeActive(event, item)}>
-              <Checkbox disabled={item?.disabled} checked={item.check} onClick={() => console.log('')} />
+              <Checkbox disabled={item?.disabled} checked={item.check} onClick={() => handleInput(item)} />
               {item[keyValue]}
             </Style.ValueSelector>
           ))}
