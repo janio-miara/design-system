@@ -34,13 +34,19 @@ export const InputMultiSelect = (_a) => {
         if (activeAll) {
             setActiveAll(false);
         }
+        const newValue = value === null || value === void 0 ? void 0 : value.map((el) => (el.id === item.id ? Object.assign(Object.assign({}, el), { check: !item.check }) : el));
+        const dados = newValue.filter((object) => object.check);
+        onChange(dados);
         setValue(value === null || value === void 0 ? void 0 : value.map((el) => (el.id === item.id ? Object.assign(Object.assign({}, el), { check: !item.check }) : el)));
     };
     const handleCount = () => {
         return value.filter((object) => object.check).map((el) => el[keyValue]).length;
     };
     const handleSelectAll = () => {
-        setValue(value === null || value === void 0 ? void 0 : value.map((el) => (!el.disabled ? Object.assign(Object.assign({}, el), { check: !activeAll }) : el)));
+        const newValue = value === null || value === void 0 ? void 0 : value.map((el) => (!el.disabled ? Object.assign(Object.assign({}, el), { check: !activeAll }) : el));
+        setValue(newValue);
+        const dados = newValue.filter((object) => object.check);
+        onChange(dados);
         setActiveAll(!activeAll);
     };
     const handleTratamentoValue = () => {
@@ -50,9 +56,12 @@ export const InputMultiSelect = (_a) => {
             .join(', ');
     };
     const closeInput = () => {
-        const dados = value.filter((object) => object.check);
-        onChange(dados);
         setActive(false);
+    };
+    const handleInput = (item) => {
+        const newValue = value === null || value === void 0 ? void 0 : value.map((el) => (el.id === item.id ? Object.assign(Object.assign({}, el), { check: !item.check }) : el));
+        const dados = newValue.filter((object) => object.check);
+        onChange(dados);
     };
     useOnClickOutside(ref, closeInput);
     return (React.createElement(Style.ContainerInput, { ref: ref, status: active, onClick: () => setActive(true) },
@@ -67,10 +76,10 @@ export const InputMultiSelect = (_a) => {
         React.createElement(Style.ContainerPoper, { status: active, ref: ref },
             React.createElement(Popover, { height: height },
                 React.createElement(Style.ValueSelector, { onClick: () => handleSelectAll() },
-                    React.createElement(Checkbox, { checked: activeAll, onClick: () => console.log('') }),
+                    React.createElement(Checkbox, { checked: activeAll }),
                     React.createElement("b", null, "Selecionar Todos")),
                 value.map((item) => (React.createElement(Style.ValueSelector, { onClick: (event) => !(item === null || item === void 0 ? void 0 : item.disabled) && handleChangeActive(event, item) },
-                    React.createElement(Checkbox, { disabled: item === null || item === void 0 ? void 0 : item.disabled, checked: item.check, onClick: () => console.log('') }),
+                    React.createElement(Checkbox, { disabled: item === null || item === void 0 ? void 0 : item.disabled, checked: item.check }),
                     item[keyValue])))))));
 };
 //# sourceMappingURL=index.js.map

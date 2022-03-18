@@ -2,7 +2,7 @@
 interface props {
     disabled?: boolean;
     checked?: boolean;
-    onClick: any;
+    onClick?: any;
 }
 export declare const Checkbox: ({ checked, onClick, disabled }: props) => JSX.Element;
 export {};

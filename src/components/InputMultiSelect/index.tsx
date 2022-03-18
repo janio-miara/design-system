@@ -9,6 +9,7 @@ import useOnClickOutside from '../../hooks/useOnClickOutside'
 export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   const { icon, id, placeholder, label, keyValue, object, height, onChange, defaultValue } = props
   const [active, setActive] = useState(false)
+
   const [activeAll, setActiveAll] = useState(false)
   const [value, setValue] = useState(object)
   const ref = useRef()
@@ -28,6 +29,9 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
     if (activeAll) {
       setActiveAll(false)
     }
+    const newValue = value?.map((el: any) => (el.id === item.id ? { ...el, check: !item.check } : el))
+    const dados = newValue.filter((object: any) => object.check)
+    onChange(dados)
     setValue(value?.map((el: any) => (el.id === item.id ? { ...el, check: !item.check } : el)))
   }
 
@@ -95,12 +99,12 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
       <Style.ContainerPoper status={active} ref={ref}>
         <Popover height={height}>
           <Style.ValueSelector onClick={() => handleSelectAll()}>
-            <Checkbox checked={activeAll} onClick={() => console.log('')} />
+            <Checkbox checked={activeAll} />
             <b>Selecionar Todos</b>
           </Style.ValueSelector>
           {value.map((item: any) => (
             <Style.ValueSelector onClick={(event: any) => !item?.disabled && handleChangeActive(event, item)}>
-              <Checkbox disabled={item?.disabled} checked={item.check} onClick={() => handleInput(item)} />
+              <Checkbox disabled={item?.disabled} checked={item.check} />
               {item[keyValue]}
             </Style.ValueSelector>
           ))}

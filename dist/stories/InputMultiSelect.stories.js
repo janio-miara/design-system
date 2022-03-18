@@ -14,7 +14,7 @@ const InputSelectContent = () => {
             value: 'Janio',
             sobrenome: 'Miara Tadeu Ribeiro Fernando Suares',
         },
-        { id: 2, check: false, disabled: true, value: 'Marcelo', sobrenome: 'Ribeiro' },
+        { id: 2, check: false, value: 'Marcelo', sobrenome: 'Ribeiro' },
         { id: 3, check: true, value: 'Joao', sobrenome: 'Martins' },
     ];
     return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
