@@ -13,7 +13,7 @@ const InputIconContent = () => {
     };
     return (React.createElement("div", { style: { display: 'flex', width: '700px', height: '500px', padding: '50px' } },
         React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" }),
-        React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" }),
+        React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", type: "password", id: "password", name: "Password", onClear: true, placeholder: "Primeiro nome" }),
         React.createElement("div", null,
             React.createElement(Input, { value: inputValue.name, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome", error: true, messageError: "Nome Invalido" }),
             React.createElement(Input, { value: inputValue.name, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome", error: true, messageError: "Nome Invalido" }))));

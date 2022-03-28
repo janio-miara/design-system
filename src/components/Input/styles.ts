@@ -119,7 +119,12 @@ export const WrapperInput = styled.input<InputProps>`
   &:-webkit-autofill {
     background: -internal-light-dark(black, white) !important;
     -webkit-box-shadow: 0 0 0 30px ${theme.colors.shade05} inset;
-    -webkit-text-fill-color: ${theme.colors.shade80} !important;
+  }
+  &-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: white !important;
+    color: -internal-light-dark(black, white) !important;
   }
 
   ::placeholder {

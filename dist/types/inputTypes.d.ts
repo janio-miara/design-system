@@ -14,6 +14,7 @@ export interface InputProps {
     scapingHeight?: sizeBasic;
     scapingWidth?: sizeBasic;
     autocomplete?: string;
+    props?: any;
 }
 export interface InputPropsSelect {
     id?: string;
@@ -27,5 +28,6 @@ export interface InputPropsSelect {
     defaultValue?: any;
     keyValue?: any;
     height?: string;
+    props?: any;
 }
 //# sourceMappingURL=inputTypes.d.ts.map

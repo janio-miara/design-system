@@ -15,8 +15,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { Text } from '../Text';
 import * as Style from './styles';
 export const Input = (_a) => {
-    var props = __rest(_a, []);
-    const { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type, scapingWidth, scapingHeight, } = props;
+    var { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type, scapingWidth, scapingHeight } = _a, props = __rest(_a, ["icon", "onChange", "value", "id", "onClear", "placeholder", "name", "messageError", "error", "type", "scapingWidth", "scapingHeight"]);
     const [active, setActive] = useState(false);
     const handleClearValue = (event) => {
         event.stopPropagation();
@@ -26,7 +25,7 @@ export const Input = (_a) => {
     return (React.createElement(React.Fragment, null,
         React.createElement(Style.ContainerInput, { onBlur: () => active && setActive(false), onClick: () => setActive(true), scapingWidth: scapingWidth, scapingHeight: scapingHeight },
             React.createElement("span", { className: "wrapper-label" }, (active || value) && name),
-            React.createElement(Style.WrapperInput, Object.assign({}, props, { autocomplete: "off", id: id, type: type || 'text', placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) })),
+            React.createElement(Style.WrapperInput, Object.assign({}, props, { autoComplete: "off", id: id, type: type || 'text', placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) })),
             icon && (React.createElement("span", { className: "wrapper-icon" },
                 React.createElement(FontAwesomeIcon, { icon: icon }))),
             value && onClear && (React.createElement("span", { className: "wrapper-icon-close" },
