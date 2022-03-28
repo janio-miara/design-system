@@ -5,21 +5,21 @@ import { Text } from '../Text'
 import * as Style from './styles'
 import { InputProps } from '../../types/inputTypes'
 
-export const Input = ({ ...props }: InputProps) => {
-  const {
-    icon,
-    onChange,
-    value,
-    id,
-    onClear,
-    placeholder,
-    name,
-    messageError,
-    error,
-    type,
-    scapingWidth,
-    scapingHeight,
-  } = props
+export const Input = ({
+  icon,
+  onChange,
+  value,
+  id,
+  onClear,
+  placeholder,
+  name,
+  messageError,
+  error,
+  type,
+  scapingWidth,
+  scapingHeight,
+  ...props
+}: InputProps) => {
   const [active, setActive] = useState(false)
 
   const handleClearValue = (event: any) => {
@@ -39,7 +39,7 @@ export const Input = ({ ...props }: InputProps) => {
         <span className="wrapper-label">{(active || value) && name}</span>
         <Style.WrapperInput
           {...props}
-          autocomplete="off"
+          autoComplete="off"
           id={id}
           type={type || 'text'}
           placeholder={!active ? placeholder : ''}

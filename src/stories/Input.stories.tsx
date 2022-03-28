@@ -35,8 +35,9 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
         onChange={handleValues}
         scapingHeight="small"
         scapingWidth="small"
-        id="name"
-        name="Primeiro Nome"
+        type="password"
+        id="password"
+        name="Password"
         onClear
         placeholder="Primeiro nome"
       />
