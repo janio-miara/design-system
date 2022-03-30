@@ -92,7 +92,6 @@ export const ContainerInput = styled.div<propsInput>`
     transition: transform 0.3s;
     left: 0;
     top: 12px;
-    position: absolute;
     padding-left: ${theme.spacing.space3};
     color: ${theme.colors.shade40};
   }

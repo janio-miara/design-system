@@ -11,7 +11,7 @@ const InputIconContent = () => {
         const { id, value } = target;
         setInputValue(Object.assign(Object.assign({}, inputValue), { [id]: value }));
     };
-    return (React.createElement("div", { style: { display: 'flex', width: '700px', height: '500px', padding: '50px' } },
+    return (React.createElement("div", { style: { display: 'flex', flexDirection: 'column', width: '700px', height: '500px', padding: '50px' } },
         React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", id: "name", name: "Primeiro Nome", onClear: true, placeholder: "Primeiro nome" }),
         React.createElement(Input, { value: inputValue.name, icon: faUser, onChange: handleValues, scapingHeight: "small", scapingWidth: "small", type: "password", id: "password", name: "Password", onClear: true, placeholder: "Primeiro nome" }),
         React.createElement("div", null,

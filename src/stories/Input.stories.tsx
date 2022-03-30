@@ -17,7 +17,7 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
   }
 
   return (
-    <div style={{ display: 'flex', width: '700px', height: '500px', padding: '50px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', width: '700px', height: '500px', padding: '50px' }}>
       <Input
         value={inputValue.name}
         icon={faUser}

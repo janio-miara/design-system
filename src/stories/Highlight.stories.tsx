@@ -19,6 +19,6 @@ export const Playground = PlaygroundContent.bind({})
 Playground.args = {
   size: 'p3',
   color: 'primary',
-  searchWords: ['Prezado', 'margem'],
-  text: 'Janio Vinicius Miara, margem',
+  searchWords: ['Prezado', 'margem ', 'ítem', 'Feijão'],
+  text: 'Janio Vinicius Miara, margem, Feijão, ítem',
 }
