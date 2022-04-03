@@ -4,7 +4,6 @@ import { BadgeWordProps } from '../../types/BaggeWordTypes'
 import { changeBackground, changeColor, changeColorOutlined, changePaletaColor } from '../../utils/changeColorTheme'
 
 export const Container = styled.div<BadgeWordProps>`
-  font-family: ${theme.fonts.join()};
   border-radius: 10px;
   margin: ${theme.spacing.space1} 0;
   width: fit-content;

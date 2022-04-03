@@ -16,7 +16,7 @@ export const Tabs = ({ onChange, tabs, size, colorActive, colorDefault }: TabsTy
     <S.Container>
       {tabs.map(tab => {
         return (
-          <S.Wrapper onClick={() => handleTab(tab)} colorActive={colorActive}>
+          <S.Wrapper key={tab} onClick={() => handleTab(tab)} colorActive={colorActive}>
             <Text
               element="span"
               bold={active === tab}

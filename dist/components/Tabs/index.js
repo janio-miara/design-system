@@ -10,7 +10,7 @@ export const Tabs = ({ onChange, tabs, size, colorActive, colorDefault }) => {
         }
     };
     return (React.createElement(S.Container, null, tabs.map(tab => {
-        return (React.createElement(S.Wrapper, { onClick: () => handleTab(tab), colorActive: colorActive },
+        return (React.createElement(S.Wrapper, { key: tab, onClick: () => handleTab(tab), colorActive: colorActive },
             React.createElement(Text, { element: "span", bold: active === tab, size: size || 'p2', color: active === tab ? colorActive || 'secondary' : colorDefault || 'default' }, tab),
             active === tab && React.createElement("div", { className: "divider" })));
     })));

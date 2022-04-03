@@ -58,11 +58,6 @@ export const InputMultiSelect = (_a) => {
     const closeInput = () => {
         setActive(false);
     };
-    const handleInput = (item) => {
-        const newValue = value === null || value === void 0 ? void 0 : value.map((el) => (el.id === item.id ? Object.assign(Object.assign({}, el), { check: !item.check }) : el));
-        const dados = newValue.filter((object) => object.check);
-        onChange(dados);
-    };
     useOnClickOutside(ref, closeInput);
     return (React.createElement(Style.ContainerInput, { ref: ref, status: active, onClick: () => setActive(true) },
         React.createElement("span", { className: "wrapper-label" }, (active || value) && label),
@@ -78,7 +73,7 @@ export const InputMultiSelect = (_a) => {
                 React.createElement(Style.ValueSelector, { onClick: () => handleSelectAll() },
                     React.createElement(Checkbox, { checked: activeAll }),
                     React.createElement("b", null, "Selecionar Todos")),
-                value.map((item) => (React.createElement(Style.ValueSelector, { onClick: (event) => !(item === null || item === void 0 ? void 0 : item.disabled) && handleChangeActive(event, item) },
+                value.map((item) => (React.createElement(Style.ValueSelector, { key: item, onClick: (event) => !(item === null || item === void 0 ? void 0 : item.disabled) && handleChangeActive(event, item) },
                     React.createElement(Checkbox, { disabled: item === null || item === void 0 ? void 0 : item.disabled, checked: item.check }),
                     item[keyValue])))))));
 };

@@ -47,7 +47,7 @@ export const InputSelectOutline = ({ ...props }: InputPropsSelect) => {
         <Style.ContainerPoper status={active} ref={ref}>
           <Popover ref={ref}>
             {object.map((item: any) => (
-              <Style.ValueSelector onClick={(event: any) => handleChangeActive(event, item)}>
+              <Style.ValueSelector key={item} onClick={(event: any) => handleChangeActive(event, item)}>
                 {item[keyValue]}
               </Style.ValueSelector>
             ))}

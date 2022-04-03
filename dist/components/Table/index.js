@@ -14,7 +14,7 @@ export const Table = ({ header, body }) => {
             React.createElement("table", { cellPadding: "0", cellSpacing: "0" },
                 React.createElement("tbody", null, body.map(({ id, values }) => {
                     return (React.createElement("tr", null, values === null || values === void 0 ? void 0 : values.map(({ value, maxCaracter, align, action, width }) => {
-                        return (React.createElement(TableRow, { align: align, width: width, action: action, maxCaracter: maxCaracter }, value));
+                        return (React.createElement(TableRow, { key: value, align: align, width: width, action: action, maxCaracter: maxCaracter }, value));
                     })));
                 }))))));
 };

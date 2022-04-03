@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { theme } from '../Themes';
 import { changeBackground, changeColor, changeColorOutlined, changePaletaColor } from '../../utils/changeColorTheme';
 export const Container = styled.div `
-  font-family: ${theme.fonts.join()};
   border-radius: 10px;
   margin: ${theme.spacing.space1} 0;
   width: fit-content;

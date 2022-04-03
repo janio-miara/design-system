@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { theme } from '../Themes'
 import { colorTypes } from '../../types/colorTypes'
 import { changeBackground } from '../../utils/changeColorTheme'
 

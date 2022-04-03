@@ -1,8 +1,7 @@
 import React from 'react'
-import * as S from './styles'
 import TableRow from './TableRow'
 import CellHeader from './TableHeader'
-import { ContainerBody, ContainerHeader, Wrapper, Container } from './styles'
+import { Container } from './styles'
 
 interface Ivalue {
   value?: string | any
@@ -56,7 +55,7 @@ export const Table = ({ header, body }: ITable) => {
                 <tr>
                   {values?.map(({ value, maxCaracter, align, action, width }) => {
                     return (
-                      <TableRow align={align} width={width} action={action} maxCaracter={maxCaracter}>
+                      <TableRow key={value} align={align} width={width} action={action} maxCaracter={maxCaracter}>
                         {value}
                       </TableRow>
                     )
