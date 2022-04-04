@@ -20,8 +20,8 @@ export const changeSize = {
 
 export const changeScapingHeight = {
   small: css`
-    margin-top: ${theme.spacing.space2};
-    margin-bottom: ${theme.spacing.space2};
+    margin-top: ${theme.spacing.space3};
+    margin-bottom: ${theme.spacing.space3};
   `,
   medium: css`
     margin-top: ${theme.spacing.space3};
@@ -59,6 +59,8 @@ export const ContainerInput = styled.div<propsInput>`
   height: 40px;
   display: flex;
   position: relative;
+  margin-top: ${theme.spacing.space3};
+  margin-bottom: ${theme.spacing.space3};
   ${({ scapingWidth }) => scapingWidth && changeScapingWidth[scapingWidth]};
   ${({ scapingHeight }) => scapingHeight && changeScapingHeight[scapingHeight]}
 

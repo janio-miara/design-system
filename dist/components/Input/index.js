@@ -30,7 +30,7 @@ export const Input = (_a) => {
                 React.createElement(FontAwesomeIcon, { icon: icon }))),
             value && onClear && (React.createElement("span", { className: "wrapper-icon-close" },
                 React.createElement(FontAwesomeIcon, { icon: faTimesCircle, onClick: (event) => handleClearValue(event) })))),
-        messageError && (React.createElement(Style.WrapperMessage, null,
+        error && messageError && (React.createElement(Style.WrapperMessage, null,
             React.createElement(Text, { color: "error", size: "p4", element: "p" }, messageError)))));
 };
 //# sourceMappingURL=index.js.map

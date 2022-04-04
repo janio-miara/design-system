@@ -59,7 +59,7 @@ export const Input = ({
           </span>
         )}
       </Style.ContainerInput>
-      {messageError && (
+      {error && messageError && (
         <Style.WrapperMessage>
           <Text color="error" size="p4" element="p">
             {messageError}
