@@ -38,6 +38,7 @@ export const Input = ({
       >
         <span className="wrapper-label">{(active || value) && name}</span>
         <Style.WrapperInput
+          error={error}
           icon={icon}
           {...props}
           autoComplete="off"
@@ -58,7 +59,7 @@ export const Input = ({
           </span>
         )}
       </Style.ContainerInput>
-      {error && (
+      {messageError && (
         <Style.WrapperMessage>
           <Text color="error" size="p4" element="p">
             {messageError}

@@ -16,8 +16,7 @@ import * as Style from './styles';
 import { Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 export const InputSelectOutline = (_a) => {
-    var props = __rest(_a, []);
-    const { icon, id, placeholder, keyValue, defaultValue, object, onChange } = props;
+    var { icon, id, placeholder, keyValue, defaultValue, object, onChange } = _a, props = __rest(_a, ["icon", "id", "placeholder", "keyValue", "defaultValue", "object", "onChange"]);
     const [active, setActive] = useState(false);
     const [value, setValue] = useState(defaultValue || '');
     const ref = useRef();
@@ -30,13 +29,13 @@ export const InputSelectOutline = (_a) => {
     useOnClickOutside(ref, () => setActive(false));
     return (React.createElement(React.Fragment, null,
         React.createElement(Style.ContainerInput, { status: active, onBlur: () => active && setActive(false), onClick: () => setActive(true) },
-            React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, disabled: true, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: value[keyValue], placeholder: !active ? placeholder : '', onChange: () => console.log() })),
+            React.createElement(Style.WrapperInput, Object.assign({ icon: icon }, props, { id: id, disabled: true, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: value[keyValue], placeholder: !active ? placeholder : '' })),
             icon && (React.createElement("span", { className: "wrapper-icon" },
                 React.createElement(FontAwesomeIcon, { icon: icon }))),
             React.createElement("span", { className: "wrapper-icon-selector" },
                 React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
             React.createElement(Style.ContainerPoper, { status: active, ref: ref },
-                React.createElement(Popover, { ref: ref }, object.map((item) => (React.createElement(Style.ValueSelector, { key: item, onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))),
+                React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id + keyValue, onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))),
         !active && (React.createElement(Style.WrapperMessage, null,
             React.createElement("div", null, "Empresa Selecionada")))));
 };

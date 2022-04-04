@@ -1,3 +1,4 @@
+import { InputHTMLAttributes } from 'react'
 import { sizeBasic } from './sizeTypes'
 
 export interface InputProps {
@@ -8,14 +9,14 @@ export interface InputProps {
   name?: string
   icon?: any
   onClear?: boolean
-  onChange: any
+  onChange?: any
   error?: boolean
   type?: string
   messageError?: string
   scapingHeight?: sizeBasic
   scapingWidth?: sizeBasic
   autocomplete?: string
-  props?: any
+  props?: InputHTMLAttributes<HTMLInputElement>
 }
 
 export interface InputPropsSelect {
@@ -30,5 +31,5 @@ export interface InputPropsSelect {
   defaultValue?: any
   keyValue?: any
   height?: string
-  props?: any
+  props?: InputHTMLAttributes<HTMLInputElement>
 }

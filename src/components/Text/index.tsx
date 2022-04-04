@@ -2,8 +2,7 @@ import React from 'react'
 import * as Style from './styles'
 import { TextPros } from '../../types/textTypes'
 
-export const Text = (props: TextPros) => {
-  const { children, element } = props
+export const Text = ({ color, children, element, size, transform, bold, ...props }: TextPros) => {
   const handleElementP = () => {
     return <p {...props}>{children}</p>
   }
@@ -24,7 +23,7 @@ export const Text = (props: TextPros) => {
   }
 
   return (
-    <Style.Container {...props}>
+    <Style.Container color={color} size={size} transform={transform} bold={bold}>
       {element === 'h1' && handleElementH1()}
       {element === 'h2' && handleElementH2()}
       {element === 'h3' && handleElementH3()}

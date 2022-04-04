@@ -3,8 +3,7 @@ import { FaSpinner } from 'react-icons/fa'
 import * as Style from './styles'
 import { ButtonProps } from '../../types/buttonTypes'
 
-export const Button = (props: ButtonProps) => {
-  const { loading, icon, children, disabled } = props
+export const Button = ({ loading, icon, children, disabled, ...props }: ButtonProps) => {
   return (
     <Style.ContainerButton disabled={disabled} {...props}>
       {loading && (

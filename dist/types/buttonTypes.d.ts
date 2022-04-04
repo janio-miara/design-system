@@ -10,7 +10,7 @@ export interface ButtonProps {
     disabled?: boolean;
     size?: sizeBasic;
     icon?: any;
-    props?: any;
+    props?: React.HTMLProps<HTMLButtonElement>;
 }
 export interface ButtonRadiusProps {
     outlined?: boolean;

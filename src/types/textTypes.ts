@@ -6,7 +6,7 @@ export interface TextPros {
   color?: colorTypes
   children?: React.ReactNode | any
   element?: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4'
-  props?: any
+  props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
   size?: sizeText
   transform?: 'uppercase' | 'lowercase' | 'capitalize'
   bold?: boolean

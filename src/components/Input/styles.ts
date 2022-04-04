@@ -20,16 +20,16 @@ export const changeSize = {
 
 export const changeScapingHeight = {
   small: css`
+    margin-top: ${theme.spacing.space2};
+    margin-bottom: ${theme.spacing.space2};
+  `,
+  medium: css`
     margin-top: ${theme.spacing.space3};
     margin-bottom: ${theme.spacing.space3};
   `,
-  medium: css`
+  large: css`
     margin-top: ${theme.spacing.space4};
     margin-bottom: ${theme.spacing.space4};
-  `,
-  large: css`
-    margin-top: ${theme.spacing.space5};
-    margin-bottom: ${theme.spacing.space5};
   `,
 }
 
@@ -99,6 +99,7 @@ export const ContainerInput = styled.div<propsInput>`
 
 export const WrapperInput = styled.input<InputProps>`
   width: 100%;
+  margin: 0;
   min-width: 65px;
   border-radius: ${theme.spacing.space2};
   background: white;
@@ -133,7 +134,8 @@ export const WrapperInput = styled.input<InputProps>`
 `
 
 export const WrapperMessage = styled.div`
-  height: 5px;
-  margin-top: -${theme.spacing.space3};
+  height: 10px;
+  margin-top: -10px;
   margin-left: ${theme.spacing.space2};
+  margin-bottom: 16px;
 `
