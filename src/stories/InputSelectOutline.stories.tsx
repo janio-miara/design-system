@@ -31,7 +31,6 @@ const InputSelectContent: ComponentStory<typeof InputSelectOutline> = () => {
         icon={faUser}
         id="name"
         label="Primeiro Nome"
-        onClear
         variant="medium"
         placeholder="Primeiro nome"
       />

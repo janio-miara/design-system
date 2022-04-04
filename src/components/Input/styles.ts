@@ -119,8 +119,9 @@ export const WrapperInput = styled.input<InputProps>`
   }
 
   &:-webkit-autofill {
+    border: 1px solid ${theme.colors.shade40};
     background: -internal-light-dark(black, white) !important;
-    -webkit-box-shadow: 0 0 0 30px ${theme.colors.shade05} inset;
+    -webkit-box-shadow: 0 0 0 30px ${theme.colors.white} inset;
   }
   &-internal-autofill-selected {
     appearance: menulist-button;

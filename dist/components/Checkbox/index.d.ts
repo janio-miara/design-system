@@ -2,8 +2,8 @@
 interface props {
     disabled?: boolean;
     checked?: boolean;
-    onClick?: any;
+    onChange?: any;
 }
-export declare const Checkbox: ({ checked, onClick, disabled }: props) => JSX.Element;
+export declare const Checkbox: ({ checked, disabled, onChange }: props) => JSX.Element;
 export {};
 //# sourceMappingURL=index.d.ts.map

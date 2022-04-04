@@ -1,23 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Label } from './styles'
 
 interface props {
   disabled?: boolean
   checked?: boolean
-  onClick?: any
+  onChange?: any
 }
 
-export const Checkbox = ({ checked, onClick, disabled }: props) => {
-  const [status, setStatus] = useState<boolean>(checked || false)
-  useEffect(() => {
-    if (!disabled) {
-      setStatus(checked || false)
-    }
-  }, [checked])
-
+export const Checkbox = ({ checked, disabled, onChange }: props) => {
   return (
-    <Label disabled={disabled} onClick={() => onClick && onClick(!status)}>
-      <input type="checkbox" checked={status} />
+    <Label disabled={disabled}>
+      <input type="checkbox" checked={checked} onChange={e => onChange(e.target.checked)} />
       <span />
     </Label>
   )

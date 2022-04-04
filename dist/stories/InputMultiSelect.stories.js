@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { InputMultiSelect } from '../components';
 export default {
@@ -6,7 +6,6 @@ export default {
     component: InputMultiSelect,
 };
 const InputSelectContent = () => {
-    const [inputValue, setInputValue] = useState({ id: 3, value: 'Joao', sobrenome: 'Martins' });
     const object = [
         {
             id: 1,
@@ -18,7 +17,7 @@ const InputSelectContent = () => {
         { id: 3, check: true, value: 'Joao', sobrenome: 'Martins' },
     ];
     return (React.createElement("div", { style: { width: '500px', height: '500px', padding: '50px' } },
-        React.createElement(InputMultiSelect, { keyValue: "sobrenome", object: object, defaultValue: [1, 2], onChange: (e) => console.log(e), icon: faUser, id: "name", label: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome" })));
+        React.createElement(InputMultiSelect, { keyValue: "sobrenome", object: object, defaultValue: [3], onChange: (e) => console.log(e), icon: faUser, id: "name", label: "Primeiro Nome", variant: "medium", placeholder: "Primeiro nome" })));
 };
 export const InputSelectContentPlay = InputSelectContent.bind({});
 //# sourceMappingURL=InputMultiSelect.stories.js.map

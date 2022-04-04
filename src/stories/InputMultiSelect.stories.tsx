@@ -9,8 +9,6 @@ export default {
 } as ComponentMeta<typeof InputMultiSelect>
 
 const InputSelectContent: ComponentStory<typeof InputMultiSelect> = () => {
-  const [inputValue, setInputValue] = useState({ id: 3, value: 'Joao', sobrenome: 'Martins' })
-
   const object = [
     {
       id: 1,
@@ -27,12 +25,11 @@ const InputSelectContent: ComponentStory<typeof InputMultiSelect> = () => {
       <InputMultiSelect
         keyValue="sobrenome"
         object={object}
-        defaultValue={[1, 2]}
+        defaultValue={[3]}
         onChange={(e: any) => console.log(e)}
         icon={faUser}
         id="name"
         label="Primeiro Nome"
-        onClear
         variant="medium"
         placeholder="Primeiro nome"
       />

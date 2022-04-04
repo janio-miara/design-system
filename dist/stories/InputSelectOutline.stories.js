@@ -16,7 +16,7 @@ const InputSelectContent = () => {
         console.log(inputValue);
     }, [inputValue]);
     return (React.createElement("div", { style: { width: '200px', height: '500px', padding: '50px' } },
-        React.createElement(InputSelectOutline, { keyValue: "sobrenome", object: object, defaultValue: inputValue, onChange: setInputValue, icon: faUser, id: "name", label: "Primeiro Nome", onClear: true, variant: "medium", placeholder: "Primeiro nome" })));
+        React.createElement(InputSelectOutline, { keyValue: "sobrenome", object: object, defaultValue: inputValue, onChange: setInputValue, icon: faUser, id: "name", label: "Primeiro Nome", variant: "medium", placeholder: "Primeiro nome" })));
 };
 export const InputSelectOutli = InputSelectContent.bind({});
 //# sourceMappingURL=InputSelectOutline.stories.js.map

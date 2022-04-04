@@ -6,8 +6,18 @@ import { InputPropsSelect } from '../../types/inputTypes'
 import { Badge, Checkbox, Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
-export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, label, keyValue, object, height, onChange, defaultValue } = props
+export const InputMultiSelect = ({
+  icon,
+  id,
+  placeholder,
+  label,
+  keyValue,
+  object,
+  height,
+  onChange,
+  defaultValue,
+  ...props
+}: InputPropsSelect) => {
   const [active, setActive] = useState(false)
 
   const [activeAll, setActiveAll] = useState(false)
@@ -24,15 +34,14 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
     }
   }, [])
 
-  const handleChangeActive = (event: any, item: any) => {
-    event.stopPropagation()
+  const handleChangeActiveNew = (checked: any, item: any) => {
     if (activeAll) {
       setActiveAll(false)
     }
-    const newValue = value?.map((el: any) => (el.id === item.id ? { ...el, check: !item.check } : el))
+    const newValue = value?.map((el: any) => (el.id === item.id ? { ...el, check: checked } : el))
     const dados = newValue.filter((object: any) => object.check)
     onChange(dados)
-    setValue(value?.map((el: any) => (el.id === item.id ? { ...el, check: !item.check } : el)))
+    setValue(newValue)
   }
 
   const handleCount = () => {
@@ -42,7 +51,6 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   const handleSelectAll = () => {
     const newValue = value?.map((el: any) => (!el.disabled ? { ...el, check: !activeAll } : el))
     setValue(newValue)
-
     const dados = newValue.filter((object: any) => object.check)
     onChange(dados)
     setActiveAll(!activeAll)
@@ -62,9 +70,10 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
   useOnClickOutside(ref, closeInput)
 
   return (
-    <Style.ContainerInput ref={ref} status={active} onClick={() => setActive(true)}>
+    <Style.ContainerInput status={active} onClick={() => setActive(true)}>
       <span className="wrapper-label">{(active || value) && label}</span>
       <Style.WrapperInput
+        icon={icon}
         {...props}
         id={id}
         disabled
@@ -92,16 +101,17 @@ export const InputMultiSelect = ({ ...props }: InputPropsSelect) => {
 
       <Style.ContainerPoper status={active} ref={ref}>
         <Popover height={height}>
-          <Style.ValueSelector onClick={() => handleSelectAll()}>
-            <Checkbox checked={activeAll} />
+          <Style.ValueSelector>
+            <Checkbox checked={activeAll} onChange={() => handleSelectAll()} />
             <b>Selecionar Todos</b>
           </Style.ValueSelector>
           {value.map((item: any) => (
-            <Style.ValueSelector
-              key={item}
-              onClick={(event: any) => !item?.disabled && handleChangeActive(event, item)}
-            >
-              <Checkbox disabled={item?.disabled} checked={item.check} />
+            <Style.ValueSelector key={item.id}>
+              <Checkbox
+                disabled={item?.disabled}
+                checked={item.check}
+                onChange={(checked: boolean) => handleChangeActiveNew(checked, item)}
+              />
               {item[keyValue]}
             </Style.ValueSelector>
           ))}
