@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { BiHelpCircle } from 'react-icons/all'
+import { BiHelpCircle } from 'react-icons/bi'
 import { Button, ModalDrawer } from '../components'
 
 export default {
@@ -8,7 +8,8 @@ export default {
   component: ModalDrawer,
 } as ComponentMeta<typeof ModalDrawer | any>
 
-const PlaygroundContent: ComponentStory<typeof ModalDrawer> = args => {
+// eslint-disable-next-line react/function-component-definition
+const PlaygroundContent: ComponentStory<typeof ModalDrawer> = (args: any) => {
   const [open, setOpen] = useState<boolean>(false)
   return (
     <>
@@ -17,7 +18,7 @@ const PlaygroundContent: ComponentStory<typeof ModalDrawer> = args => {
     </>
   )
 }
-export const Playground = PlaygroundContent.bind({})
+export const Playground = PlaygroundContent.bind({}) as any
 
 Playground.args = {
   title: 'Modal Title',

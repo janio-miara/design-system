@@ -1,3 +1,4 @@
+export {};
 // export interface TabsTypes {
 //   tabs: string[]
 //   // eslint-disable-next-line no-unused-vars

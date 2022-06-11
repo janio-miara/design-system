@@ -1,4 +1,5 @@
-declare const _default: import("@storybook/react").Meta<any>;
+import { ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<any>;
 export default _default;
 export declare const Playground: any;
 //# sourceMappingURL=Checkbox.stories.d.ts.map

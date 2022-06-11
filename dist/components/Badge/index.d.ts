@@ -1,7 +1,3 @@
 /// <reference types="react" />
-interface Props {
-    children: string | number;
-}
-export declare const Badge: ({ children }: Props) => JSX.Element;
-export {};
+export declare const Badge: (children: any) => JSX.Element;
 //# sourceMappingURL=index.d.ts.map

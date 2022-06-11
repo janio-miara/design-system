@@ -1,4 +1,6 @@
-declare const _default: import("@storybook/react").Meta<import("../types/textTypes").TextLinkProps>;
+/// <reference types="react" />
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<(props: import("../types/textTypes").TextLinkProps) => JSX.Element>;
 export default _default;
-export declare const TextLinks: import("@storybook/react").Story<import("../types/textTypes").TextLinkProps>;
+export declare const TextLinks: ComponentStory<(props: import("../types/textTypes").TextLinkProps) => JSX.Element>;
 //# sourceMappingURL=TextLink.stories.d.ts.map

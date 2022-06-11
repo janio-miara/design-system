@@ -15,9 +15,8 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import * as Style from './styles';
 import { Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
-export const InputSelect = (_a) => {
-    var props = __rest(_a, []);
-    const { icon, id, placeholder, label, keyValue, defaultValue, object, onChange } = props;
+export function InputSelect(_a) {
+    var { icon, id, placeholder, label, keyValue, defaultValue, object, onChange } = _a, props = __rest(_a, ["icon", "id", "placeholder", "label", "keyValue", "defaultValue", "object", "onChange"]);
     const [active, setActive] = useState(false);
     const [value, setValue] = useState(defaultValue || '');
     const ref = useRef();
@@ -36,10 +35,10 @@ export const InputSelect = (_a) => {
         React.createElement("span", { className: "wrapper-icon-selector" },
             React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
         React.createElement(Style.ContainerPoper, { status: active, ref: ref },
-            React.createElement(Popover, { ref: ref }, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id, onClick: (event) => handleChangeActive(event, item) },
+            React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id, onClick: (event) => handleChangeActive(event, item) },
                 React.createElement(React.Fragment, null,
                     item.icon && item.icon,
                     item.image && React.createElement("img", { src: item.image, alt: "loading" }),
                     item[keyValue]))))))));
-};
+}
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiClock } from 'react-icons/all';
+import { FiClock } from 'react-icons/fi';
 import { Heading } from '../components';
 export default {
     title: 'Example/Heading',

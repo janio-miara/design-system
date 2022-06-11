@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiUserFill } from 'react-icons/all';
+import { RiUserFill } from 'react-icons/ri';
 import { Button } from '../components';
 export default {
     title: 'Example/Button',

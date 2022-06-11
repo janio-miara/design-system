@@ -14,6 +14,6 @@ import * as Style from './styles';
 export const Divisor = (_a) => {
     var props = __rest(_a, []);
     const { orientation } = props;
-    return (React.createElement(React.Fragment, null, orientation === 'vertical' ? React.createElement(Style.ContainerVertical, Object.assign({}, props)) : React.createElement(Style.ContainerHorizontal, Object.assign({}, props))));
+    return (React.createElement("span", null, orientation === 'vertical' ? React.createElement(Style.ContainerVertical, Object.assign({}, props)) : React.createElement(Style.ContainerHorizontal, Object.assign({}, props))));
 };
 //# sourceMappingURL=index.js.map

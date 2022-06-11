@@ -1,6 +1,8 @@
-declare const _default: import("@storybook/react").Meta<import("../types/textTypes").TextPros>;
+/// <reference types="react" />
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<({ color, children, element, size, transform, bold, ...props }: import("../types/textTypes").TextPros) => JSX.Element>;
 export default _default;
-export declare const Playground: import("@storybook/react").Story<import("../types/textTypes").TextPros>;
-export declare const TextContentStyle: import("@storybook/react").Story<import("../types/textTypes").TextPros>;
-export declare const TextContentSize: import("@storybook/react").Story<import("../types/textTypes").TextPros>;
+export declare const Playground: ComponentStory<({ color, children, element, size, transform, bold, ...props }: import("../types/textTypes").TextPros) => JSX.Element>;
+export declare const TextContentStyle: ComponentStory<({ color, children, element, size, transform, bold, ...props }: import("../types/textTypes").TextPros) => JSX.Element>;
+export declare const TextContentSize: ComponentStory<({ color, children, element, size, transform, bold, ...props }: import("../types/textTypes").TextPros) => JSX.Element>;
 //# sourceMappingURL=Text.stories.d.ts.map

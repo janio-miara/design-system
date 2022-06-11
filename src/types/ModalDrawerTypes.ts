@@ -8,4 +8,5 @@ export interface ModalDrawerProps {
   subTitle?: string
   notHeader?: boolean
   refScroll?: any
+  children?: any
 }

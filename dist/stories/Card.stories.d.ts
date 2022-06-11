@@ -1,4 +1,6 @@
-declare const _default: import("@storybook/react").Meta<any>;
+/// <reference types="react" />
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<any>;
 export default _default;
-export declare const Playground: import("@storybook/react").Story<import("../types/cardTypes").ICard>;
+export declare const Playground: ComponentStory<({ ...props }: import("../types/cardTypes").ICard) => JSX.Element>;
 //# sourceMappingURL=Card.stories.d.ts.map

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import * as S from './styles'
 import { Text } from '../Text'
 import { Button } from '../Button'
@@ -32,7 +32,7 @@ export const Modal = ({
           </div>
           {!offClose && (
             <div className="close">
-              <ButtonRadius onClick={close} size="small" icon={<FontAwesomeIcon icon={faTimes} />} />
+              <ButtonRadius onClick={close} size="small" icon={<FontAwesomeIcon icon={faTimes as any} />} />
             </div>
           )}
         </header>

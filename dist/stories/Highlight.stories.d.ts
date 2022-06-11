@@ -1,4 +1,6 @@
-declare const _default: import("@storybook/react").Meta<any>;
+/// <reference types="react" />
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<any>;
 export default _default;
-export declare const Playground: import("@storybook/react").Story<import("../components/Highlight").PropsHighlight>;
+export declare const Playground: ComponentStory<({ text, searchWords, color, size, fontWeight }: import("../components/Highlight").PropsHighlight) => JSX.Element>;
 //# sourceMappingURL=Highlight.stories.d.ts.map

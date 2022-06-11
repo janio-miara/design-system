@@ -1,5 +1,5 @@
-import React from 'react';
-declare const _default: import("@storybook/react").Meta<any>;
+import { ComponentMeta } from '@storybook/react';
+declare const _default: ComponentMeta<any>;
 export default _default;
-export declare const Playground: import("@storybook/react").Story<React.PropsWithChildren<import("../types/ModalDrawerTypes").ModalDrawerProps>>;
+export declare const Playground: any;
 //# sourceMappingURL=ModalDrawer.stories.d.ts.map

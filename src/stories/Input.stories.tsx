@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FaUser } from 'react-icons/fa'
 import { Input } from '../components'
 
 export default {
@@ -17,56 +17,61 @@ const InputIconContent: ComponentStory<typeof Input> = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', width: '700px', height: '500px', padding: '50px' }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '700px',
+        height: '500px',
+      }}
+    >
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+        }}
+      >
+        <Input
+          value={inputValue.name}
+          icon={<FaUser />}
+          onChange={handleValues}
+          id="name"
+          name="Primeiro Nome"
+          onClear
+          placeholder="Primeiro nome"
+        />
+        <Input
+          value={inputValue.name}
+          icon={<FaUser />}
+          onChange={handleValues}
+          type="password"
+          id="password"
+          name="Password"
+          onClear
+          placeholder="Primeiro nome"
+        />
+      </div>
+
       <Input
         value={inputValue.name}
-        icon={faUser}
         onChange={handleValues}
-        scapingHeight="small"
-        scapingWidth="small"
         id="name"
         name="Primeiro Nome"
         onClear
         placeholder="Primeiro nome"
+        error
+        messageError="Nome Invalido"
       />
       <Input
         value={inputValue.name}
-        icon={faUser}
         onChange={handleValues}
-        scapingHeight="small"
-        scapingWidth="small"
-        type="password"
-        id="password"
-        name="Password"
+        id="name"
+        name="Primeiro Nome"
         onClear
         placeholder="Primeiro nome"
+        error
+        messageError="Nome Invalido"
       />
-      <div>
-        <Input
-          value={inputValue.name}
-          onChange={handleValues}
-          scapingHeight="small"
-          scapingWidth="small"
-          id="name"
-          name="Primeiro Nome"
-          onClear
-          placeholder="Primeiro nome"
-          error
-          messageError="Nome Invalido"
-        />
-        <Input
-          value={inputValue.name}
-          onChange={handleValues}
-          scapingHeight="small"
-          scapingWidth="small"
-          id="name"
-          name="Primeiro Nome"
-          onClear
-          placeholder="Primeiro nome"
-          error
-          messageError="Nome Invalido"
-        />
-      </div>
     </div>
   )
 }
@@ -81,11 +86,11 @@ const InputIconErrorContent: ComponentStory<typeof Input> = () => {
   }
 
   return (
-    <div style={{ width: '500px', height: '500px', padding: '50px' }}>
+    <div style={{ width: '500px', height: '500px' }}>
       <Input
         value={inputValue.name}
         onChange={handleValues}
-        icon={faUser}
+        icon={<FaUser />}
         type="text"
         id="name"
         name="Primeiro Nome"

@@ -6,8 +6,17 @@ import { InputPropsSelect } from '../../types/inputTypes'
 import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
-export const InputSelect = ({ ...props }: InputPropsSelect) => {
-  const { icon, id, placeholder, label, keyValue, defaultValue, object, onChange } = props
+export function InputSelect({
+  icon,
+  id,
+  placeholder,
+  label,
+  keyValue,
+  defaultValue,
+  object,
+  onChange,
+  ...props
+}: InputPropsSelect) {
   const [active, setActive] = useState(false)
   const [value, setValue] = useState(defaultValue || '')
   const ref = useRef()
@@ -41,11 +50,11 @@ export const InputSelect = ({ ...props }: InputPropsSelect) => {
         </span>
       )}
       <span className="wrapper-icon-selector">
-        <FontAwesomeIcon icon={faCaretDown} />
+        <FontAwesomeIcon icon={faCaretDown as any} />
       </span>
 
       <Style.ContainerPoper status={active} ref={ref}>
-        <Popover ref={ref}>
+        <Popover>
           {object.map((item: any) => (
             <Style.ValueSelector key={item.id} onClick={(event: any) => handleChangeActive(event, item)}>
               <>

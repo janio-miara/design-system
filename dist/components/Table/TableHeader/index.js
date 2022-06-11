@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { RowHeaders } from './styles';
-const CellHeader = ({ children, align, width, action }) => {
+function CellHeader({ children, align, width, action }) {
     const [ordenBy, setOrdenBy] = useState(false);
     const toogleOrdenBy = () => {
         action();
@@ -13,6 +13,6 @@ const CellHeader = ({ children, align, width, action }) => {
             children,
             action && !ordenBy && React.createElement(FontAwesomeIcon, { icon: faCaretDown }),
             action && ordenBy && React.createElement(FontAwesomeIcon, { icon: faCaretUp }))));
-};
+}
 export default CellHeader;
 //# sourceMappingURL=index.js.map

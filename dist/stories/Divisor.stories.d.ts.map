@@ -1,1 +1,1 @@
-{"version":3,"file":"Divisor.stories.d.ts","sourceRoot":"","sources":["../../src/stories/Divisor.stories.tsx"],"names":[],"mappings":";AAIA,wBAGwC;AASxC,eAAO,MAAM,UAAU,gFAA6B,CAAA"}
+{"version":3,"file":"Divisor.stories.d.ts","sourceRoot":"","sources":["../../src/stories/Divisor.stories.tsx"],"names":[],"mappings":";AACA,OAAO,EAAE,cAAc,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAA;;AAGhE,wBAGwC;AASxC,eAAO,MAAM,UAAU,6FAA6B,CAAA"}

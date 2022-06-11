@@ -16,13 +16,19 @@ const InputSelectContent: ComponentStory<typeof InputSelectOutline> = () => {
     { id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' },
     { id: 3, value: 'Joao', sobrenome: 'Martins' },
   ]
-
+  const deleteItem = (id: number) => {
+    const newObject = object.filter(item => item.id !== id)
+    setInputValue(newObject[0])
+  }
   useEffect(() => {
     console.log(inputValue)
   }, [inputValue])
 
   return (
     <div style={{ width: '200px', height: '500px', padding: '50px' }}>
+      <button type="button" onClick={() => setInputValue({ id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' })}>
+        Selecionar
+      </button>
       <InputSelectOutline
         keyValue="sobrenome"
         object={object}

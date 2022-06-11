@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { BiHelpCircle } from 'react-icons/all';
+import { BiHelpCircle } from 'react-icons/bi';
 import { Button, ModalDrawer } from '../components';
 export default {
     title: 'Example/ModalDrawer',
     component: ModalDrawer,
 };
-const PlaygroundContent = args => {
+// eslint-disable-next-line react/function-component-definition
+const PlaygroundContent = (args) => {
     const [open, setOpen] = useState(false);
     return (React.createElement(React.Fragment, null,
         React.createElement(Button, { onClick: () => setOpen(true) }, "Open side filter"),

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { RiUserFill } from 'react-icons/all'
+import { RiUserFill } from 'react-icons/ri'
 
 import { ButtonRadius } from '../components'
 

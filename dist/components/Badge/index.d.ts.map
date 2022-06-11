@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/components/Badge/index.tsx"],"names":[],"mappings":";AAGA,UAAU,KAAK;IACb,QAAQ,EAAE,MAAM,GAAG,MAAM,CAAA;CAC1B;AAED,eAAO,MAAM,KAAK,iBAAkB,KAAK,gBAExC,CAAA"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/components/Badge/index.tsx"],"names":[],"mappings":";AAGA,eAAO,MAAM,KAAK,aAAc,GAAG,gBAElC,CAAA"}

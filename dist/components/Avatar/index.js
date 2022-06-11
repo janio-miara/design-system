@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Wrapper } from './styles';
+import * as Styles from './styles';
 export const Avatar = ({ active, name }) => {
     const handleName = () => {
         const newName = name.split(' ');
@@ -8,7 +8,7 @@ export const Avatar = ({ active, name }) => {
         }
         return newName[0].substr(0, 2);
     };
-    return (React.createElement(Container, null,
-        React.createElement(Wrapper, { active: active }, handleName())));
+    return (React.createElement(Styles.Container, null,
+        React.createElement(Styles.Wrapper, { active: active }, handleName())));
 };
 //# sourceMappingURL=index.js.map

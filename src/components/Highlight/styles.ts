@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { darken } from 'polished'
 import { theme } from '../Themes'
 import { colorTypes } from '../../types/colorTypes'
 import { sizeText } from '../../types/sizeTypes'

@@ -1,5 +1,5 @@
-import { ReactChild, ReactChildren } from 'react';
+import { ReactNode } from 'react';
 export interface IChildTypes {
-    children: ReactChild | ReactChild[] | ReactChildren | ReactChildren[];
+    children: ReactNode | ReactNode[] | any;
 }
 //# sourceMappingURL=childrenTypes.d.ts.map

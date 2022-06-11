@@ -8,7 +8,7 @@ import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal'
 
-export const ModalDrawer: React.FC<ModalDrawerProps> = props => {
+export function ModalDrawer(props: any) {
   const { open, close, title, subTitle, icon, children, action, notHeader, side, refScroll } = props
   const ref: any = useRef()
 

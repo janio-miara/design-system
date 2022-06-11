@@ -12,10 +12,15 @@ const InputSelectContent = () => {
         { id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' },
         { id: 3, value: 'Joao', sobrenome: 'Martins' },
     ];
+    const deleteItem = (id) => {
+        const newObject = object.filter(item => item.id !== id);
+        setInputValue(newObject[0]);
+    };
     useEffect(() => {
         console.log(inputValue);
     }, [inputValue]);
     return (React.createElement("div", { style: { width: '200px', height: '500px', padding: '50px' } },
+        React.createElement("button", { type: "button", onClick: () => setInputValue({ id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' }) }, "Selecionar"),
         React.createElement(InputSelectOutline, { keyValue: "sobrenome", object: object, defaultValue: inputValue, onChange: setInputValue, icon: faUser, id: "name", label: "Primeiro Nome", variant: "medium", placeholder: "Primeiro nome" })));
 };
 export const InputSelectOutli = InputSelectContent.bind({});

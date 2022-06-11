@@ -1,4 +1,6 @@
-declare const _default: import("@storybook/react").Meta<import("../types/inputTypes").InputPropsSelect>;
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { InputSelectOutline } from '../components';
+declare const _default: ComponentMeta<typeof InputSelectOutline>;
 export default _default;
-export declare const InputSelectOutli: import("@storybook/react").Story<import("../types/inputTypes").InputPropsSelect>;
+export declare const InputSelectOutli: ComponentStory<typeof InputSelectOutline>;
 //# sourceMappingURL=InputSelectOutline.stories.d.ts.map

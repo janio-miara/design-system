@@ -28,6 +28,20 @@ export const ContainerInput = styled.div<status>`
   position: relative;
   display: flex;
   align-items: center;
+  .popover-content {
+    overflow-y: auto;
+    font-family: ${theme.fonts.join()};
+    z-index: ${theme.zIndex.z4};
+    margin-top: ${theme.spacing.space1};
+    border-radius: ${theme.spacing.space2};
+    box-shadow: ${theme.shadow.shad1};
+    border: 1px solid ${theme.colors.shade30};
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
 
   .wrapper-label {
     position: absolute;
@@ -43,10 +57,19 @@ export const ContainerInput = styled.div<status>`
   }
 
   .wrapper-badge-selector {
+    background: ${theme.colors.honey40};
+    border-radius: 50%;
     transition: transform 0.3s;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #eeeeee;
     right: 24px;
     position: absolute;
-    padding-right: ${theme.spacing.space3};
+    margin-right: ${theme.spacing.space2};
   }
 
   .wrapper-icon-selector {
@@ -118,6 +141,21 @@ export const ContainerPoper = styled.div<status>`
   top: 45px;
   width: 100%;
   z-index: 10;
+
+  .popover-content {
+    overflow-y: auto;
+    font-family: ${theme.fonts.join()};
+    z-index: ${theme.zIndex.z4};
+    margin-top: ${theme.spacing.space1};
+    border-radius: ${theme.spacing.space2};
+    box-shadow: ${theme.shadow.shad1};
+    border: 1px solid ${theme.colors.shade30};
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export const ValueSelector = styled.div`

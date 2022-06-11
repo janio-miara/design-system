@@ -9,28 +9,17 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import { Text } from '../Text';
+import React from 'react';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 import * as Style from './styles';
 export const Input = (_a) => {
-    var { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type, scapingWidth, scapingHeight } = _a, props = __rest(_a, ["icon", "onChange", "value", "id", "onClear", "placeholder", "name", "messageError", "error", "type", "scapingWidth", "scapingHeight"]);
-    const [active, setActive] = useState(false);
-    const handleClearValue = (event) => {
-        event.stopPropagation();
-        onChange({ id, value: '' });
-        setActive(false);
-    };
-    return (React.createElement(React.Fragment, null,
-        React.createElement(Style.ContainerInput, { onBlur: () => active && setActive(false), onClick: () => setActive(true), scapingWidth: scapingWidth, scapingHeight: scapingHeight },
-            React.createElement("span", { className: "wrapper-label" }, (active || value) && name),
-            React.createElement(Style.WrapperInput, Object.assign({ error: error, icon: icon }, props, { autoComplete: "off", id: id, type: type || 'text', placeholder: !active ? placeholder : '', value: value, onChange: (e) => onChange(e.target) })),
-            icon && (React.createElement("span", { className: "wrapper-icon" },
-                React.createElement(FontAwesomeIcon, { icon: icon }))),
-            value && onClear && (React.createElement("span", { className: "wrapper-icon-close" },
-                React.createElement(FontAwesomeIcon, { icon: faTimesCircle, onClick: (event) => handleClearValue(event) })))),
-        error && messageError && (React.createElement(Style.WrapperMessage, null,
-            React.createElement(Text, { color: "error", size: "p4", element: "p" }, messageError)))));
+    var { icon, onChange, value, id, onClear, placeholder, name, messageError, error, type } = _a, props = __rest(_a, ["icon", "onChange", "value", "id", "onClear", "placeholder", "name", "messageError", "error", "type"]);
+    return (React.createElement(Style.ContainerInput, { error: error },
+        value && React.createElement("div", { className: "wrapper-label" }, name),
+        React.createElement(Style.WrapperInput, Object.assign({ icon: icon, error: error }, props, { id: id, type: type || 'text', placeholder: placeholder, value: value, onChange: (e) => onChange(e.target) })),
+        icon && React.createElement("div", { className: "wrapper-icon" }, icon),
+        value && onClear && (React.createElement("button", { type: "button", className: "wrapper-icon-close", onClick: () => onChange({ id, name, value: '' }) },
+            React.createElement(AiOutlineCloseCircle, null))),
+        error && React.createElement(Style.WrapperMessage, null, messageError)));
 };
 //# sourceMappingURL=index.js.map

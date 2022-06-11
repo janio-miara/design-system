@@ -14,48 +14,18 @@ export const changeSize = {
     font-size: ${theme.fontSizes.p3};
   `,
 };
-export const changeScapingHeight = {
-    small: css `
-    margin-top: ${theme.spacing.space3};
-    margin-bottom: ${theme.spacing.space3};
-  `,
-    medium: css `
-    margin-top: ${theme.spacing.space3};
-    margin-bottom: ${theme.spacing.space3};
-  `,
-    large: css `
-    margin-top: ${theme.spacing.space4};
-    margin-bottom: ${theme.spacing.space4};
-  `,
-};
-export const changeScapingWidth = {
-    small: css `
-    margin-left: ${theme.spacing.space2};
-    margin-right: ${theme.spacing.space2};
-  `,
-    medium: css `
-    margin-left: ${theme.spacing.space3};
-    margin-right: ${theme.spacing.space3};
-  `,
-    large: css `
-    margin-left: ${theme.spacing.space5};
-    margin-right: ${theme.spacing.space5};
-  `,
-};
 export const ContainerInput = styled.div `
+  display: flex;
+  flex-direction: column;
   font-family: ${theme.fonts.join()};
   width: 100%;
-  height: 40px;
-  display: flex;
+  height: 60px;
   position: relative;
-  margin-top: ${theme.spacing.space3};
-  margin-bottom: ${theme.spacing.space3};
-  ${({ scapingWidth }) => scapingWidth && changeScapingWidth[scapingWidth]};
-  ${({ scapingHeight }) => scapingHeight && changeScapingHeight[scapingHeight]}
+  margin-bottom: ${({ error }) => (error ? theme.spacing.space2 : '0px')};
 
   .wrapper-label {
     position: absolute;
-    color: ${theme.colors.shade50};
+    color: ${theme.colors.shade40};
     font-size: 13px;
     left: 14px;
     top: -${theme.spacing.space2};
@@ -77,6 +47,8 @@ export const ContainerInput = styled.div `
       cursor: pointer;
       transform: scale(1.03);
     }
+    border: none;
+    background: transparent;
   }
   .wrapper-icon {
     position: absolute;
@@ -88,14 +60,13 @@ export const ContainerInput = styled.div `
   }
 `;
 export const WrapperInput = styled.input `
-  width: 100%;
   margin: 0;
   min-width: 65px;
   border-radius: ${theme.spacing.space2};
   background: white;
   border: 1px solid transparent;
   box-shadow: ${({ error }) => (!error ? theme.colors.shade40 : theme.colors.red40)} 0 0 0 1.2px inset;
-  color: ${theme.colors.shade70};
+  color: ${theme.colors.shade80};
   ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
   padding-left: ${({ icon }) => (icon ? '40px' : '16px')};
   padding-right: ${({ onClear }) => (onClear ? '40px' : '16px')};
@@ -124,9 +95,9 @@ export const WrapperInput = styled.input `
   }
 `;
 export const WrapperMessage = styled.div `
-  height: 10px;
-  margin-top: -10px;
-  margin-left: ${theme.spacing.space2};
-  margin-bottom: 16px;
+  color: ${theme.colors.red40};
+  font-size: 12px;
+  margin-bottom: ${theme.spacing.space4};
+  margin-left: ${theme.spacing.space3};
 `;
 //# sourceMappingURL=styles.js.map

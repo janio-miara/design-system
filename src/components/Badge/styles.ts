@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components'
 import { theme } from '../Themes'
+import { IChildTypes } from '../../types/childrenTypes'
 
 interface PropsBadge {
   color?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning'
+  children?: IChildTypes
 }
 
 const colorBadge = {

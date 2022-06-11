@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Wrapper } from './styles'
+import * as Styles from './styles'
 
 interface AvatarProps {
   active?: boolean
@@ -16,8 +16,8 @@ export const Avatar = ({ active, name }: AvatarProps) => {
   }
 
   return (
-    <Container>
-      <Wrapper active={active}>{handleName()}</Wrapper>
-    </Container>
+    <Styles.Container>
+      <Styles.Wrapper active={active}>{handleName()}</Styles.Wrapper>
+    </Styles.Container>
   )
 }

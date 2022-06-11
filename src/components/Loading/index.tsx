@@ -8,20 +8,20 @@ export interface LoadingProps {
   active: boolean
 }
 
-export const Loading = ({ active }: LoadingProps) => {
+export function Loading({ active }: LoadingProps) {
   if (!active) return null
   return (
-    <>
+    <span>
       {active && (
         <Overlay>
           <Container>
-            <FontAwesomeIcon icon={faSpinner} size="2x" spin />
+            <FontAwesomeIcon icon={faSpinner as any} size="2x" spin />
             <Text size="p3" color="default">
               CARREGANDO
             </Text>
           </Container>
         </Overlay>
       )}
-    </>
+    </span>
   )
 }

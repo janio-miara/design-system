@@ -14,10 +14,10 @@ import { Button } from '../Button';
 import { Text } from '../Text';
 import * as Style from './styles';
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal';
-export const ModalDrawer = props => {
+export function ModalDrawer(props) {
     const { open, close, title, subTitle, icon, children, action, notHeader, side, refScroll } = props;
     const ref = useRef();
-    const closeModal = () => __awaiter(void 0, void 0, void 0, function* () {
+    const closeModal = () => __awaiter(this, void 0, void 0, function* () {
         yield animationCloseSideModal(ref.current, side);
         if (close)
             close();
@@ -37,5 +37,5 @@ export const ModalDrawer = props => {
                     action && action(),
                     React.createElement(Button, { size: "small", outlined: true, color: "primary", onClick: closeModal }, "Fechar")))), document.body)
         : null;
-};
+}
 //# sourceMappingURL=index.js.map

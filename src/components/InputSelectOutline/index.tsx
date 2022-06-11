@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import * as Style from './styles'
@@ -6,7 +6,7 @@ import { InputPropsSelect } from '../../types/inputTypes'
 import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
-export const InputSelectOutline = ({
+export function InputSelectOutline({
   icon,
   id,
   placeholder,
@@ -15,10 +15,16 @@ export const InputSelectOutline = ({
   object,
   onChange,
   ...props
-}: InputPropsSelect) => {
+}: InputPropsSelect) {
   const [active, setActive] = useState<boolean>(false)
   const [value, setValue] = useState(defaultValue || '')
   const ref = useRef()
+
+  useEffect(() => {
+    if (defaultValue) {
+      setValue(defaultValue)
+    }
+  }, [defaultValue])
 
   const handleChangeActive = (event: any, item: any) => {
     event.stopPropagation()
@@ -30,7 +36,7 @@ export const InputSelectOutline = ({
   useOnClickOutside(ref, () => setActive(false))
 
   return (
-    <>
+    <span>
       <Style.ContainerInput status={active} onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
         <Style.WrapperInput
           icon={icon}
@@ -49,7 +55,7 @@ export const InputSelectOutline = ({
           </span>
         )}
         <span className="wrapper-icon-selector">
-          <FontAwesomeIcon icon={faCaretDown} />
+          <FontAwesomeIcon icon={faCaretDown as any} />
         </span>
 
         <Style.ContainerPoper status={active} ref={ref}>
@@ -67,6 +73,6 @@ export const InputSelectOutline = ({
           <div>Empresa Selecionada</div>
         </Style.WrapperMessage>
       )}
-    </>
+    </span>
   )
 }

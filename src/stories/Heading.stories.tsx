@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { FiClock } from 'react-icons/all'
+import { FiClock } from 'react-icons/fi'
 import { Heading } from '../components'
 
 export default {

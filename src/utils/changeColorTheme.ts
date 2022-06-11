@@ -32,7 +32,7 @@ const changeBackground = {
     color: ${theme.colors.white};
   `,
   lightDark: css`
-    background: ${theme.colors.shade50};
+    background: ${theme.colors.shade30};
     color: ${theme.colors.white};
   `,
   dark: css`

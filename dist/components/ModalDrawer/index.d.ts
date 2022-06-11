@@ -1,4 +1,3 @@
 import React from 'react';
-import { ModalDrawerProps } from '../../types/ModalDrawerTypes';
-export declare const ModalDrawer: React.FC<ModalDrawerProps>;
+export declare function ModalDrawer(props: any): React.ReactPortal | null;
 //# sourceMappingURL=index.d.ts.map

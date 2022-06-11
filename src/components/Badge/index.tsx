@@ -1,10 +1,6 @@
 import React from 'react'
 import { SmallBadge } from './styles'
 
-interface Props {
-  children: string | number
-}
-
-export const Badge = ({ children }: Props) => {
+export const Badge = (children: any) => {
   return <SmallBadge>{children}</SmallBadge>
 }
