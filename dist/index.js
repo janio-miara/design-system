@@ -23,4 +23,5 @@ export { Loading } from './components/Loading/index';
 export { Tabs } from './components/Tabs/index';
 export { Table } from './components/Table/index';
 export { TextArea } from './components/TextArea/index';
+export { Datepicker } from './components/Datepicker/index';
 //# sourceMappingURL=index.js.map

@@ -1,3 +1,4 @@
+export { Datepicker } from './Datepicker/index';
 export { Switch } from './Switch/index';
 export { Button } from './Button/index';
 export { Text } from './Text/index';
