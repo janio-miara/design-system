@@ -1,106 +1,51 @@
 import React, { useState } from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, Meta } from '@storybook/react'
 import { FaUser } from 'react-icons/fa'
 import { Input } from '../components'
+import { InputProps } from '../types/inputTypes'
 
 export default {
   title: 'Example/Input ',
   component: Input,
-} as ComponentMeta<typeof Input>
+  args: {
+    id: 'name',
+    variant: 'small',
+    placeholder: 'Nome Completo',
+    name: 'full-name',
+    error: false,
+    type: 'text',
+    messageError: 'Digita direito',
+    value: '',
+    icon: <FaUser />,
+  },
+  argTypes: {
+    icon: {
+      type: 'symbol',
+    },
+  },
+} as Meta<InputProps>
 
-const InputIconContent: ComponentStory<typeof Input> = () => {
+export const Default: Story<InputProps> = args => {
   const [inputValue, setInputValue] = useState({ name: '' })
 
   const handleValues = (target: any) => {
     const { id, value } = target
     setInputValue({ ...inputValue, [id]: value })
   }
-
   return (
     <div
       style={{
-        display: 'flex',
         flexDirection: 'column',
-        width: '700px',
-        height: '500px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100vh',
       }}
     >
-      <div
-        style={{
-          width: '100%',
-          display: 'flex',
-        }}
-      >
-        <Input
-          value={inputValue.name}
-          icon={<FaUser />}
-          onChange={handleValues}
-          id="name"
-          name="Primeiro Nome"
-          onClear
-          placeholder="Primeiro nome"
-        />
-        <Input
-          value={inputValue.name}
-          icon={<FaUser />}
-          onChange={handleValues}
-          type="password"
-          id="password"
-          name="Password"
-          onClear
-          placeholder="Primeiro nome"
-        />
+      <div style={{ width: '250px' }}>
+        <Input {...args} value={inputValue.name} onChange={handleValues} />
       </div>
-
-      <Input
-        value={inputValue.name}
-        onChange={handleValues}
-        id="name"
-        name="Primeiro Nome"
-        onClear
-        placeholder="Primeiro nome"
-        error
-        messageError="Nome Invalido"
-      />
-      <Input
-        value={inputValue.name}
-        onChange={handleValues}
-        id="name"
-        name="Primeiro Nome"
-        onClear
-        placeholder="Primeiro nome"
-        error
-        messageError="Nome Invalido"
-      />
     </div>
   )
 }
-export const InputIcon = InputIconContent.bind({})
-
-const InputIconErrorContent: ComponentStory<typeof Input> = () => {
-  const [inputValue, setInputValue] = useState({ name: '' })
-
-  const handleValues = (target: any) => {
-    const { id, value } = target
-    setInputValue({ ...inputValue, [id]: value })
-  }
-
-  return (
-    <div style={{ width: '500px', height: '500px' }}>
-      <Input
-        value={inputValue.name}
-        onChange={handleValues}
-        icon={<FaUser />}
-        type="text"
-        id="name"
-        name="Primeiro Nome"
-        onClear
-        variant="medium"
-        placeholder="Primeiro nome"
-        error
-        messageError="Nome Invalido"
-      />
-    </div>
-  )
-}
-export const InputIconError = InputIconErrorContent.bind({})
