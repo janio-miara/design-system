@@ -24,13 +24,24 @@ export function InputSelect({
     event.stopPropagation()
     setValue(item)
     onChange(item)
-    setActive(false)
+    setActive(!active)
   }
 
   useOnClickOutside(ref, () => setActive(false))
 
+  const handleClick = () => {
+    setActive(!active)
+  }
+
+  const changeBackground = (select: string, value: string) => {
+    if (select === value) {
+      return 'selected'
+    }
+    return 'not-select'
+  }
+
   return (
-    <Style.ContainerInput status={active} onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
+    <Style.ContainerInput status={active} ref={ref} onBlur={() => active && setActive(false)} onClick={handleClick}>
       <span className="wrapper-label">{(active || value) && label}</span>
       <Style.WrapperInput
         {...props}
@@ -53,10 +64,15 @@ export function InputSelect({
         <FontAwesomeIcon icon={faCaretDown as any} />
       </span>
 
-      <Style.ContainerPoper status={active} ref={ref}>
+      <Style.ContainerPoper status={active}>
         <Popover>
           {object.map((item: any) => (
-            <Style.ValueSelector key={item.id} onClick={(event: any) => handleChangeActive(event, item)}>
+            <Style.ValueSelector
+              id={item.id}
+              className={changeBackground(item.value, value.value)}
+              key={item.id}
+              onClick={(event: any) => handleChangeActive(event, item)}
+            >
               <>
                 {item.icon && item.icon}
                 {item.image && <img src={item.image} alt="loading" />}
