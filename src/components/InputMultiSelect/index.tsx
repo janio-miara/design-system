@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { AiOutlineCaretDown } from 'react-icons/ai'
 import * as Style from './styles'
 import { InputPropsSelect } from '../../types/inputTypes'
-import { Badge, Checkbox, Popover } from '..'
+import { Checkbox, Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 export function InputMultiSelect({
@@ -27,38 +27,37 @@ export function InputMultiSelect({
     if (defaultValue) {
       setValue(
         value?.map((el: any) => {
-          return { ...el, check: !!defaultValue.find((ell: any) => el.id === ell) }
+          return { ...el, checked: !!defaultValue.find((ell: any) => el.id === ell) }
         }),
       )
     }
   }, [])
 
-  const handleChangeActiveNew = (checked: any, item: any) => {
-    console.log(checked, item)
+  const handleChangeActiveNew = (check: any, item: any) => {
     if (activeAll) {
       setActiveAll(false)
     }
-    const newValue = value?.map((el: any) => (el.id === item.id ? { ...el, check: checked } : { ...el }))
-    const dados = newValue.filter((object: any) => object.check)
+    const newValue = value?.map((el: any) => (el.id === item.id ? { ...el, checked: check } : { ...el }))
+    const dados = newValue.filter((object: any) => object.checked)
     onChange(dados)
     setValue(newValue)
   }
 
   const handleCount = () => {
-    return value.filter((objects: any) => objects.check).map((el: any) => el[keyValue]).length
+    return value.filter((objects: any) => objects.checked).map((el: any) => el[keyValue]).length
   }
 
   const handleSelectAll = () => {
-    const newValue = value?.map((el: any) => (!el.disabled ? { ...el, check: !activeAll } : el))
+    const newValue = value?.map((el: any) => (!el.disabled ? { ...el, checked: !activeAll } : el))
     setValue(newValue)
-    const dados = newValue.filter((object: any) => object.check)
+    const dados = newValue.filter((object: any) => object.checked)
     onChange(dados)
     setActiveAll(!activeAll)
   }
 
   const handleTratamentoValue = () => {
     return value
-      .filter((object: any) => object.check)
+      .filter((object: any) => object.checked)
       .map((el: any) => el[keyValue])
       .join(', ')
   }
@@ -69,32 +68,44 @@ export function InputMultiSelect({
 
   useOnClickOutside(ref, closeInput)
 
+  const handleClose = () => {
+    if (active === true) {
+      setActive(false)
+    } else if (active === false) {
+      setActive(true)
+    }
+  }
+
+  console.log(value)
+
   return (
-    <Style.ContainerInput status={active} onClick={() => setActive(true)}>
-      <span className="wrapper-label">{(active || value) && label}</span>
-      <Style.WrapperInput
-        icon={icon}
-        id={id}
-        disabled
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        value={handleTratamentoValue()}
-        placeholder={!active ? placeholder : ''}
-        onChange={onChange}
-      />
-      {icon && (
-        <span className="wrapper-icon">
-          <FontAwesomeIcon icon={icon} />
+    <Style.ContainerInput ref={ref} status={active}>
+      <Style.ContentInput onClick={handleClose}>
+        <span className="wrapper-label">{(active || value) && label}</span>
+        <Style.WrapperInput
+          icon={icon}
+          id={id}
+          disabled
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          value={handleTratamentoValue()}
+          placeholder={!active ? placeholder : ''}
+          onChange={onChange}
+        />
+        {icon && (
+          <span className="wrapper-icon">
+            <FontAwesomeIcon icon={icon} />
+          </span>
+        )}
+        {handleCount() >= 2 && <div className="wrapper-badge-selector">{handleCount()}</div>}
+
+        <span className="wrapper-icon-selector">
+          <AiOutlineCaretDown />
         </span>
-      )}
-      {handleCount() >= 2 && <div className="wrapper-badge-selector">{handleCount()}</div>}
+      </Style.ContentInput>
 
-      <span className="wrapper-icon-selector">
-        <FontAwesomeIcon icon={faCaretDown as any} />
-      </span>
-
-      <Style.ContainerPoper status={active} ref={ref}>
+      <Style.ContainerPoper status={active}>
         <Popover height={height}>
           <div>
             <Style.ValueSelector>
@@ -105,11 +116,12 @@ export function InputMultiSelect({
               value.map((item: any) => (
                 <Style.ValueSelector key={item.id}>
                   <Checkbox
+                    id={item.id}
                     disabled={item?.disabled}
-                    checked={item.check}
-                    onChange={(checked: boolean) => handleChangeActiveNew(checked, item)}
+                    checked={item.checked}
+                    onChange={(check: boolean) => handleChangeActiveNew(check, item)}
                   />
-                  {item[keyValue]}
+                  <label htmlFor={item.id}>{item[keyValue]}</label>
                 </Style.ValueSelector>
               ))}
           </div>

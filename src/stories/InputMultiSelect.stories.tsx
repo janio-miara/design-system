@@ -12,12 +12,12 @@ const InputSelectContent: ComponentStory<typeof InputMultiSelect> = () => {
   const object = [
     {
       id: 1,
-      check: false,
+      checked: false,
       value: 'Janio',
       sobrenome: 'Miara Tadeu Ribeiro Fernando Suares',
     },
-    { id: 2, check: false, value: 'Marcelo', sobrenome: 'Ribeiro' },
-    { id: 3, check: true, value: 'Joao', sobrenome: 'Martins' },
+    { id: 2, checked: false, value: 'Marcelo', sobrenome: 'Ribeiro' },
+    { id: 3, checked: true, value: 'Joao', sobrenome: 'Martins' },
   ]
 
   return (
