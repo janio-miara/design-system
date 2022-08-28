@@ -9,15 +9,26 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from 'react';
-import { FaSpinner } from 'react-icons/fa';
-import * as Style from './styles';
-export const Button = (_a) => {
-    var { loading, icon, children, disabled } = _a, props = __rest(_a, ["loading", "icon", "children", "disabled"]);
-    return (React.createElement(Style.ContainerButton, Object.assign({ disabled: disabled }, props),
-        loading && (React.createElement("span", { className: "spinner" },
-            React.createElement(FaSpinner, null))),
-        React.createElement("span", { className: "icon-button" }, icon),
-        React.createElement("span", null, children)));
+/* eslint-disable no-undef */
+import React, { forwardRef } from 'react';
+import Lottie from 'react-lottie';
+import load from './load.json';
+import * as S from './styles';
+const Button = (_a, ref) => {
+    var { children, icon, size = 'medium', fullWidth = false, minimal = false, background = 'primary', disable = false, loading = false } = _a, props = __rest(_a, ["children", "icon", "size", "fullWidth", "minimal", "background", "disable", "loading"]);
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: load,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+    return (React.createElement(S.Wrapper, Object.assign({ background: background, size: size, fullWidth: fullWidth, hasIcon: !!icon, minimal: minimal, ref: ref, disabled: disable }, props),
+        loading && (React.createElement("div", { className: "animateBx" },
+            React.createElement(Lottie, { options: defaultOptions, height: 60, width: "100%" }))),
+        !loading && icon,
+        !!children && React.createElement("span", null, children)));
 };
+export default forwardRef(Button);
 //# sourceMappingURL=index.js.map

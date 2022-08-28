@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { theme } from '../Themes';
 export const changeSize = {
     small: css `
@@ -14,14 +14,37 @@ export const changeSize = {
     font-size: ${theme.fontSizes.p3};
   `,
 };
+export const changeSizeMessage = {
+    small: css `
+    height: 20px;
+    max-height: 20px;
+  `,
+    medium: css `
+    height: 25px;
+    max-height: 25px;
+  `,
+    large: css `
+    height: 30px;
+    max-height: 30px;
+  `,
+};
+const fadeIn = keyframes `
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 40px;
+  }
+`;
 export const ContainerInput = styled.div `
   display: flex;
   flex-direction: column;
   font-family: ${theme.fonts.join()};
   width: 100%;
-  height: 60px;
   position: relative;
   margin-bottom: ${({ error }) => (error ? theme.spacing.space2 : '0px')};
+  transition: 0.5s;
+  min-height: 60px;
 
   .wrapper-label {
     position: absolute;
@@ -65,6 +88,7 @@ export const WrapperInput = styled.input `
   border-radius: ${theme.spacing.space2};
   background: white;
   border: 1px solid transparent;
+  border-bottom: none;
   box-shadow: ${({ error }) => (!error ? theme.colors.shade40 : theme.colors.red40)} 0 0 0 1.2px inset;
   color: ${theme.colors.shade80};
   ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
@@ -96,8 +120,19 @@ export const WrapperInput = styled.input `
 `;
 export const WrapperMessage = styled.div `
   color: ${theme.colors.red40};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 12px;
-  margin-bottom: ${theme.spacing.space4};
-  margin-left: ${theme.spacing.space3};
+  background: ${theme.colors.red20};
+  width: calc(100% - 32px);
+  padding: 6px 16px 0;
+  animation: 1.5s ${fadeIn} ease 0s;
+  opacity: ${({ error }) => (error ? '0' : '1')};
+  margin: -6px 0;
+  z-index: -1;
+  transition: 1s;
+  border-radius: 0 0 8px 8px;
+  ${({ variant }) => (variant ? changeSizeMessage[variant] : changeSizeMessage.medium)};
 `;
 //# sourceMappingURL=styles.js.map

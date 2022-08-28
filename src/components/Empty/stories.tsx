@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import Empty, { EmptyProps } from '../components/Empty'
+import Empty, { EmptyProps } from '.'
 
 export default {
   title: 'Empty',

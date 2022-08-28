@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import * as S from './styles';
 import { Text } from '../Text';
-import { Button } from '../Button';
+import Button from '../Button';
 import { ButtonRadius } from '../ButtonRadius';
 export const Modal = (_a) => {
     var { icon, actionClick, textAction, open, title, size, close, children, offClose } = _a, props = __rest(_a, ["icon", "actionClick", "textAction", "open", "title", "size", "close", "children", "offClose"]);
@@ -30,6 +30,6 @@ export const Modal = (_a) => {
             React.createElement("div", { className: "body" }, children),
             React.createElement("footer", null,
                 actionClick && (React.createElement(Button, { color: "primary", size: "small", onClick: actionClick }, textAction || 'Salvar')),
-                !offClose && (React.createElement(Button, { size: "small", color: "primary", outlined: true, onClick: close }, "Fechar"))))), document.body);
+                !offClose && (React.createElement(Button, { size: "small", color: "primary", minimal: true, onClick: close }, "Fechar"))))), document.body);
 };
 //# sourceMappingURL=index.js.map

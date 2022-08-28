@@ -1,69 +1,103 @@
-import styled, { css } from 'styled-components'
-import { theme } from '../Themes'
-import { ButtonProps } from '../../types/buttonTypes'
-import { changeBackground, changeColorOutlined } from '../../utils/changeColorTheme'
+import styled, { css, keyframes } from 'styled-components'
 
-export const changeSize = {
-  small: css`
-    font-size: 12px;
-    padding: 8px 12px;
+import { ButtonProps } from '.'
+import { theme } from '../Themes'
+
+export type WrapperProps = {
+  hasIcon: boolean
+} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal' | 'background'>
+
+const wrapperModifiers = {
+  small: () => css`
+    font-size: 1.2rem;
+    padding: 5px 20px;
   `,
-  medium: css`
-    font-size: 14px;
-    padding: 10px ${theme.spacing.space3};
+  medium: () => css`
+    font-size: 1.2rem;
+    padding: ${theme.spacing.space2} ${theme.spacing.space4};
   `,
-  large: css`
-    font-size: 16px;
-    padding: 12px ${theme.spacing.space4};
+  large: () => css`
+    font-size: 1.2rem;
+    padding: ${theme.spacing.space2} ${theme.spacing.space5};
+  `,
+  fullWidth: () => css`
+    width: 100%;
+  `,
+  withIcon: () => css`
+    svg {
+      width: 1.5rem;
+
+      & + span {
+        margin-left: 8px;
+      }
+    }
+  `,
+  minimal: () => css`
+    background: none;
+    color: red;
+
+    &:hover {
+      color: red;
+    }
+  `,
+  disabled: () => css`
+    &:disabled {
+      cursor: not-allowed;
+      filter: saturate(30%);
+    }
   `,
 }
 
-export const ContainerButton = styled.button<ButtonProps>`
-  color: white;
-  font-family: ${theme.fonts.join()};
-  font-weight: 700;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  line-height: 1;
-  ${({ size }) => changeSize[size || 'medium']};
-  border: ${({ outlined }) => (outlined ? '1px solid' : '0')};
-  ${({ outlined, color }) => outlined && changeColorOutlined[color || 'primary']};
-  ${({ color, outlined }) => !outlined && changeBackground[color || 'primary']};
-  transition: transform 0.2s;
-  svg {
-    font-size: 12px;
-    margin-right: ${theme.spacing.space2};
+const fadeIn = keyframes`
+  0% {
+    height: 0;
+    margin-top: 0px;
+    opacity: 0;
   }
-  &:hover:not(:disabled) {
-    transform: scale(1.02);
-    box-shadow: ${theme.shadow.shad1};
+  100% {
+    height: 40px;
+    margin-top: -20px;
   }
-  &:active:not(:disabled) {
-    transform: scale(1.02);
-    box-shadow: ${theme.shadow.shad1};
-    opacity: 0.8;
-  }
+`
 
-  &:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
+export const Wrapper = styled.button<WrapperProps>`
+  ${({ size, fullWidth, hasIcon, minimal, disabled, background }) => css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: ${theme.colors[background!]};
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: ${theme.spacing.space2};
+    padding: ${theme.spacing.space2};
+    text-decoration: none;
+    overflow: hidden;
 
-  .spinner {
-    svg {
-      animation: ${({ loading }) => loading && 'lds-dual-ring 1.2s linear infinite'};
-      @keyframes lds-dual-ring {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
+    &:focus {
+      box-shadow: 0 0 0 3px blue;
     }
-  }
+
+    &:hover {
+      background: ${minimal ? 'none' : theme.colors.secondary};
+    }
+
+    .span {
+      margin-top: 5px;
+    }
+
+    .animateBx {
+      max-height: 40px;
+      max-width: 60px;
+      margin-top: -20px;
+      animation: 0.8s ${fadeIn} ease 0s;
+    }
+
+    ${!!size && wrapperModifiers[size]()};
+    ${!!fullWidth && wrapperModifiers.fullWidth()};
+    ${!!hasIcon && wrapperModifiers.withIcon()};
+    ${!!minimal && wrapperModifiers.minimal()};
+    ${disabled && wrapperModifiers.disabled()};
+  `}
 `

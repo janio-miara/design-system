@@ -35,15 +35,15 @@ export const ContainerInput = styled.div `
   }
 
   .wrapper-icon-selector {
-    transition: transform 0.3s;
+    transition: transform 0.5s;
     right: 0;
     position: absolute;
     padding-right: ${theme.spacing.space3};
     color: ${({ status }) => (status ? theme.colors.blue40 : theme.colors.shade40)};
+    transform: ${({ status }) => (status ? 'rotateX(160deg);' : 'none')};
     :hover {
       color: ${theme.colors.blue40};
       cursor: pointer;
-      transform: scale(1.03);
     }
   }
   .wrapper-icon {
@@ -119,6 +119,11 @@ export const ValueSelector = styled.div `
     margin-right: 8px;
     width: 20px;
   }
+
+  &.selected {
+    background: ${theme.colors.cyan10};
+  }
+
   :hover {
     font-weight: bold;
     background-color: ${theme.colors.shade20};

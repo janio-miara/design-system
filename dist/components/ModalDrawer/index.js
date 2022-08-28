@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
-import { Button } from '../Button';
+import Button from '../Button';
 import { Text } from '../Text';
 import * as Style from './styles';
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal';
@@ -35,7 +35,7 @@ export function ModalDrawer(props) {
                     React.createElement("div", { className: "content", ref: refScroll }, children))) : (React.createElement("div", { className: "content-not-header", ref: refScroll }, children)),
                 React.createElement("div", { className: "button-wrapp" },
                     action && action(),
-                    React.createElement(Button, { size: "small", outlined: true, color: "primary", onClick: closeModal }, "Fechar")))), document.body)
+                    React.createElement(Button, { size: "small", minimal: true, color: "primary", onClick: closeModal }, "Fechar")))), document.body)
         : null;
 }
 //# sourceMappingURL=index.js.map

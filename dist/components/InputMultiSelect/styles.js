@@ -73,8 +73,9 @@ export const ContainerInput = styled.div `
     :hover {
       color: ${theme.colors.blue40};
       cursor: pointer;
-      transform: scale(1.03);
     }
+
+    transform: ${({ status }) => (status ? 'rotateX(160deg);' : 'none')};
   }
   .wrapper-icon {
     transition: transform 0.3s;
@@ -87,6 +88,12 @@ export const ContainerInput = styled.div `
   input {
     box-shadow: ${({ status }) => (status ? theme.colors.blue40 : theme.colors.shade40)} 0 0 0 1.2px inset;
   }
+`;
+export const ContentInput = styled.div `
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
 `;
 export const WrapperInput = styled.input `
   width: 100%;

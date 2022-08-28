@@ -5,7 +5,7 @@ import { RiUserFill } from 'react-icons/ri'
 import { ButtonRadius } from '../components'
 
 export default {
-  title: 'Example/ButtonRadius',
+  title: 'Components/Buttons/ButtonRadius',
   component: ButtonRadius,
 } as ComponentMeta<typeof ButtonRadius>
 

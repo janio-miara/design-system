@@ -20,6 +20,6 @@ Playground.args = {
     icon: React.createElement(BiHelpCircle, null),
     children: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptas.',
     textAction: 'janio',
-    actionClick: () => (React.createElement(Button, { size: "small", color: "primary", outlined: true }, "Salvarddd")),
+    actionClick: () => (React.createElement(Button, { size: "small", color: "primary", minimal: true }, "Salvarddd")),
 };
 //# sourceMappingURL=Modal.stories.js.map

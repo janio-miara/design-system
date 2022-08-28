@@ -17,9 +17,9 @@ export const Input = (_a) => {
     return (React.createElement(Style.ContainerInput, { error: error },
         value && React.createElement("div", { className: "wrapper-label" }, name),
         React.createElement(Style.WrapperInput, Object.assign({ icon: icon, error: error }, props, { id: id, type: type || 'text', placeholder: placeholder, value: value, onChange: (e) => onChange(e.target) })),
-        icon && React.createElement("div", { className: "wrapper-icon" }, icon),
+        !!icon && React.createElement("div", { className: "wrapper-icon" }, icon),
         value && onClear && (React.createElement("button", { type: "button", className: "wrapper-icon-close", onClick: () => onChange({ id, name, value: '' }) },
             React.createElement(AiOutlineCloseCircle, null))),
-        error && React.createElement(Style.WrapperMessage, null, messageError)));
+        !!error && React.createElement(Style.WrapperMessage, Object.assign({}, props), messageError)));
 };
 //# sourceMappingURL=index.js.map
