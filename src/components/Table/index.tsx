@@ -1,71 +1,56 @@
 import React from 'react'
-import TableRow from './TableRow'
-import CellHeader from './TableHeader'
+import DataTable from 'react-data-table-component'
+import { customStylesTable, columnsMock, dataMock } from './mock'
 import { Container } from './styles'
 
-interface Ivalue {
-  value?: string | any
-  align?: string
-  width?: string
-  action?: () => void
-  maxCaracter?: number | string
+import Empty from '../Empty'
+import LoadingContainer from '../LoadingContainer'
+
+export type TableProps = {
+  customStyles?: any
+  columns?: any
+  data?: any
+  ContainerVisible?: boolean
+  loading?: boolean
+  titleEmpty?: string
+  subTitleEmpty?: string
 }
 
-interface Ibody {
-  id?: number | string
-  values?: Array<Ivalue>
-}
-
-interface IData {
-  name?: string | any
-  id?: number | string
-  align?: string
-  width?: string
-  action?: () => void
-}
-
-export interface ITable {
-  header: IData[]
-  body: Ibody[]
-}
-
-export const Table = ({ header, body }: ITable) => {
+const Tabela = ({
+  customStyles = customStylesTable,
+  columns = columnsMock,
+  data = dataMock,
+  ContainerVisible = true,
+  loading = false,
+  titleEmpty = 'Não localizamos itens!',
+  subTitleEmpty = 'SubTitle',
+  ...props
+}: TableProps) => {
   return (
-    <Container>
-      <div className="tbl-header">
-        <table cellPadding="0" cellSpacing="0">
-          <thead>
-            <tr>
-              {header.map(({ align, width, name, action, id }) => {
-                return (
-                  <CellHeader align={align} width={width} action={action}>
-                    {name}
-                  </CellHeader>
-                )
-              })}
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div className="tbl-content">
-        <table cellPadding="0" cellSpacing="0">
-          <tbody>
-            {body.map(({ id, values }) => {
-              return (
-                <tr>
-                  {values?.map(({ value, maxCaracter, align, action, width }) => {
-                    return (
-                      <TableRow key={value} align={align} width={width} action={action} maxCaracter={maxCaracter}>
-                        {value}
-                      </TableRow>
-                    )
-                  })}
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-      </div>
+    <Container visible={ContainerVisible}>
+      <DataTable
+        {...props}
+        customStyles={customStyles}
+        className="tabela-padrao"
+        striped
+        pointerOnHover
+        highlightOnHover
+        columns={columns}
+        data={data}
+        noDataComponent={
+          <div className="Empty">
+            <Empty title={titleEmpty} subTitle={subTitleEmpty} />
+          </div>
+        }
+        progressPending={loading}
+        progressComponent={
+          <div className="loading">
+            <LoadingContainer loading={loading} />
+          </div>
+        }
+      />
     </Container>
   )
 }
+
+export default Tabela

@@ -7,4 +7,8 @@ export default {
   component: Loading,
 } as ComponentMeta<typeof Loading>
 
-export const LoadingActive: ComponentStory<typeof Loading> = () => <Loading active />
+export const LoadingActive: ComponentStory<typeof Loading> = () => (
+  <div style={{ height: '400px' }}>
+    <Loading active />
+  </div>
+)

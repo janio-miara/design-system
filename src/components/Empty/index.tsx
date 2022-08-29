@@ -10,8 +10,8 @@ export type EmptyProps = {
   title?: string
   subTitle?: string
   alertType?: 'notPage' | 'notData'
-  height?: number
-  width?: number
+  height?: number | string
+  width?: number | string
 }
 
 const SelectAnimation = (animation: string) => {
