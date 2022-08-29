@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import Empty, { EmptyProps } from '.'
 
 export default {
-  title: 'Empty',
+  title: 'Components/Empty',
   component: Empty,
   args: {
     title: 'Pagina não encontrada',
