@@ -29,13 +29,13 @@ export const Input = ({
         value={value}
         onChange={(e: any) => onChange(e.target)}
       />
-      {icon && <div className="wrapper-icon">{icon}</div>}
+      {!!icon && <div className="wrapper-icon">{icon}</div>}
       {value && onClear && (
         <button type="button" className="wrapper-icon-close" onClick={() => onChange({ id, name, value: '' })}>
           <AiOutlineCloseCircle />
         </button>
       )}
-      {error && <Style.WrapperMessage>{messageError}</Style.WrapperMessage>}
+      {!!error && <Style.WrapperMessage {...props}>{messageError}</Style.WrapperMessage>}
     </Style.ContainerInput>
   )
 }
