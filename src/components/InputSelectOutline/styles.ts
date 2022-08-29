@@ -113,6 +113,11 @@ export const ValueSelector = styled.div`
   color: ${theme.colors.shade60};
   padding: 12px ${theme.spacing.space3};
   border-bottom: 1px solid ${theme.colors.shade20};
+
+  &.selected {
+    background: ${theme.colors.cyan10};
+  }
+
   :hover {
     font-weight: bold;
     background-color: ${theme.colors.cyan10};
