@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import * as Style from './styles'
+import { AiOutlineCaretDown } from 'react-icons/ai'
 import { InputPropsSelect } from '../../types/inputTypes'
+
+import * as Style from './styles'
 import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
@@ -61,7 +62,7 @@ export function InputSelect({
         </span>
       )}
       <span className="wrapper-icon-selector">
-        <FontAwesomeIcon icon={faCaretDown as any} />
+        <AiOutlineCaretDown />
       </span>
 
       <Style.ContainerPoper status={active}>
