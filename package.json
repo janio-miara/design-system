@@ -53,7 +53,8 @@
     "overrides": [
       {
         "files": [
-          "**/*.stories.*"
+          "**/*.stories.*",
+          "**/stories.tsx"
         ],
         "rules": {
           "import/no-anonymous-default-export": "off"
