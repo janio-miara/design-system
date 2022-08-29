@@ -1,7 +1,7 @@
 import React from 'react';
 import Empty from '.';
 export default {
-    title: 'Empty',
+    title: 'Components/Empty',
     component: Empty,
     args: {
         title: 'Pagina não encontrada',

@@ -65,7 +65,6 @@ export const Wrapper = styled.button `
     padding: ${theme.spacing.space2};
     text-decoration: none;
     overflow: hidden;
-    transition: 1s;
 
     &:focus {
       box-shadow: 0 0 0 3px blue;
