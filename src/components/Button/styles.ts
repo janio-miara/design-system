@@ -37,7 +37,7 @@ const wrapperModifiers = {
   disabled: () => css`
     &:disabled {
       cursor: not-allowed;
-      filter: saturate(40%);
+      opacity: 0.4;
     }
   `,
   customColor: (color: string) => css`

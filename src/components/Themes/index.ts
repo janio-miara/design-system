@@ -54,7 +54,6 @@ const mint = {
 const white = '#FFFFFF'
 const black = '#000000'
 const transparent = 'transparent'
-const custom = 'transparent'
 
 export const spacing = {
   space1: '4px',
