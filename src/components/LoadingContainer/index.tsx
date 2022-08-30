@@ -5,10 +5,10 @@ import * as Styles from './styles'
 
 export type propsLoading = {
   loading: boolean
-  color?: string
+  color?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark'
 }
 
-const LoadingContainer = ({ loading, color }: propsLoading) => {
+const LoadingContainer = ({ loading, color = 'primary' }: propsLoading) => {
   return (
     <>
       {loading && (

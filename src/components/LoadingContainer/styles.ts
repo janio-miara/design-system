@@ -1,34 +1,37 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { theme } from '../Themes'
+import { changeColor } from '../../utils/changeColorTheme'
+import { propsLoading } from '.'
 
-interface propsLoading {
-  color?: string
-}
-export const Container = styled.div<propsLoading>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
+type stylePropsLoading = Pick<propsLoading, 'color'>
 
-  p {
-    margin: 8px;
-    color: ${({ color }) => color || theme.colors.blue40};
-  }
-  svg {
-    color: ${({ color }) => color || theme.colors.blue40};
-    width: 50px;
-    height: 50px;
-    animation: normal rotate-center 1s ease-in-out infinite both;
-  }
+export const Container = styled.div<stylePropsLoading>`
+  ${({ color }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
 
-  @keyframes rotate-center {
-    0% {
-      transform: rotate(0);
+    p {
+      margin: 8px;
+      ${!!color && changeColor[color!]}
     }
-    100% {
-      transform: rotate(360deg);
+    svg {
+      ${!!color && changeColor[color!]}
+      width: 50px;
+      height: 50px;
+      animation: normal rotate-center 1s ease-in-out infinite both;
     }
-  }
+
+    @keyframes rotate-center {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  `}
 `

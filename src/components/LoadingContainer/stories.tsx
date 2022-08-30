@@ -7,14 +7,9 @@ export default {
   title: 'Components/Loaders/LoadingContainer',
   component: LoadingContainer,
   args: {
-    color: '#c3c',
+    color: 'primary',
     loading: true,
   },
-  argsTypes: {
-    color: {
-      type: 'color',
-    },
-  },
-} as unknown as Meta<propsLoading>
+} as Meta<propsLoading>
 
 export const Default: Story<propsLoading> = args => <LoadingContainer {...args} />

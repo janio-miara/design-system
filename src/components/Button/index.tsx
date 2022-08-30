@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React, { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
-import Lottie from 'react-lottie'
-import load from './load.json'
+import { BiLoaderCircle } from 'react-icons/bi'
 
 import * as S from './styles'
 
@@ -12,7 +11,7 @@ export type ButtonProps = {
   fullWidth?: boolean
   minimal?: boolean
   icon?: JSX.Element
-  background?: 'primary' | 'secondary' | 'transparent'
+  variant?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark'
   disable?: boolean
   loading?: true
   as?: React.ElementType
@@ -25,39 +24,31 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
     size = 'medium',
     fullWidth = false,
     minimal = false,
-    background = 'primary',
     disable = false,
     loading = false,
+    variant = 'primary',
     ...props
   },
   ref,
 ) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: load,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  }
   return (
     <S.Wrapper
-      background={background}
       size={size}
       fullWidth={fullWidth}
       hasIcon={!!icon}
       minimal={minimal}
       ref={ref}
       disabled={disable}
+      variant={variant}
       {...props}
     >
       {loading && (
         <div className="animateBx">
-          <Lottie options={defaultOptions} height={60} width="100%" />
+          <BiLoaderCircle />
         </div>
       )}
-      {!loading && icon}
-      {!!children && <span>{children}</span>}
+      {icon}
+      {!!children && <span className="text">{children}</span>}
     </S.Wrapper>
   )
 }

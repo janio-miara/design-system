@@ -18,7 +18,7 @@ export default {
 
 export const Default: Story<TableProps> = args => {
   return (
-    <div style={{ width: '100%', margin: '0 auto' }}>
+    <div style={{ width: '100%', height: '400px', margin: '0 auto' }}>
       <Tabela {...args} />
     </div>
   )
@@ -28,8 +28,8 @@ export const NoData: Story<TableProps> = args => {
   return (
     <div
       style={{
-        width: '450px',
-        height: '500px',
+        width: '100%',
+        height: '400px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

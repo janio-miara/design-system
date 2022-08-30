@@ -10,6 +10,7 @@ export default {
   args: {
     minimal: false,
     loading: false,
+    variant: 'success',
   },
   argTypes: {
     children: {
@@ -19,6 +20,12 @@ export default {
       control: {
         type: 'select',
         options: ['small', 'medium', 'large'],
+      },
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary', 'success', 'error', 'default', 'warning', 'white', 'dark', 'lightDark'],
       },
     },
     icon: {
@@ -36,7 +43,6 @@ Default.args = {
 export const withIcon: Story<ButtonProps> = args => <Button {...args} />
 
 withIcon.args = {
-  size: 'small',
   children: 'Cotação',
   icon: <FiLayers />,
 }

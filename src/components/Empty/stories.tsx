@@ -11,6 +11,8 @@ export default {
     alertType: 'notPage',
     height: 250,
     width: 200,
+    asLink: '#',
+    linkText: 'Link Novo',
   },
 } as Meta
 

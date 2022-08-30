@@ -12,6 +12,8 @@ export type EmptyProps = {
   alertType?: 'notPage' | 'notData'
   height?: number | string
   width?: number | string
+  asLink?: string
+  linkText?: string
 }
 
 const SelectAnimation = (animation: string) => {
@@ -27,6 +29,8 @@ const Empty = ({
   alertType = 'notData',
   height = 250,
   width = 200,
+  asLink = '#',
+  linkText = 'Click Here',
 }: EmptyProps) => {
   const defaultOptions = {
     loop: true,
@@ -46,6 +50,9 @@ const Empty = ({
         </Text>
         <Text size="p2" color="default" element="p">
           {subTitle}
+          <a href={asLink} target="_blank" rel="noreferrer">
+            {linkText}
+          </a>
         </Text>
       </Style.ContainerEmpty>
     </Style.Container>

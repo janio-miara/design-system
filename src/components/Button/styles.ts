@@ -1,11 +1,12 @@
 import styled, { css, keyframes } from 'styled-components'
 
 import { ButtonProps } from '.'
+import { changeColorOutlined, changeBackground } from '../../utils/changeColorTheme'
 import { theme } from '../Themes'
 
 export type WrapperProps = {
   hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal' | 'background'>
+} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal' | 'variant'>
 
 const wrapperModifiers = {
   small: () => css`
@@ -32,72 +33,63 @@ const wrapperModifiers = {
       }
     }
   `,
-  minimal: () => css`
-    background: none;
-    color: red;
 
-    &:hover {
-      color: red;
-    }
-  `,
   disabled: () => css`
     &:disabled {
       cursor: not-allowed;
-      filter: saturate(30%);
+      filter: saturate(40%);
     }
+  `,
+  customColor: (color: string) => css`
+    background: ${color};
   `,
 }
 
-const fadeIn = keyframes`
-  0% {
-    height: 0;
-    margin-top: 0px;
-    opacity: 0;
+const rotate = keyframes`
+  from {
+    transform: rotate(0);
   }
-  100% {
-    height: 40px;
-    margin-top: -20px;
+  to {
+    transform: rotate(360deg);
   }
 `
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ size, fullWidth, hasIcon, minimal, disabled, background }) => css`
+  ${({ size, fullWidth, hasIcon, minimal, disabled, variant }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background: ${theme.colors[background!]};
-    color: white;
     border: 0;
     cursor: pointer;
     border-radius: ${theme.spacing.space2};
     padding: ${theme.spacing.space2};
     text-decoration: none;
     overflow: hidden;
+    transition: all 0.2s ease-in-out;
 
-    &:focus {
-      box-shadow: 0 0 0 3px blue;
+    &:active {
+      opacity: 0.8;
     }
 
     &:hover {
-      background: ${minimal ? 'none' : theme.colors.secondary};
-    }
-
-    .span {
-      margin-top: 5px;
+      transform: scale(1.05);
     }
 
     .animateBx {
-      max-height: 40px;
-      max-width: 60px;
-      margin-top: -20px;
-      animation: 0.8s ${fadeIn} ease 0s;
+      height: 18px;
+      width: 18px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: ${rotate} 2s linear infinite;
     }
 
     ${!!size && wrapperModifiers[size]()};
     ${!!fullWidth && wrapperModifiers.fullWidth()};
     ${!!hasIcon && wrapperModifiers.withIcon()};
-    ${!!minimal && wrapperModifiers.minimal()};
     ${disabled && wrapperModifiers.disabled()};
+    ${!!minimal && changeColorOutlined[variant!]};
+    ${!minimal && changeBackground[variant!]}
   `}
 `
