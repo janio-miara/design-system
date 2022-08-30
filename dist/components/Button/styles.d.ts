@@ -1,8 +1,8 @@
-import { ButtonProps } from '../../types/buttonTypes';
-export declare const changeSize: {
-    small: import("styled-components").FlattenSimpleInterpolation;
-    medium: import("styled-components").FlattenSimpleInterpolation;
-    large: import("styled-components").FlattenSimpleInterpolation;
-};
-export declare const ContainerButton: import("styled-components").StyledComponent<"button", any, ButtonProps, never>;
+import { ButtonProps } from '.';
+export declare type WrapperProps = {
+    hasIcon: boolean;
+} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal' | 'background'>;
+export declare const Wrapper: import("styled-components").StyledComponent<"button", any, {
+    hasIcon: boolean;
+} & Pick<ButtonProps, "size" | "fullWidth" | "minimal" | "background">, never>;
 //# sourceMappingURL=styles.d.ts.map

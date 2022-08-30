@@ -32,15 +32,21 @@ export function InputSelectOutline(_a) {
         setActive(false);
     };
     useOnClickOutside(ref, () => setActive(false));
+    const changeBackground = (select, value) => {
+        if (select === value) {
+            return 'selected';
+        }
+        return 'not-select';
+    };
     return (React.createElement("span", null,
-        React.createElement(Style.ContainerInput, { status: active, onBlur: () => active && setActive(false), onClick: () => setActive(true) },
+        React.createElement(Style.ContainerInput, { status: active, ref: ref, onBlur: () => active && setActive(false), onClick: () => setActive(!active) },
             React.createElement(Style.WrapperInput, Object.assign({ icon: icon }, props, { id: id, disabled: true, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: value[keyValue], placeholder: !active ? placeholder : '' })),
             icon && (React.createElement("span", { className: "wrapper-icon" },
                 React.createElement(FontAwesomeIcon, { icon: icon }))),
             React.createElement("span", { className: "wrapper-icon-selector" },
                 React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
-            React.createElement(Style.ContainerPoper, { status: active, ref: ref },
-                React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id + keyValue, onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))),
+            React.createElement(Style.ContainerPoper, { status: active },
+                React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id + keyValue, className: changeBackground(item.value, value.value), onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))),
         !active && (React.createElement(Style.WrapperMessage, null,
             React.createElement("div", null, "Empresa Selecionada")))));
 }

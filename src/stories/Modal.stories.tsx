@@ -28,7 +28,7 @@ Playground.args = {
   children: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, voluptas.',
   textAction: 'janio',
   actionClick: () => (
-    <Button size="small" color="primary" outlined>
+    <Button size="small" color="primary" minimal>
       Salvarddd
     </Button>
   ),

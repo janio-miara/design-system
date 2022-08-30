@@ -11,7 +11,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React, { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { AiOutlineCaretDown } from 'react-icons/ai';
 import * as Style from './styles';
 import { Popover } from '..';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
@@ -24,18 +24,27 @@ export function InputSelect(_a) {
         event.stopPropagation();
         setValue(item);
         onChange(item);
-        setActive(false);
+        setActive(!active);
     };
     useOnClickOutside(ref, () => setActive(false));
-    return (React.createElement(Style.ContainerInput, { status: active, onBlur: () => active && setActive(false), onClick: () => setActive(true) },
+    const handleClick = () => {
+        setActive(!active);
+    };
+    const changeBackground = (select, value) => {
+        if (select === value) {
+            return 'selected';
+        }
+        return 'not-select';
+    };
+    return (React.createElement(Style.ContainerInput, { status: active, ref: ref, onBlur: () => active && setActive(false), onClick: handleClick },
         React.createElement("span", { className: "wrapper-label" }, (active || value) && label),
         React.createElement(Style.WrapperInput, Object.assign({}, props, { id: id, disabled: true, icon: icon, autoComplete: "off", autoCorrect: "off", autoCapitalize: "off", value: value[keyValue], placeholder: !active ? placeholder : '', onChange: () => console.log() })),
         icon && (React.createElement("span", { className: "wrapper-icon" },
             React.createElement(FontAwesomeIcon, { icon: icon }))),
         React.createElement("span", { className: "wrapper-icon-selector" },
-            React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
-        React.createElement(Style.ContainerPoper, { status: active, ref: ref },
-            React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id, onClick: (event) => handleChangeActive(event, item) },
+            React.createElement(AiOutlineCaretDown, null)),
+        React.createElement(Style.ContainerPoper, { status: active },
+            React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { id: item.id, className: changeBackground(item.value, value.value), key: item.id, onClick: (event) => handleChangeActive(event, item) },
                 React.createElement(React.Fragment, null,
                     item.icon && item.icon,
                     item.image && React.createElement("img", { src: item.image, alt: "loading" }),

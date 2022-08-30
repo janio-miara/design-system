@@ -6,8 +6,10 @@
     "browser": true
   },
   "extends": [
-    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "airbnb",
     "plugin:prettier/recommended"
   ],
@@ -32,6 +34,7 @@
     "camelcase": "off",
     "no-undef:": ["off", { "typeof": "false" }],
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "off",
     "prettier/prettier": [

@@ -1,3 +1,8 @@
+const buttonColor = {
+  primary: 'linear-gradient(90deg, rgba(58,130,180,1) 0%, rgba(29,135,253,1) 50%, rgba(69,131,252,1) 100%)',
+  secondary: 'linear-gradient(90deg, rgba(58,157,180,1) 0%, rgba(29,169,253,1) 50%, rgba(69,149,252,1) 100%)',
+}
+
 const blue = {
   blue50: '#3A566E',
   blue40: '#3A566E',
@@ -48,6 +53,8 @@ const mint = {
 
 const white = '#FFFFFF'
 const black = '#000000'
+const transparent = 'transparent'
+const custom = 'transparent'
 
 export const spacing = {
   space1: '4px',
@@ -90,6 +97,8 @@ export const theme = {
     ...cyan,
     white,
     black,
+    ...buttonColor,
+    transparent,
   },
   fonts: ['Ubuntu', 'Nunito Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
   fontSizes: {

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import Empty, { EmptyProps } from '../components/Empty'
+import Empty, { EmptyProps } from '.'
 
 export default {
-  title: 'Exemple/Empty',
+  title: 'Components/Empty',
   component: Empty,
   args: {
     title: 'Pagina não encontrada',
@@ -11,6 +11,8 @@ export default {
     alertType: 'notPage',
     height: 250,
     width: 200,
+    asLink: '#',
+    linkText: 'Link Novo',
   },
 } as Meta
 

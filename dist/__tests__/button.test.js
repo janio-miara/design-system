@@ -16,7 +16,7 @@ describe('Testing button', () => {
         expect(element).toHaveStyle({ background: theme.colors.blue40, color: theme.colors.white });
     });
     test('testing the props of button outlined and colors props', () => {
-        render(React.createElement(Button, { color: "primary", outlined: true, "data-test-id": "button" }, titleButton));
+        render(React.createElement(Button, { color: "primary", "data-test-id": "button" }, titleButton));
         const element = screen.getByTestId('button');
         expect(element).toHaveStyle({
             color: theme.colors.blue40,

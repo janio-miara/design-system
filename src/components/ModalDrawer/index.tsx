@@ -1,10 +1,9 @@
 import React, { useRef } from 'react'
 import ReactDOM from 'react-dom'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
-import { Button } from '../Button'
+import Button from '../Button'
 import { Text } from '../Text'
 import * as Style from './styles'
-import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal'
 
@@ -47,7 +46,7 @@ export function ModalDrawer(props: any) {
 
             <div className="button-wrapp">
               {action && action()}
-              <Button size="small" outlined color="primary" onClick={closeModal}>
+              <Button size="small" minimal color="primary" onClick={closeModal}>
                 Fechar
               </Button>
             </div>

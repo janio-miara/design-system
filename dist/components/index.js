@@ -1,6 +1,6 @@
 export { Datepicker } from './Datepicker/index';
 export { Switch } from './Switch/index';
-export { Button } from './Button/index';
+export { default as Button } from './Button';
 export { Text } from './Text/index';
 export { ColorPalette } from './ColorPalette/index';
 export { TextLink } from './TextLink/index';
@@ -22,6 +22,6 @@ export { Modal } from './Modal/index';
 export { Heading } from './Heading/index';
 export { Loading } from './Loading/index';
 export { Tabs } from './Tabs/index';
-export { Table } from './Table/index';
+export { default as Table } from './Table/index';
 export { TextArea } from './TextArea/index';
 //# sourceMappingURL=index.js.map

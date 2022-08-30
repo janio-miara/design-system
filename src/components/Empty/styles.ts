@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '../Themes'
 
 export const Container = styled.div`
   background: transparent;
@@ -22,5 +23,10 @@ export const ContainerEmpty = styled.div`
   }
   img {
     width: 20%;
+  }
+
+  a {
+    color: ${theme.colors.cyan30};
+    margin-left: 5px;
   }
 `

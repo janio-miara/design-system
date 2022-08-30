@@ -1,4 +1,4 @@
-export { Button } from './components/Button';
+export { default as Button } from './components/Button';
 export { Text } from './components/Text/index';
 export { ColorPalette } from './components/ColorPalette/index';
 export { TextLink } from './components/TextLink/index';
@@ -21,7 +21,7 @@ export { Checkbox } from './components/Checkbox/index';
 export { Switch } from './components/Switch/index';
 export { Loading } from './components/Loading/index';
 export { Tabs } from './components/Tabs/index';
-export { Table } from './components/Table/index';
+export { default as Table } from './components/Table/index';
 export { TextArea } from './components/TextArea/index';
 export { Datepicker } from './components/Datepicker/index';
 //# sourceMappingURL=index.d.ts.map
