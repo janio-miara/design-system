@@ -4,6 +4,7 @@ export const customStylesTable = {
             fontWeight: 'bold',
             boxShadow: '0 3px 6px 2px rgb(0 0 0 / 5%)',
             maxHeight: '100%',
+            height: '400px',
         },
     },
     headRow: {

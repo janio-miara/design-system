@@ -16,7 +16,7 @@ export type TableProps = {
   subTitleEmpty?: string
 }
 
-const Tabela = ({
+export const Tabela = ({
   customStyles = customStylesTable,
   columns = columnsMock,
   data = dataMock,
@@ -52,5 +52,3 @@ const Tabela = ({
     </Container>
   )
 }
-
-export default Tabela

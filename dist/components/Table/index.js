@@ -15,12 +15,11 @@ import { customStylesTable, columnsMock, dataMock } from './mock';
 import { Container } from './styles';
 import Empty from '../Empty';
 import LoadingContainer from '../LoadingContainer';
-const Tabela = (_a) => {
+export const Tabela = (_a) => {
     var { customStyles = customStylesTable, columns = columnsMock, data = dataMock, ContainerVisible = true, loading = false, titleEmpty = 'Não localizamos itens!', subTitleEmpty = 'SubTitle' } = _a, props = __rest(_a, ["customStyles", "columns", "data", "ContainerVisible", "loading", "titleEmpty", "subTitleEmpty"]);
     return (React.createElement(Container, { visible: ContainerVisible },
         React.createElement(DataTable, Object.assign({}, props, { customStyles: customStyles, className: "tabela-padrao", striped: true, pointerOnHover: true, highlightOnHover: true, columns: columns, data: data, noDataComponent: React.createElement("div", { className: "Empty" },
                 React.createElement(Empty, { title: titleEmpty, subTitle: subTitleEmpty })), progressPending: loading, progressComponent: React.createElement("div", { className: "loading" },
                 React.createElement(LoadingContainer, { loading: loading })) }))));
 };
-export default Tabela;
 //# sourceMappingURL=index.js.map

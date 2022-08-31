@@ -10,7 +10,7 @@ const SelectAnimation = (animation) => {
     }
     return notPage;
 };
-const Empty = ({ title = 'Pagina não encontrada', subTitle = 'Outro ', alertType = 'notData', height = 250, width = 200, }) => {
+const Empty = ({ title = 'Pagina não encontrada', subTitle = 'Outro ', alertType = 'notData', height = 250, width = 200, asLink = '#', linkText = 'Click Here', }) => {
     const defaultOptions = {
         loop: true,
         autoplay: true,
@@ -23,7 +23,9 @@ const Empty = ({ title = 'Pagina não encontrada', subTitle = 'Outro ', alertTyp
         React.createElement(Style.ContainerEmpty, null,
             React.createElement(Lottie, { options: defaultOptions, height: height, width: width }),
             React.createElement(Text, { size: "p2", color: "default", bold: true, element: "p" }, title),
-            React.createElement(Text, { size: "p2", color: "default", element: "p" }, subTitle))));
+            React.createElement(Text, { size: "p2", color: "default", element: "p" },
+                subTitle,
+                React.createElement("a", { href: asLink, target: "_blank", rel: "noreferrer" }, linkText)))));
 };
 export default Empty;
 //# sourceMappingURL=index.js.map

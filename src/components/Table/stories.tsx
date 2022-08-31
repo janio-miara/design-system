@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import Tabela, { TableProps } from '.'
+import { Tabela, TableProps } from './index'
 
 export default {
   title: 'Components/Table',

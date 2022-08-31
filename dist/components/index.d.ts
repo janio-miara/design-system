@@ -22,6 +22,6 @@ export { Modal } from './Modal/index';
 export { Heading } from './Heading/index';
 export { Loading } from './Loading/index';
 export { Tabs } from './Tabs/index';
-export { default as Table } from './Table/index';
+export { Tabela } from './Table/index';
 export { TextArea } from './TextArea/index';
 //# sourceMappingURL=index.d.ts.map

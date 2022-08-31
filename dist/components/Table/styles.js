@@ -25,7 +25,6 @@ export const Container = styled.div `
     }
 
     .rdt_TableBody {
-      max-height: calc(100vh - 210px);
       overflow-y: auto;
     }
 

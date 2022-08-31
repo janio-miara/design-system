@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../Themes';
 export const Container = styled.div `
   background: transparent;
   border-radius: 8px;
@@ -21,6 +22,11 @@ export const ContainerEmpty = styled.div `
   }
   img {
     width: 20%;
+  }
+
+  a {
+    color: ${theme.colors.cyan30};
+    margin-left: 5px;
   }
 `;
 //# sourceMappingURL=styles.js.map

@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { TableProps } from '.';
+import { TableProps } from './index';
 declare const _default: Meta<import("@storybook/react").Args>;
 export default _default;
 export declare const Default: Story<TableProps>;

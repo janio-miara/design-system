@@ -1,1 +1,1 @@
-{"version":3,"file":"stories.d.ts","sourceRoot":"","sources":["../../../src/components/Empty/stories.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,KAAK,EAAE,IAAI,EAAE,MAAM,kBAAkB,CAAA;AAC9C,OAAc,EAAE,UAAU,EAAE,MAAM,GAAG,CAAA;;AAErC,wBAUS;AAET,eAAO,MAAM,OAAO,EAAE,KAAK,CAAC,UAAU,CAIrC,CAAA"}
+{"version":3,"file":"stories.d.ts","sourceRoot":"","sources":["../../../src/components/Empty/stories.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,KAAK,EAAE,IAAI,EAAE,MAAM,kBAAkB,CAAA;AAC9C,OAAc,EAAE,UAAU,EAAE,MAAM,GAAG,CAAA;;AAErC,wBAYS;AAET,eAAO,MAAM,OAAO,EAAE,KAAK,CAAC,UAAU,CAIrC,CAAA"}

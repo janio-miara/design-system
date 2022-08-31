@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabela from '.';
+import { Tabela } from './index';
 export default {
     title: 'Components/Table',
     component: Tabela,
@@ -14,13 +14,13 @@ export default {
     },
 };
 export const Default = args => {
-    return (React.createElement("div", { style: { width: '100%', margin: '0 auto' } },
+    return (React.createElement("div", { style: { width: '100%', height: '400px', margin: '0 auto' } },
         React.createElement(Tabela, Object.assign({}, args))));
 };
 export const NoData = args => {
     return (React.createElement("div", { style: {
-            width: '450px',
-            height: '500px',
+            width: '100%',
+            height: '400px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

@@ -6,7 +6,7 @@ export declare type ButtonProps = {
     fullWidth?: boolean;
     minimal?: boolean;
     icon?: JSX.Element;
-    background?: 'primary' | 'secondary' | 'transparent';
+    variant?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark';
     disable?: boolean;
     loading?: true;
     as?: React.ElementType;
