@@ -16,7 +16,7 @@ export type TableProps = {
   subTitleEmpty?: string
 }
 
-export const Tabela = ({
+export const Table = ({
   customStyles = customStylesTable,
   columns = columnsMock,
   data = dataMock,

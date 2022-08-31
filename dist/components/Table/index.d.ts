@@ -8,5 +8,5 @@ export declare type TableProps = {
     titleEmpty?: string;
     subTitleEmpty?: string;
 };
-export declare const Tabela: ({ customStyles, columns, data, ContainerVisible, loading, titleEmpty, subTitleEmpty, ...props }: TableProps) => JSX.Element;
+export declare const Table: ({ customStyles, columns, data, ContainerVisible, loading, titleEmpty, subTitleEmpty, ...props }: TableProps) => JSX.Element;
 //# sourceMappingURL=index.d.ts.map

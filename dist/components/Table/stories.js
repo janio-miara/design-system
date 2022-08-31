@@ -1,8 +1,8 @@
 import React from 'react';
-import { Tabela } from './index';
+import { Table } from './index';
 export default {
     title: 'Components/Table',
-    component: Tabela,
+    component: Table,
     args: {
         ContainerVisible: true,
         loading: false,
@@ -15,7 +15,7 @@ export default {
 };
 export const Default = args => {
     return (React.createElement("div", { style: { width: '100%', height: '400px', margin: '0 auto' } },
-        React.createElement(Tabela, Object.assign({}, args))));
+        React.createElement(Table, Object.assign({}, args))));
 };
 export const NoData = args => {
     return (React.createElement("div", { style: {
@@ -25,7 +25,7 @@ export const NoData = args => {
             alignItems: 'center',
             justifyContent: 'center',
         } },
-        React.createElement(Tabela, Object.assign({}, args))));
+        React.createElement(Table, Object.assign({}, args))));
 };
 NoData.args = {
     titleEmpty: 'Não Localizamos Nenhum Item !!!',
