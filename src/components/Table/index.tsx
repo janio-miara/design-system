@@ -21,7 +21,7 @@ export type TableProps = {
   height: string
 }
 
-const Tabela = ({
+export const Table = ({
   customStyles = customStylesTable,
   columns = columnsMock,
   data = dataMock,
@@ -66,5 +66,3 @@ const Tabela = ({
     </Style.Wrapper>
   )
 }
-
-export default Tabela

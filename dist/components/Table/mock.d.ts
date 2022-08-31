@@ -4,6 +4,7 @@ export declare const customStylesTable: {
             fontWeight: string;
             boxShadow: string;
             maxHeight: string;
+            height: string;
         };
     };
     headRow: {
