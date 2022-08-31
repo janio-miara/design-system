@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
-import { theme } from '../Themes'
-export const Wrapper = styled.div`
-  ${({ height }) => css`
+import styled, { css } from 'styled-components';
+import { theme } from '../Themes';
+export const Wrapper = styled.div `
+  ${({ height }) => css `
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,9 +9,9 @@ export const Wrapper = styled.div`
     height: ${height};
     width: 100%;
   `}
-`
-export const Container = styled.div`
-  ${({ visible, height }) => css`
+`;
+export const Container = styled.div `
+  ${({ visible, height }) => css `
     display: flex;
     height: 100%;
     width: 100%;
@@ -55,12 +55,12 @@ export const Container = styled.div`
       width: 100%;
     }
   `}
-`
-export const Paginate = styled.div`
+`;
+export const Paginate = styled.div `
   margin-top: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: content-box;
-`
+`;
 //# sourceMappingURL=styles.js.map

@@ -46,7 +46,7 @@ export function InputSelectOutline(_a) {
             React.createElement("span", { className: "wrapper-icon-selector" },
                 React.createElement(FontAwesomeIcon, { icon: faCaretDown })),
             React.createElement(Style.ContainerPoper, { status: active },
-                React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id + keyValue, className: changeBackground(item.value, value.value), onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))),
+                React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { key: item.id + keyValue, className: changeBackground(item.id, value.id), onClick: (event) => handleChangeActive(event, item) }, item[keyValue])))))),
         !active && (React.createElement(Style.WrapperMessage, null,
             React.createElement("div", null, "Empresa Selecionada")))));
 }

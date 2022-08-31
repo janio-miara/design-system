@@ -1,24 +1,21 @@
 import styled, { css, keyframes } from 'styled-components'
 
-import { ButtonProps } from '.'
+import { ButtonPropsType } from '.'
 import { changeColorOutlined, changeBackground } from '../../utils/changeColorTheme'
 import { theme } from '../Themes'
 
 export type WrapperProps = {
   hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'fullWidth' | 'minimal' | 'variant'>
+} & Pick<ButtonPropsType, 'size' | 'fullWidth' | 'minimal' | 'variant'>
 
 const wrapperModifiers = {
   small: () => css`
-    font-size: 1.2rem;
     padding: 5px 20px;
   `,
   medium: () => css`
-    font-size: 1.2rem;
     padding: ${theme.spacing.space2} ${theme.spacing.space4};
   `,
   large: () => css`
-    font-size: 1.2rem;
     padding: ${theme.spacing.space2} ${theme.spacing.space5};
   `,
   fullWidth: () => css`
@@ -72,7 +69,7 @@ export const Wrapper = styled.button<WrapperProps>`
     }
 
     &:hover {
-      transform: scale(1.05);
+      opacity: 0.9;
     }
 
     .animateBx {

@@ -45,6 +45,7 @@ export const ContainerInput = styled.div `
   margin-bottom: ${({ error }) => (error ? theme.spacing.space2 : '0px')};
   transition: 0.5s;
   min-height: 60px;
+  z-index: ${theme.zIndex.z2};
 
   .wrapper-label {
     position: absolute;
@@ -57,6 +58,7 @@ export const ContainerInput = styled.div `
     line-height: ${theme.spacing.space3};
     letter-spacing: 0;
     font-weight: normal;
+    z-index: ${theme.zIndex.z3};
   }
 
   .wrapper-icon-close {
@@ -72,6 +74,7 @@ export const ContainerInput = styled.div `
     }
     border: none;
     background: transparent;
+    z-index: ${theme.zIndex.z3};
   }
   .wrapper-icon {
     position: absolute;
@@ -80,6 +83,7 @@ export const ContainerInput = styled.div `
     top: 12px;
     padding-left: ${theme.spacing.space3};
     color: ${theme.colors.shade40};
+    z-index: ${theme.zIndex.z3};
   }
 `;
 export const WrapperInput = styled.input `
@@ -94,11 +98,12 @@ export const WrapperInput = styled.input `
   ${({ variant }) => (variant ? changeSize[variant] : changeSize.medium)};
   padding-left: ${({ icon }) => (icon ? '40px' : '16px')};
   padding-right: ${({ onClear }) => (onClear ? '40px' : '16px')};
+  z-index: ${theme.zIndex.z2};
 
   &:focus {
     outline: none;
     border-color: ${theme.colors.blue40};
-    box-shadow: 0 0 2px ${theme.colors.blue40};
+    box-shadow: 0 2px 2px ${theme.colors.blue40};
   }
 
   &:-webkit-autofill {
@@ -125,12 +130,11 @@ export const WrapperMessage = styled.div `
   align-items: center;
   font-size: 12px;
   background: ${theme.colors.red20};
-  width: calc(100% - 32px);
   padding: 6px 16px 0;
   animation: 1.5s ${fadeIn} ease 0s;
   opacity: ${({ error }) => (error ? '0' : '1')};
   margin: -6px 0;
-  z-index: -1;
+  z-index: ${theme.zIndex.z1};
   transition: 1s;
   border-radius: 0 0 8px 8px;
   ${({ variant }) => (variant ? changeSizeMessage[variant] : changeSizeMessage.medium)};

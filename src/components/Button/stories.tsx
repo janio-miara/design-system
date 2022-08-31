@@ -2,7 +2,7 @@ import React from 'react'
 import { Story, Meta } from '@storybook/react'
 import { FiLayers } from 'react-icons/fi'
 
-import Button, { ButtonProps } from '.'
+import Button, { ButtonPropsType } from '.'
 
 export default {
   title: 'Components/Buttons/Button',
@@ -32,22 +32,22 @@ export default {
       type: '',
     },
   },
-} as unknown as Meta<ButtonProps>
+} as unknown as Meta<ButtonPropsType>
 
-export const Default: Story<ButtonProps> = args => <Button {...args} />
+export const Default: Story<ButtonPropsType> = args => <Button {...args} />
 
 Default.args = {
   children: 'Solicitar',
 }
 
-export const withIcon: Story<ButtonProps> = args => <Button {...args} />
+export const withIcon: Story<ButtonPropsType> = args => <Button {...args} />
 
 withIcon.args = {
   children: 'Cotação',
   icon: <FiLayers />,
 }
 
-export const asLink: Story<ButtonProps> = args => <Button {...args} />
+export const asLink: Story<ButtonPropsType> = args => <Button {...args} />
 
 asLink.args = {
   size: 'large',
@@ -56,7 +56,7 @@ asLink.args = {
   href: '/link',
 }
 
-export const isDisabled: Story<ButtonProps> = args => <Button {...args} />
+export const isDisabled: Story<ButtonPropsType> = args => <Button {...args} />
 
 isDisabled.args = {
   children: 'Solicitar',

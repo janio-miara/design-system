@@ -75,7 +75,7 @@ export function InputSelectOutline({
             {object.map((item: any) => (
               <Style.ValueSelector
                 key={item.id + keyValue}
-                className={changeBackground(item.value, value.value)}
+                className={changeBackground(item.id, value.id)}
                 onClick={(event: any) => handleChangeActive(event, item)}
               >
                 {item[keyValue]}
