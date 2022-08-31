@@ -3,15 +3,12 @@ import { changeColorOutlined, changeBackground } from '../../utils/changeColorTh
 import { theme } from '../Themes';
 const wrapperModifiers = {
     small: () => css `
-    font-size: 1.2rem;
     padding: 5px 20px;
   `,
     medium: () => css `
-    font-size: 1.2rem;
     padding: ${theme.spacing.space2} ${theme.spacing.space4};
   `,
     large: () => css `
-    font-size: 1.2rem;
     padding: ${theme.spacing.space2} ${theme.spacing.space5};
   `,
     fullWidth: () => css `
@@ -62,7 +59,7 @@ export const Wrapper = styled.button `
     }
 
     &:hover {
-      transform: scale(1.05);
+      opacity: 0.9;
     }
 
     .animateBx {

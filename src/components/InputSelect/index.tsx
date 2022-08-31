@@ -70,7 +70,7 @@ export function InputSelect({
           {object.map((item: any) => (
             <Style.ValueSelector
               id={item.id}
-              className={changeBackground(item.value, value.value)}
+              className={changeBackground(item.id, value.id)}
               key={item.id}
               onClick={(event: any) => handleChangeActive(event, item)}
             >

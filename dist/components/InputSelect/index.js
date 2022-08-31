@@ -44,7 +44,7 @@ export function InputSelect(_a) {
         React.createElement("span", { className: "wrapper-icon-selector" },
             React.createElement(AiOutlineCaretDown, null)),
         React.createElement(Style.ContainerPoper, { status: active },
-            React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { id: item.id, className: changeBackground(item.value, value.value), key: item.id, onClick: (event) => handleChangeActive(event, item) },
+            React.createElement(Popover, null, object.map((item) => (React.createElement(Style.ValueSelector, { id: item.id, className: changeBackground(item.id, value.id), key: item.id, onClick: (event) => handleChangeActive(event, item) },
                 React.createElement(React.Fragment, null,
                     item.icon && item.icon,
                     item.image && React.createElement("img", { src: item.image, alt: "loading" }),
