@@ -7,6 +7,7 @@ export default {
     args: {
         minimal: false,
         loading: false,
+        variant: 'success',
     },
     argTypes: {
         children: {
@@ -16,6 +17,12 @@ export default {
             control: {
                 type: 'select',
                 options: ['small', 'medium', 'large'],
+            },
+        },
+        variant: {
+            control: {
+                type: 'select',
+                options: ['primary', 'secondary', 'success', 'error', 'default', 'warning', 'white', 'dark', 'lightDark'],
             },
         },
         icon: {
@@ -29,7 +36,6 @@ Default.args = {
 };
 export const withIcon = args => React.createElement(Button, Object.assign({}, args));
 withIcon.args = {
-    size: 'small',
     children: 'Cotação',
     icon: React.createElement(FiLayers, null),
 };

@@ -6,6 +6,7 @@ export default {
     args: {
         ContainerVisible: true,
         loading: false,
+        height: '400px',
     },
     argTypes: {
         data: {
@@ -14,16 +15,14 @@ export default {
     },
 };
 export const Default = args => {
-    return (React.createElement("div", { style: { width: '100%', margin: '0 auto' } },
+    return (React.createElement("div", { style: { width: '100%', height: '400px', margin: '0 auto' } },
         React.createElement(Tabela, Object.assign({}, args))));
 };
 export const NoData = args => {
     return (React.createElement("div", { style: {
-            width: '450px',
-            height: '500px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            margin: '0 auto',
+            width: '100%',
+            height: '400px',
         } },
         React.createElement(Tabela, Object.assign({}, args))));
 };

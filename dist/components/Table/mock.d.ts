@@ -68,5 +68,8 @@ export declare const dataMock: {
     year: string;
     other: string;
     another: string;
+    another2: string;
+    another3: string;
+    another4: string;
 }[];
 //# sourceMappingURL=mock.d.ts.map

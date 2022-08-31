@@ -11,24 +11,15 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 /* eslint-disable no-undef */
 import React, { forwardRef } from 'react';
-import Lottie from 'react-lottie';
-import load from './load.json';
+import { BiLoaderCircle } from 'react-icons/bi';
 import * as S from './styles';
 const Button = (_a, ref) => {
-    var { children, icon, size = 'medium', fullWidth = false, minimal = false, background = 'primary', disable = false, loading = false } = _a, props = __rest(_a, ["children", "icon", "size", "fullWidth", "minimal", "background", "disable", "loading"]);
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: load,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
-    return (React.createElement(S.Wrapper, Object.assign({ background: background, size: size, fullWidth: fullWidth, hasIcon: !!icon, minimal: minimal, ref: ref, disabled: disable }, props),
+    var { children, icon, size = 'medium', fullWidth = false, minimal = false, disable = false, loading = false, variant = 'primary' } = _a, props = __rest(_a, ["children", "icon", "size", "fullWidth", "minimal", "disable", "loading", "variant"]);
+    return (React.createElement(S.Wrapper, Object.assign({ size: size, fullWidth: fullWidth, hasIcon: !!icon, minimal: minimal, ref: ref, disabled: disable, variant: variant }, props),
         loading && (React.createElement("div", { className: "animateBx" },
-            React.createElement(Lottie, { options: defaultOptions, height: 60, width: "100%" }))),
-        !loading && icon,
-        !!children && React.createElement("span", null, children)));
+            React.createElement(BiLoaderCircle, null))),
+        icon,
+        !!children && React.createElement("span", { className: "text" }, children)));
 };
 export default forwardRef(Button);
 //# sourceMappingURL=index.js.map

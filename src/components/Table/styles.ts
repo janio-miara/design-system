@@ -3,11 +3,23 @@ import { theme } from '../Themes'
 
 type StyleContainerProps = {
   visible?: boolean
+  height: string
 }
 
+export const Wrapper = styled.div<StyleContainerProps>`
+  ${({ height }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: ${height};
+    width: 100%;
+  `}
+`
+
 export const Container = styled.div<StyleContainerProps>`
-  ${({ visible }) => css`
-    display: block;
+  ${({ visible, height }) => css`
+    display: flex;
     height: 100%;
     width: 100%;
     justify-content: space-between;
@@ -30,19 +42,32 @@ export const Container = styled.div<StyleContainerProps>`
     }
 
     .rdt_TableBody {
-      overflow-y: auto;
+      min-height: 100%;
+      overflow-y: scroll;
+      height: calc(${height} - 120px);
     }
 
     .Empty {
       width: 100%;
       display: flex;
-      height: 100%;
       align-items: center;
       justify-content: center;
     }
 
     .loading {
-      margin-top: 40px;
+      height: calc(${height} - 64px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
   `}
+`
+
+export const Paginate = styled.div`
+  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: content-box;
 `

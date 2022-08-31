@@ -7,7 +7,11 @@ export declare type TableProps = {
     loading?: boolean;
     titleEmpty?: string;
     subTitleEmpty?: string;
+    pageCount?: number;
+    startPage?: number;
+    changePage?: any;
+    height: string;
 };
-declare const Tabela: ({ customStyles, columns, data, ContainerVisible, loading, titleEmpty, subTitleEmpty, ...props }: TableProps) => JSX.Element;
+declare const Tabela: ({ customStyles, columns, data, ContainerVisible, loading, titleEmpty, subTitleEmpty, pageCount, startPage, changePage, height, ...props }: TableProps) => JSX.Element;
 export default Tabela;
 //# sourceMappingURL=index.d.ts.map

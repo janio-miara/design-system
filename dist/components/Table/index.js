@@ -12,15 +12,19 @@ var __rest = (this && this.__rest) || function (s, e) {
 import React from 'react';
 import DataTable from 'react-data-table-component';
 import { customStylesTable, columnsMock, dataMock } from './mock';
-import { Container } from './styles';
+import * as Style from './styles';
 import Empty from '../Empty';
 import LoadingContainer from '../LoadingContainer';
+import Paginate from '../Paginate';
 const Tabela = (_a) => {
-    var { customStyles = customStylesTable, columns = columnsMock, data = dataMock, ContainerVisible = true, loading = false, titleEmpty = 'Não localizamos itens!', subTitleEmpty = 'SubTitle' } = _a, props = __rest(_a, ["customStyles", "columns", "data", "ContainerVisible", "loading", "titleEmpty", "subTitleEmpty"]);
-    return (React.createElement(Container, { visible: ContainerVisible },
-        React.createElement(DataTable, Object.assign({}, props, { customStyles: customStyles, className: "tabela-padrao", striped: true, pointerOnHover: true, highlightOnHover: true, columns: columns, data: data, noDataComponent: React.createElement("div", { className: "Empty" },
-                React.createElement(Empty, { title: titleEmpty, subTitle: subTitleEmpty })), progressPending: loading, progressComponent: React.createElement("div", { className: "loading" },
-                React.createElement(LoadingContainer, { loading: loading })) }))));
+    var { customStyles = customStylesTable, columns = columnsMock, data = dataMock, ContainerVisible = true, loading = false, titleEmpty = 'Não localizamos itens!', subTitleEmpty = 'SubTitle', pageCount = 10, startPage = 1, changePage = () => null, height = '400px' } = _a, props = __rest(_a, ["customStyles", "columns", "data", "ContainerVisible", "loading", "titleEmpty", "subTitleEmpty", "pageCount", "startPage", "changePage", "height"]);
+    return (React.createElement(Style.Wrapper, { height: height },
+        React.createElement(Style.Container, { height: height, visible: ContainerVisible },
+            React.createElement(DataTable, Object.assign({}, props, { customStyles: customStyles, className: "tabela-padrao", striped: true, pointerOnHover: true, highlightOnHover: true, columns: columns, data: data, noDataComponent: React.createElement("div", { className: "Empty" },
+                    React.createElement(Empty, { title: titleEmpty, subTitle: subTitleEmpty })), progressPending: loading, progressComponent: React.createElement("div", { className: "loading" },
+                    React.createElement(LoadingContainer, { loading: loading })) }))),
+        React.createElement(Style.Paginate, null,
+            React.createElement(Paginate, { startPage: startPage, changePage: changePage, pageCount: pageCount }))));
 };
 export default Tabela;
 //# sourceMappingURL=index.js.map

@@ -8,6 +8,7 @@ export default {
   args: {
     ContainerVisible: true,
     loading: false,
+    height: '400px',
   },
   argTypes: {
     data: {
@@ -28,11 +29,9 @@ export const NoData: Story<TableProps> = args => {
   return (
     <div
       style={{
+        margin: '0 auto',
         width: '100%',
         height: '400px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
       }}
     >
       <Tabela {...args} />

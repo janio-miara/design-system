@@ -1,7 +1,7 @@
 /// <reference types="react" />
 export declare type propsLoading = {
     loading: boolean;
-    color?: string;
+    color?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark';
 };
 declare const LoadingContainer: ({ loading, color }: propsLoading) => JSX.Element;
 export default LoadingContainer;
