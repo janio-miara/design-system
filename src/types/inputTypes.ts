@@ -1,3 +1,4 @@
+import React from 'react'
 import { sizeBasic } from './sizeTypes'
 
 export interface InputProps {
@@ -6,7 +7,7 @@ export interface InputProps {
   value: string | number
   placeholder?: string
   name?: string
-  icon?: any
+  icon?: React.ReactNode
   onClear?: boolean
   onChange?: any
   error?: boolean

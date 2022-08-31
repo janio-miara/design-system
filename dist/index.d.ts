@@ -1,4 +1,4 @@
-export { Button } from './components/Button';
+export { default as Button } from './components/Button';
 export { Text } from './components/Text/index';
 export { ColorPalette } from './components/ColorPalette/index';
 export { TextLink } from './components/TextLink/index';

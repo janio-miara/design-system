@@ -27,7 +27,7 @@ describe('Testing button', () => {
   })
   test('testing the props of button outlined and colors props', () => {
     render(
-      <Button color="primary" outlined data-test-id="button">
+      <Button color="primary" data-test-id="button">
         {titleButton}
       </Button>,
     )

@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-import * as Style from './styles'
+import { AiOutlineCaretDown } from 'react-icons/ai'
 import { InputPropsSelect } from '../../types/inputTypes'
+
+import * as Style from './styles'
 import { Popover } from '..'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
@@ -24,13 +25,24 @@ export function InputSelect({
     event.stopPropagation()
     setValue(item)
     onChange(item)
-    setActive(false)
+    setActive(!active)
   }
 
   useOnClickOutside(ref, () => setActive(false))
 
+  const handleClick = () => {
+    setActive(!active)
+  }
+
+  const changeBackground = (select: string, value: string) => {
+    if (select === value) {
+      return 'selected'
+    }
+    return 'not-select'
+  }
+
   return (
-    <Style.ContainerInput status={active} onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
+    <Style.ContainerInput status={active} ref={ref} onBlur={() => active && setActive(false)} onClick={handleClick}>
       <span className="wrapper-label">{(active || value) && label}</span>
       <Style.WrapperInput
         {...props}
@@ -50,13 +62,18 @@ export function InputSelect({
         </span>
       )}
       <span className="wrapper-icon-selector">
-        <FontAwesomeIcon icon={faCaretDown as any} />
+        <AiOutlineCaretDown />
       </span>
 
-      <Style.ContainerPoper status={active} ref={ref}>
+      <Style.ContainerPoper status={active}>
         <Popover>
           {object.map((item: any) => (
-            <Style.ValueSelector key={item.id} onClick={(event: any) => handleChangeActive(event, item)}>
+            <Style.ValueSelector
+              id={item.id}
+              className={changeBackground(item.value, value.value)}
+              key={item.id}
+              onClick={(event: any) => handleChangeActive(event, item)}
+            >
               <>
                 {item.icon && item.icon}
                 {item.image && <img src={item.image} alt="loading" />}

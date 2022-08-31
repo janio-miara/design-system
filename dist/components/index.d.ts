@@ -1,6 +1,6 @@
 export { Datepicker } from './Datepicker/index';
 export { Switch } from './Switch/index';
-export { Button } from './Button/index';
+export { default as Button } from './Button';
 export { Text } from './Text/index';
 export { ColorPalette } from './ColorPalette/index';
 export { TextLink } from './TextLink/index';

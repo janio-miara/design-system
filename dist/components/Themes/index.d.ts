@@ -36,6 +36,9 @@ export declare const theme: {
         shad1: string;
     };
     colors: {
+        transparent: string;
+        primary: string;
+        secondary: string;
         white: string;
         black: string;
         cyan40: string;

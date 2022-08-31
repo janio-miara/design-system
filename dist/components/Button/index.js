@@ -9,15 +9,17 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from 'react';
-import { FaSpinner } from 'react-icons/fa';
-import * as Style from './styles';
-export const Button = (_a) => {
-    var { loading, icon, children, disabled } = _a, props = __rest(_a, ["loading", "icon", "children", "disabled"]);
-    return (React.createElement(Style.ContainerButton, Object.assign({ disabled: disabled }, props),
-        loading && (React.createElement("span", { className: "spinner" },
-            React.createElement(FaSpinner, null))),
-        React.createElement("span", { className: "icon-button" }, icon),
-        React.createElement("span", null, children)));
+/* eslint-disable no-undef */
+import React, { forwardRef } from 'react';
+import { BiLoaderCircle } from 'react-icons/bi';
+import * as S from './styles';
+const Button = (_a, ref) => {
+    var { children, icon, size = 'medium', fullWidth = false, minimal = false, disable = false, loading = false, variant = 'primary' } = _a, props = __rest(_a, ["children", "icon", "size", "fullWidth", "minimal", "disable", "loading", "variant"]);
+    return (React.createElement(S.Wrapper, Object.assign({ size: size, fullWidth: fullWidth, hasIcon: !!icon, minimal: minimal, ref: ref, disabled: disable, variant: variant }, props),
+        loading && (React.createElement("div", { className: "animateBx" },
+            React.createElement(BiLoaderCircle, null))),
+        icon,
+        !!children && React.createElement("span", { className: "text" }, children)));
 };
+export default forwardRef(Button);
 //# sourceMappingURL=index.js.map

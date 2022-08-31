@@ -35,9 +35,21 @@ export function InputSelectOutline({
 
   useOnClickOutside(ref, () => setActive(false))
 
+  const changeBackground = (select: string, value: string) => {
+    if (select === value) {
+      return 'selected'
+    }
+    return 'not-select'
+  }
+
   return (
     <span>
-      <Style.ContainerInput status={active} onBlur={() => active && setActive(false)} onClick={() => setActive(true)}>
+      <Style.ContainerInput
+        status={active}
+        ref={ref}
+        onBlur={() => active && setActive(false)}
+        onClick={() => setActive(!active)}
+      >
         <Style.WrapperInput
           icon={icon}
           {...props}
@@ -58,10 +70,14 @@ export function InputSelectOutline({
           <FontAwesomeIcon icon={faCaretDown as any} />
         </span>
 
-        <Style.ContainerPoper status={active} ref={ref}>
+        <Style.ContainerPoper status={active}>
           <Popover>
             {object.map((item: any) => (
-              <Style.ValueSelector key={item.id + keyValue} onClick={(event: any) => handleChangeActive(event, item)}>
+              <Style.ValueSelector
+                key={item.id + keyValue}
+                className={changeBackground(item.value, value.value)}
+                onClick={(event: any) => handleChangeActive(event, item)}
+              >
                 {item[keyValue]}
               </Style.ValueSelector>
             ))}
