@@ -25,12 +25,12 @@ const SelectAnimation = (animation: string) => {
 
 const Empty = ({
   title = 'Pagina não encontrada',
-  subTitle = 'Outro ',
+  subTitle,
   alertType = 'notData',
   height = 250,
   width = 200,
   asLink = '#',
-  linkText = 'Click Here',
+  linkText,
 }: EmptyProps) => {
   const defaultOptions = {
     loop: true,
