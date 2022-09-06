@@ -12,5 +12,5 @@ export declare type TableProps = {
     changePage?: any;
     height: string;
 };
-export declare const Table: ({ customStyles, columns, data, ContainerVisible, loading, titleEmpty, subTitleEmpty, pageCount, startPage, changePage, height, ...props }: TableProps) => JSX.Element;
+export declare const Table: ({ customStyles, columns, data, ContainerVisible, loading, titleEmpty, subTitleEmpty, pageCount, startPage, changePage, ...props }: TableProps) => JSX.Element;
 //# sourceMappingURL=index.d.ts.map

@@ -1,19 +1,15 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../Themes';
 export const Wrapper = styled.div `
-  ${({ height }) => css `
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: ${height};
-    width: 100%;
-  `}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 `;
 export const Container = styled.div `
-  ${({ visible, height }) => css `
-    display: flex;
-    height: 100%;
+  ${({ visible }) => css `
+    display: block;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -35,9 +31,8 @@ export const Container = styled.div `
     }
 
     .rdt_TableBody {
-      min-height: 100%;
-      overflow-y: scroll;
-      height: calc(${height} - 120px);
+      overflow-y: auto;
+      max-height: calc(100vh - 210px);
     }
 
     .Empty {
@@ -48,7 +43,7 @@ export const Container = styled.div `
     }
 
     .loading {
-      height: calc(${height} - 64px);
+      height: calc(100vh - 200px);
       display: flex;
       align-items: center;
       justify-content: center;

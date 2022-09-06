@@ -30,14 +30,14 @@ export const Table = ({
   titleEmpty = 'Não localizamos itens!',
   subTitleEmpty = 'SubTitle',
   pageCount = 10,
-  startPage = 1,
+  startPage = 0,
   changePage = () => null,
-  height = '400px',
+
   ...props
 }: TableProps) => {
   return (
-    <Style.Wrapper height={height}>
-      <Style.Container height={height} visible={ContainerVisible}>
+    <Style.Wrapper>
+      <Style.Container visible={ContainerVisible}>
         <DataTable
           {...props}
           customStyles={customStyles}
@@ -60,9 +60,11 @@ export const Table = ({
           }
         />
       </Style.Container>
-      <Style.Paginate>
-        <Paginate startPage={startPage} changePage={changePage} pageCount={pageCount} />
-      </Style.Paginate>
+      {!!startPage && (
+        <Style.Paginate>
+          <Paginate startPage={startPage} changePage={changePage} pageCount={pageCount} />
+        </Style.Paginate>
+      )}
     </Style.Wrapper>
   )
 }

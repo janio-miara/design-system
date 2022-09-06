@@ -50,9 +50,11 @@ const Empty = ({
         </Text>
         <Text size="p2" color="default" element="p">
           {subTitle}
-          <a href={asLink} target="_blank" rel="noreferrer">
-            {linkText}
-          </a>
+          {!!linkText && (
+            <a href={asLink} target="_blank" rel="noreferrer">
+              {linkText}
+            </a>
+          )}
         </Text>
       </Style.ContainerEmpty>
     </Style.Container>

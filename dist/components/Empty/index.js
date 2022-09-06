@@ -25,7 +25,7 @@ const Empty = ({ title = 'Pagina não encontrada', subTitle = 'Outro ', alertTyp
             React.createElement(Text, { size: "p2", color: "default", bold: true, element: "p" }, title),
             React.createElement(Text, { size: "p2", color: "default", element: "p" },
                 subTitle,
-                React.createElement("a", { href: asLink, target: "_blank", rel: "noreferrer" }, linkText)))));
+                !!linkText && (React.createElement("a", { href: asLink, target: "_blank", rel: "noreferrer" }, linkText))))));
 };
 export default Empty;
 //# sourceMappingURL=index.js.map

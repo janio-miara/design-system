@@ -6,7 +6,7 @@ export default {
     args: {
         ContainerVisible: true,
         loading: false,
-        height: '400px',
+        startPage: 1,
     },
     argTypes: {
         data: {
