@@ -49,7 +49,7 @@ const Empty = ({
           {title}
         </Text>
         <Text size="p2" color="default" element="p">
-          {subTitle}
+          {!!subTitle && subTitle}
           {!!linkText && (
             <a href={asLink} target="_blank" rel="noreferrer">
               {linkText}

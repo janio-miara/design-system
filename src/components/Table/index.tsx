@@ -18,7 +18,6 @@ export type TableProps = {
   pageCount?: number
   startPage?: number
   changePage?: any
-  height: string
 }
 
 export const Table = ({
@@ -32,7 +31,6 @@ export const Table = ({
   pageCount = 10,
   startPage = 0,
   changePage = () => null,
-
   ...props
 }: TableProps) => {
   return (
@@ -40,6 +38,7 @@ export const Table = ({
       <Style.Container visible={ContainerVisible}>
         <DataTable
           {...props}
+          responsive
           customStyles={customStyles}
           className="tabela-padrao"
           striped
