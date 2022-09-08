@@ -18,6 +18,9 @@ export type TableProps = {
   pageCount?: number
   startPage?: number
   changePage?: any
+  asLinkEmpty?: string
+  linkTextEmpty?: string
+  onRowClicked: any
 }
 
 export const Table = ({
@@ -31,13 +34,16 @@ export const Table = ({
   pageCount = 10,
   startPage = 0,
   changePage = () => null,
+  asLinkEmpty,
+  linkTextEmpty,
+  onRowClicked,
   ...props
 }: TableProps) => {
   return (
     <Style.Wrapper>
       <Style.Container visible={ContainerVisible}>
         <DataTable
-          {...props}
+          onRowClicked={onRowClicked}
           responsive
           customStyles={customStyles}
           className="tabela-padrao"
@@ -48,7 +54,7 @@ export const Table = ({
           data={data}
           noDataComponent={
             <div className="Empty">
-              <Empty title={titleEmpty} subTitle={subTitleEmpty} />
+              <Empty title={titleEmpty} subTitle={subTitleEmpty} asLink={asLinkEmpty} linkText={linkTextEmpty} />
             </div>
           }
           progressPending={loading}
@@ -57,6 +63,7 @@ export const Table = ({
               <LoadingContainer loading={loading} />
             </div>
           }
+          {...props}
         />
       </Style.Container>
       {!!startPage && (
