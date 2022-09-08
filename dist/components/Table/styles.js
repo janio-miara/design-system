@@ -32,7 +32,7 @@ export const Container = styled.div `
 
     .rdt_TableBody {
       overflow-y: auto;
-      max-height: calc(100vh - 210px);
+      max-height: calc(100vh - 240px);
     }
 
     .Empty {
@@ -55,7 +55,6 @@ export const Paginate = styled.div `
   margin-top: 4px;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: content-box;
 `;
 //# sourceMappingURL=styles.js.map

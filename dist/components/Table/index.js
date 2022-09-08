@@ -17,12 +17,12 @@ import Empty from '../Empty';
 import LoadingContainer from '../LoadingContainer';
 import Paginate from '../Paginate';
 export const Table = (_a) => {
-    var { customStyles = customStylesTable, columns = columnsMock, data = dataMock, ContainerVisible = true, loading = false, titleEmpty = 'Não localizamos itens!', subTitleEmpty = 'SubTitle', pageCount = 10, startPage = 0, changePage = () => null } = _a, props = __rest(_a, ["customStyles", "columns", "data", "ContainerVisible", "loading", "titleEmpty", "subTitleEmpty", "pageCount", "startPage", "changePage"]);
+    var { customStyles = customStylesTable, columns = columnsMock, data = dataMock, ContainerVisible = true, loading = false, titleEmpty = 'Não localizamos itens!', subTitleEmpty = 'SubTitle', pageCount = 10, startPage = 0, changePage = () => null, asLinkEmpty, linkTextEmpty, onRowClicked } = _a, props = __rest(_a, ["customStyles", "columns", "data", "ContainerVisible", "loading", "titleEmpty", "subTitleEmpty", "pageCount", "startPage", "changePage", "asLinkEmpty", "linkTextEmpty", "onRowClicked"]);
     return (React.createElement(Style.Wrapper, null,
         React.createElement(Style.Container, { visible: ContainerVisible },
-            React.createElement(DataTable, Object.assign({}, props, { customStyles: customStyles, className: "tabela-padrao", striped: true, pointerOnHover: true, highlightOnHover: true, columns: columns, data: data, noDataComponent: React.createElement("div", { className: "Empty" },
-                    React.createElement(Empty, { title: titleEmpty, subTitle: subTitleEmpty })), progressPending: loading, progressComponent: React.createElement("div", { className: "loading" },
-                    React.createElement(LoadingContainer, { loading: loading })) }))),
+            React.createElement(DataTable, Object.assign({ onRowClicked: onRowClicked, responsive: true, customStyles: customStyles, className: "tabela-padrao", striped: true, pointerOnHover: true, highlightOnHover: true, columns: columns, data: data, noDataComponent: React.createElement("div", { className: "Empty" },
+                    React.createElement(Empty, { title: titleEmpty, subTitle: subTitleEmpty, asLink: asLinkEmpty, linkText: linkTextEmpty })), progressPending: loading, progressComponent: React.createElement("div", { className: "loading" },
+                    React.createElement(LoadingContainer, { loading: loading })) }, props))),
         !!startPage && (React.createElement(Style.Paginate, null,
             React.createElement(Paginate, { startPage: startPage, changePage: changePage, pageCount: pageCount })))));
 };
