@@ -30,7 +30,7 @@ const Empty = ({
   height = 250,
   width = 200,
   asLink = '#',
-  linkText,
+  linkText = '',
 }: EmptyProps) => {
   const defaultOptions = {
     loop: true,

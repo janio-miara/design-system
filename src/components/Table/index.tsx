@@ -20,7 +20,7 @@ export type TableProps = {
   changePage?: any
   asLinkEmpty?: string
   linkTextEmpty?: string
-  onRowClicked: any
+  onRowClicked?: any
 }
 
 export const Table = ({
