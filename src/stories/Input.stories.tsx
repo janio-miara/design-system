@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Story, Meta } from '@storybook/react'
 import { FaUser } from 'react-icons/fa'
-import { Input } from '../components'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { RiUserFill } from 'react-icons/ri'
+import { Input, InputSelect } from '../components'
 import { InputProps } from '../types/inputTypes'
 
 export default {
@@ -12,7 +14,7 @@ export default {
     variant: 'small',
     placeholder: 'Nome Completo',
     name: 'full-name',
-    error: false,
+    error: true,
     type: 'text',
     messageError: 'Digita direito',
     value: '',
@@ -32,6 +34,12 @@ export const Default: Story<InputProps> = args => {
     const { id, value } = target
     setInputValue({ ...inputValue, [id]: value })
   }
+
+  const object = [
+    { id: 1, value: 'Janio', sobrenome: 'Miara Tadeu Ribeiro Fernando Suares', icon: <RiUserFill />, image: '#' },
+    { id: 2, value: 'Marcelo', sobrenome: 'Ribeiro' },
+    { id: 3, value: 'Joao', sobrenome: 'Martins', icon: <RiUserFill />, image: '#' },
+  ]
   return (
     <div
       style={{
@@ -45,6 +53,18 @@ export const Default: Story<InputProps> = args => {
     >
       <div style={{ width: '250px' }}>
         <Input {...args} value={inputValue.name} onChange={handleValues} />
+        <InputSelect
+          keyValue="sobrenome"
+          object={object}
+          defaultValue={inputValue}
+          onChange={setInputValue}
+          icon={faUser}
+          id="name"
+          label="Primeiro Nome"
+          onClear
+          variant="medium"
+          placeholder="Primeiro nome"
+        />
       </div>
     </div>
   )

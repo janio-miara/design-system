@@ -148,7 +148,7 @@ export const ContainerPoper = styled.div<status>`
   position: absolute;
   top: 45px;
   width: 100%;
-  z-index: 10;
+  z-index: ${theme.zIndex.z3};
 
   .popover-content {
     overflow-y: auto;
