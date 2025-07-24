@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
@@ -32,7 +32,7 @@ export const Modal = ({
           </div>
           {!offClose && (
             <div className="close">
-              <ButtonRadius onClick={close} size="small" icon={<FontAwesomeIcon icon={faTimes as any} />} />
+              <ButtonRadius onClick={close} size="small" icon={<FontAwesomeIcon icon={faTimes} />} />
             </div>
           )}
         </header>

@@ -1,17 +1,17 @@
-import React from 'react'
+
 import { Label } from './styles'
 
-interface props {
+export interface CheckboxProps {
   disabled?: boolean
   checked?: boolean
-  onChange?: any
+  onChange?: (checked: boolean) => void
   id?: string
 }
 
-export const Checkbox = ({ checked, disabled, onChange, id }: props) => {
+export const Checkbox = ({ checked, disabled, onChange, id }: CheckboxProps) => {
   return (
     <Label disabled={disabled}>
-      <input type="checkbox" id={id} checked={checked} onChange={e => onChange(e.target.checked)} />
+      <input type="checkbox" id={id} checked={checked} onChange={e => onChange && onChange(e.target.checked)} />
       <span />
     </Label>
   )

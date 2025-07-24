@@ -1,12 +1,13 @@
+import { ReactNode, RefObject } from "react"
+
 export interface ModalDrawerProps {
   open: boolean
   close?: () => void
   action?: () => void
   title: string
   side?: 'left' | 'right'
-  icon?: any
+  icon?: ReactNode
   subTitle?: string
   notHeader?: boolean
-  refScroll?: any
-  children?: any
+  refScroll?: RefObject<HTMLDivElement>
 }

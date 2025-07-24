@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import { theme } from '../Themes'
 import { changeColor } from '../../utils/changeColorTheme'
 import { propsLoading } from '.'
 

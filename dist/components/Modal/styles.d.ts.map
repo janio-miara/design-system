@@ -1,1 +1,0 @@
-{"version":3,"file":"styles.d.ts","sourceRoot":"","sources":["../../../src/components/Modal/styles.ts"],"names":[],"mappings":"AAGA,MAAM,WAAW,WAAW;IAC1B,IAAI,EAAE,OAAO,CAAA;CACd;AAED,MAAM,WAAW,UAAU;IACzB,IAAI,CAAC,EAAE,OAAO,GAAG,QAAQ,GAAG,OAAO,GAAG,MAAM,CAAA;CAC7C;AAED,eAAO,MAAM,UAAU,6EAsBtB,CAAA;AAED,eAAO,MAAM,UAAU;;;;;CAiBtB,CAAA;AAED,eAAO,MAAM,SAAS,4EA4ErB,CAAA"}

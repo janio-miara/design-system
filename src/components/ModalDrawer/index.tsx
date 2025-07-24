@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef, PropsWithChildren } from 'react'
 import ReactDOM from 'react-dom'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 import Button from '../Button'
@@ -6,12 +6,35 @@ import { Text } from '../Text'
 import * as Style from './styles'
 
 import { animationCloseSideModal } from '../../utils/animationCloseSideModal'
+export interface ModalDrawerProps extends React.HTMLAttributes<HTMLDivElement> {
+  open: boolean
+  close?: () => void
+  action?: () => React.ReactNode
+  title: string
+  subTitle?: string
+  icon?: React.ReactNode
+  notHeader?: boolean
+  side?: 'left' | 'right'
+  refScroll?: React.RefObject<HTMLDivElement>
+}
 
-export function ModalDrawer(props: any) {
-  const { open, close, title, subTitle, icon, children, action, notHeader, side, refScroll } = props
-  const ref: any = useRef()
+export const ModalDrawer = ({
+  open,
+  close,
+  title,
+  subTitle,
+  icon,
+  action,
+  notHeader,
+  side,
+  refScroll,
+  children,
+  ...props
+}: PropsWithChildren<ModalDrawerProps>) => {
+  const ref = useRef<HTMLDivElement>(null)
 
   const closeModal = async () => {
+    if (!ref.current) return
     await animationCloseSideModal(ref.current, side)
     if (close) close()
   }
@@ -20,7 +43,7 @@ export function ModalDrawer(props: any) {
   return open
     ? ReactDOM.createPortal(
         <Style.Container {...props}>
-          <Style.ContainerFilter {...props} ref={ref}>
+          <Style.ContainerFilter ref={ref} side={side || 'right'} {...props}>
             {!notHeader ? (
               <>
                 <div className="wrapper-heading">

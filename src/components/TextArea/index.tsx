@@ -1,15 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, } from 'react'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 import { ButtonRadius } from '../ButtonRadius'
 
 import * as S from './styles'
+export type TextAreaProps = {
+  size?: 'small' | 'medium' | 'large'
+  validate?: boolean
+  name?: string
+  value?: string
+  onChange: (target: EventTarget & HTMLTextAreaElement) => void
+  placeholder?: string
+  icon?: string | React.ReactNode
+  message?: string
+  autoClear?: boolean
+  id?: string
+  props?: React.HTMLAttributes<HTMLTextAreaElement>
+  onCleanup?: () => void
+}
 
 export const TextArea = ({
   size,
   validate,
   name,
-  type,
   value,
   onChange,
   placeholder,
@@ -18,8 +31,10 @@ export const TextArea = ({
   autoClear,
   id,
   props,
-}: any) => {
+  onCleanup
+}: TextAreaProps) => {
   const [viewLabel, setState] = useState<boolean>(false)
+
   return (
     <S.Container>
       <S.LabelContainer>
@@ -34,23 +49,22 @@ export const TextArea = ({
           {...props}
           id={id}
           name={name}
-          type={type}
           value={value}
-          onChange={(e: any) => onChange(e.target)}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => onChange(e.target)}
           icon={icon}
           placeholder={viewLabel ? placeholder : name}
           validate={validate}
           onFocus={() => setState(true)}
           onBlur={() => !value && setState(false)}
         />
-        {autoClear && value.length > 3 && (
+        {autoClear && onCleanup && !!value && value.length > 3 && (
           <S.CleanInput>
             <S.WrapperCleanInput>
               <ButtonRadius
-                icon={faTimes}
+                icon={faTimes as unknown as React.ReactNode}
                 size="small"
                 color="default"
-                onClick={() => onChange({ id, value: '' })}
+                onClick={onCleanup}
                 outlined
               />
             </S.WrapperCleanInput>

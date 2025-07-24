@@ -1,44 +1,36 @@
-import React from 'react'
-import DataTable from 'react-data-table-component'
-import { customStylesTable, columnsMock, dataMock } from './mock'
+import DataTable, { TableProps as  ITableProps} from 'react-data-table-component'
+import { customStylesTable } from './mock'
 import * as Style from './styles'
 
 import Empty from '../Empty'
 import LoadingContainer from '../LoadingContainer'
-import Paginate from '../Paginate'
 
-export type TableProps = {
-  customStyles?: any
-  columns?: any
-  data?: any
+export interface TableProps<T> {
+  customStyles?: typeof customStylesTable
+  columns: ITableProps<T>['columns']
+  data?: T[]
   ContainerVisible?: boolean
   loading?: boolean
   titleEmpty?: string
   subTitleEmpty?: string
-  pageCount?: number
-  startPage?: number
-  changePage?: any
   asLinkEmpty?: string
   linkTextEmpty?: string
-  onRowClicked?: any
+  onRowClicked?: (row: T) => void
 }
 
-export const Table = ({
+export const Table = <T,>({
   customStyles = customStylesTable,
-  columns = columnsMock,
-  data = dataMock,
+  columns,
+  data,
   ContainerVisible = true,
   loading = false,
   titleEmpty = 'Não localizamos itens!',
   subTitleEmpty = 'SubTitle',
-  pageCount = 10,
-  startPage = 0,
-  changePage = () => null,
   asLinkEmpty,
   linkTextEmpty,
   onRowClicked,
   ...props
-}: TableProps) => {
+}: TableProps<T>) => {
   return (
     <Style.Wrapper>
       <Style.Container visible={ContainerVisible}>
@@ -51,7 +43,7 @@ export const Table = ({
           pointerOnHover
           highlightOnHover
           columns={columns}
-          data={data}
+          data={data || []}
           noDataComponent={
             <div className="Empty">
               <Empty title={titleEmpty} subTitle={subTitleEmpty} asLink={asLinkEmpty} linkText={linkTextEmpty} />
@@ -66,11 +58,6 @@ export const Table = ({
           {...props}
         />
       </Style.Container>
-      {!!startPage && (
-        <Style.Paginate>
-          <Paginate startPage={startPage} changePage={changePage} pageCount={pageCount} />
-        </Style.Paginate>
-      )}
     </Style.Wrapper>
   )
 }

@@ -1,6 +1,6 @@
 import { ModalDrawerProps } from '../types/ModalDrawerTypes'
 
-const keyframes: any = {
+const keyframes = {
   right: [
     {
       opacity: 1,
@@ -26,5 +26,7 @@ const keyframes: any = {
 export const animationCloseSideModal = (element: HTMLElement, side: ModalDrawerProps['side']) => {
   const animationDuration = 1000
   if (side) element.animate(keyframes[side], animationDuration)
-  return new Promise(resolve => setTimeout(resolve, animationDuration))
+  return new Promise(resolve => {
+    setTimeout(resolve, animationDuration)
+  })
 }

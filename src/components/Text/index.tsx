@@ -1,4 +1,4 @@
-import React from 'react'
+
 import * as Style from './styles'
 import { TextPros } from '../../types/textTypes'
 

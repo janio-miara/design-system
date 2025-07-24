@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { ICard } from '../../types/cardTypes'
 import * as Style from './styles'
 

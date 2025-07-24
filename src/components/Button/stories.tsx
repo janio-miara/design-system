@@ -1,10 +1,9 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react-vite'
 import { FiLayers } from 'react-icons/fi'
 
 import Button, { ButtonPropsType } from '.'
 
-export default {
+const meta: Meta<ButtonPropsType> = {
   title: 'Components/Buttons/Button',
   component: Button,
   args: {
@@ -13,6 +12,9 @@ export default {
     variant: 'success',
   },
   argTypes: {
+    loading: {
+      type: 'boolean',
+    },
     children: {
       type: 'string',
     },
@@ -29,25 +31,27 @@ export default {
       },
     },
     icon: {
-      type: '',
+      type: 'string',
     },
   },
-} as unknown as Meta<ButtonPropsType>
+}
 
-export const Default: Story<ButtonPropsType> = args => <Button {...args} />
+export default meta
+
+export const Default: StoryFn<ButtonPropsType> = args => <Button {...args} />
 
 Default.args = {
   children: 'Solicitar',
 }
 
-export const withIcon: Story<ButtonPropsType> = args => <Button {...args} />
+export const withIcon: StoryFn<ButtonPropsType> = args => <Button {...args} />
 
 withIcon.args = {
   children: 'Cotação',
   icon: <FiLayers />,
 }
 
-export const asLink: Story<ButtonPropsType> = args => <Button {...args} />
+export const asLink: StoryFn<ButtonPropsType> = args => <Button {...args} />
 
 asLink.args = {
   size: 'large',
@@ -56,7 +60,7 @@ asLink.args = {
   href: '/link',
 }
 
-export const isDisabled: Story<ButtonPropsType> = args => <Button {...args} />
+export const isDisabled: StoryFn<ButtonPropsType> = args => <Button {...args} />
 
 isDisabled.args = {
   children: 'Solicitar',

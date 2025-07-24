@@ -3,7 +3,7 @@ import { theme } from '../Themes'
 import { changeColor } from '../../utils/changeColorTheme'
 import { TextPros } from '../../types/textTypes'
 
-const changeStyle = (bold: any, lighter: any) => {
+const changeStyle = (bold?: boolean, lighter?: boolean) => {
   if (bold) {
     return 'bold'
   }

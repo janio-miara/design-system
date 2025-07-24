@@ -1,5 +1,7 @@
-module.exports = {
-    clearMocks: true,
-    coverageDirectory: "coverage",
-    testEnvironment: "node",
-};
+const config = {
+  clearMocks: true,
+  coverageDirectory: 'coverage',
+  testEnvironment: 'node',
+}
+
+export default config

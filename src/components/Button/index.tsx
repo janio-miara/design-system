@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-import React, { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
+import React, { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
 import { BiLoaderCircle } from 'react-icons/bi'
 
 import * as S from './styles'
@@ -10,7 +9,7 @@ export type ButtonPropsType = {
   size?: 'small' | 'medium' | 'large'
   fullWidth?: boolean
   minimal?: boolean
-  icon?: JSX.Element
+  icon?: ReactNode
   variant?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark'
   disable?: boolean
   loading?: boolean

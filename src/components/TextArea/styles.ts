@@ -1,4 +1,4 @@
-import React from 'react'
+
 import styled from 'styled-components'
 import { theme } from '../Themes'
 
@@ -8,7 +8,6 @@ interface ILabel {
   icon?: React.ReactNode | React.Component
   validate?: boolean
   autoClear?: boolean
-  onClickClear?: boolean | any
   spacing?: string
   autocomplete?: string
   size?: sizeBasic
@@ -81,14 +80,12 @@ export const WrapperTextArea = styled.textarea<ILabel>`
     }
   }
 `
-
-export const LabelContainer = styled.span<any>`
+export const LabelContainer = styled.span`
   position: absolute;
   display: inline-flex;
   -webkit-box-align: center;
   top: -16px;
   align-items: center;
-  opacity: ${props => props.viewLabel && 0};
 `
 
 export const WrapperLabel = styled.label<ILabel>`

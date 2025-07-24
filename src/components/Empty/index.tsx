@@ -1,10 +1,9 @@
-import React from 'react'
 import Lottie from 'react-lottie'
 import { Text } from '../Text'
 import * as Style from './styles'
 
-import notData from './animations/notData.json'
-import notPage from './animations/notPage.json'
+import { data as notData } from './animations/notData.js'
+import { data as notPage } from './animations/notPage.js'
 
 export type EmptyProps = {
   title?: string
@@ -17,10 +16,10 @@ export type EmptyProps = {
 }
 
 const SelectAnimation = (animation: string) => {
-  if (animation === 'notData') {
-    return notData
+  if (animation === 'notPage') {
+    return notPage
   }
-  return notPage
+  return notData
 }
 
 const Empty = ({

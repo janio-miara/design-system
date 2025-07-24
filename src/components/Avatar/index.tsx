@@ -1,7 +1,7 @@
-import React from 'react'
+
 import * as Styles from './styles'
 
-interface AvatarProps {
+export interface AvatarProps {
   active?: boolean
   name: string
 }

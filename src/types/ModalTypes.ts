@@ -1,11 +1,12 @@
-export interface ModalProps {
+
+export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+  icon?: React.ReactNode
+  actionClick?: () => void
+  textAction?: string
   open: boolean
   title?: string
   size?: 'small' | 'medium' | 'large' | 'auto'
   close: () => void
-  textAction?: string
-  actionClick?: () => void
-  icon?: any
-  children?: any
-  offClose: boolean
+  children?: React.ReactNode
+  offClose?: boolean
 }

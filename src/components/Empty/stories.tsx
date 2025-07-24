@@ -1,8 +1,7 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import { StoryObj, Meta } from '@storybook/react-vite'
 import Empty, { EmptyProps } from '.'
 
-export default {
+const meta = {
   title: 'Components/Empty',
   component: Empty,
   args: {
@@ -14,10 +13,14 @@ export default {
     asLink: '#',
     linkText: 'Link Novo',
   },
-} as Meta
+} satisfies Meta<EmptyProps>
 
-export const Default: Story<EmptyProps> = args => (
-  <div style={{ width: '100%', margin: '0 auto' }}>
-    <Empty {...args} />
-  </div>
-)
+export default meta
+
+export const Default: StoryObj<EmptyProps> = {
+  render: args => (
+    <div style={{ width: '100%', margin: '0 auto' }}>
+      <Empty {...args} />
+    </div>
+  ),
+}

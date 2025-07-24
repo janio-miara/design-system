@@ -1,4 +1,3 @@
-import React from 'react'
 import * as Style from './styles'
 import { ButtonRadiusProps } from '../../types/buttonTypes'
 

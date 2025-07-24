@@ -1,12 +1,12 @@
-import React from 'react'
-import { Text } from '..'
+
+import { Text } from '../Text'
 import { Container } from './styles'
 
-interface PropsHeading {
+export interface PropsHeading {
   title: string
   subTitle?: string
   element?: 'h1' | 'h2' | 'h3' | 'h4'
-  icon?: any
+  icon?: React.ReactNode
 }
 
 export const Heading = ({ ...props }: PropsHeading) => {

@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { lighten } from 'polished'
 import { theme } from '../Themes'
-import { ModalDrawerProps } from '../../types/ModalDrawerTypes'
 
 export const Container = styled.div`
   display: flex;
@@ -25,8 +24,11 @@ export const Container = styled.div`
     }
   }
 `
+export interface ContainerFilterProps {
+  side?: 'left' | 'right'
+}
 
-export const ContainerFilter = styled.div<ModalDrawerProps>`
+export const ContainerFilter = styled.div<ContainerFilterProps>`
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -37,7 +39,7 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
   width: 450px;
   height: 100%;
   box-shadow: 0px -4px 6px 1px #0000004a;
-  animation: ${({ side }) => handleAnimation(side)} 1s;
+  animation: ${({ side }) => side && handleAnimation(side)} 1s;
 
   .wrapper-heading {
     display: flex;
@@ -81,7 +83,7 @@ export const ContainerFilter = styled.div<ModalDrawerProps>`
   }
 `
 
-const handleAnimation = (side: any) => {
+const handleAnimation = (side: 'left' | 'right') => {
   const keyframesData = side === 'left' ? animationLeftStart : animationStart
 
   return keyframes(keyframesData)

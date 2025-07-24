@@ -46,31 +46,31 @@ export const customStylesTable = {
 export const columnsMock = [
   {
     name: 'Title',
-    selector: (row: { title: any }) => row.title,
+    selector: (row: { title: string }) => row.title,
   },
   {
     name: 'Year',
-    selector: (row: { year: any }) => row.year,
+    selector: (row: { year: string }) => row.year,
   },
   {
     name: 'Other',
-    selector: (row: { other: any }) => row.other,
+    selector: (row: { other: string }) => row.other,
   },
   {
     name: 'Another',
-    selector: (row: { another: any }) => row.another,
+    selector: (row: { another: string }) => row.another,
   },
   {
     name: 'Another2',
-    selector: (row: { another: any }) => row.another,
+    selector: (row: { another2: string }) => row.another2,
   },
   {
     name: 'Another3',
-    selector: (row: { another: any }) => row.another,
+    selector: (row: { another3: string }) => row.another3,
   },
   {
     name: 'Another4',
-    selector: (row: { another: any }) => row.another,
+    selector: (row: { another4: string }) => row.another4,
   },
 ]
 

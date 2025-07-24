@@ -1,8 +1,7 @@
-import React from 'react'
-import { Story, Meta } from '@storybook/react'
+import { StoryObj, Meta } from '@storybook/react-vite'
 import { Table, TableProps } from './index'
 
-export default {
+const meta: Meta = {
   title: 'Components/Table',
   component: Table,
   args: {
@@ -11,22 +10,22 @@ export default {
     startPage: 1,
   },
   argTypes: {
-    data: {
-      type: '',
-    },
+    data: {},
   },
-} as unknown as Meta
+}
 
-export const Default: Story<TableProps> = args => {
-  return (
+export default meta
+
+export const Default: StoryObj<TableProps<{}>> = {
+  render: (args: TableProps<{}>) => (
     <div style={{ width: '100%', height: '400px', margin: '0 auto' }}>
       <Table {...args} />
     </div>
-  )
+  ),
 }
 
-export const NoData: Story<TableProps> = args => {
-  return (
+export const NoData: StoryObj<TableProps<{}>> = {
+  render: (args: TableProps<{}>) => (
     <div
       style={{
         margin: '0 auto',
@@ -36,11 +35,11 @@ export const NoData: Story<TableProps> = args => {
     >
       <Table {...args} />
     </div>
-  )
+  ),
 }
 
 NoData.args = {
   titleEmpty: 'Não Localizamos Nenhum Item !!!',
   subTitleEmpty: 'Pesquise novamente',
-  data: {},
+  data: [],
 }
