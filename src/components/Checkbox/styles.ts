@@ -6,10 +6,14 @@ interface props {
 }
 
 export const Label = styled.label<props>`
+  position: relative;
+
   input {
     cursor: pointer;
     position: absolute;
     opacity: 0;
+    width: 0;
+    height: 0;
   }
 
   span {

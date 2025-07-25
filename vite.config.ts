@@ -8,30 +8,38 @@ import json from '@rollup/plugin-json'
 import css from 'rollup-plugin-import-css'
 import image from '@rollup/plugin-image'
 import terser from '@rollup/plugin-terser'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      babel: {
+        plugins: [
+          ['babel-plugin-styled-components', { displayName: true, fileName: false }],
+          ['babel-plugin-react-compiler'],
+        ],
+      },
+    }),
     eslint({
       exclude: ['/virtual:/**', 'node_modules/**'],
     }),
-    dts(),
+    dts({ include: ['src', 'src/index.tsx'], insertTypesEntry: true, outDir: 'dist' }),
   ],
   build: {
     sourcemap: true,
     lib: {
-      entry: 'src/index.ts',
+      entry: path.resolve(__dirname, 'src/index.tsx'),
       formats: ['es'],
     },
     rollupOptions: {
-      external: [
-        '@fortawesome/free-solid-svg-icons',
-        'date-fns/locale',
-        'polished',
-        'styled-components',
-        /react.*/,
-        '@fortawesome/react-fontawesome',
-      ],
+      external: ['react', 'react-dom', 'styled-components'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+          'styled-components': 'styled',
+        },
+      },
       plugins: [image(), css(), json(), typescript(), terser()],
     },
   },
