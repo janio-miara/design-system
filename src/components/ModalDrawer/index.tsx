@@ -9,12 +9,13 @@ import { animationCloseSideModal } from '../../utils/animationCloseSideModal'
 export interface ModalDrawerProps extends React.HTMLAttributes<HTMLDivElement> {
   open: boolean
   close?: () => void
-  action?: () => React.ReactNode
+  action?: React.ReactNode
   title: string
   subTitle?: string
   icon?: React.ReactNode
   notHeader?: boolean
   side?: 'left' | 'right'
+  footer?: boolean
   refScroll?: React.RefObject<HTMLDivElement>
 }
 
@@ -28,6 +29,7 @@ export const ModalDrawer = ({
   notHeader,
   side,
   refScroll,
+  footer,
   children,
   ...props
 }: PropsWithChildren<ModalDrawerProps>) => {
@@ -66,13 +68,14 @@ export const ModalDrawer = ({
                 {children}
               </div>
             )}
-
-            <div className="button-wrapp">
-              {action && action()}
-              <Button size="small" minimal color="primary" onClick={closeModal}>
-                Fechar
-              </Button>
-            </div>
+            { footer !== false &&
+              <div className="button-wrapp">
+                {action}
+                <Button size="small" minimal color="primary" onClick={closeModal}>
+                  Fechar
+                </Button>
+              </div>
+            }
           </Style.ContainerFilter>
         </Style.Container>,
         document.body,
