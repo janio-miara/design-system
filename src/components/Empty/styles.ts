@@ -3,7 +3,7 @@ import { theme } from '../Themes'
 
 export const Container = styled.div`
   background: transparent;
-  border-radius: 8px;
+  border-radius: var(--component-border-radius, 5px);
   display: flex;
   flex-direction: column;
   width: 100%;

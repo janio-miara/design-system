@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components'
 import { theme } from '../Themes'
-import { colorTypes } from '../../types/colorTypes'
+import { Color } from '../../types/colorTypes'
 import { sizeText } from '../../types/sizeTypes'
 import { changeBackground } from '../../utils/changeColorTheme'
 
 export interface PropsHighlight {
-  color?: colorTypes
+  color?: Color
   size?: sizeText
   fontWeight?: 'bold' | 'lighter' | 'normal'
 }

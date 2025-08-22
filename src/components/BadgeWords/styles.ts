@@ -4,7 +4,7 @@ import { BadgeWordProps } from '../../types/BaggeWordTypes'
 import { changeBackground, changeColor, changeColorOutlined, changePaletaColor } from '../../utils/changeColorTheme'
 
 export const Container = styled.div<BadgeWordProps>`
-  border-radius: 10px;
+  border-radius: var(--component-border-radius, 5px);
   margin: ${theme.spacing.space1} 0;
   width: fit-content;
   margin-right: ${theme.spacing.space2};

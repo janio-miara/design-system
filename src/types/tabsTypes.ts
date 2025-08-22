@@ -1,11 +1,11 @@
 import { sizeText } from './sizeTypes'
-import { colorTypes } from './colorTypes'
+import { Color } from './colorTypes'
 
 export interface TabsTypes extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   tabs: string[]
   onChange?: (tab: string) => void
   disabled?: boolean
-  colorActive?: colorTypes
-  colorDefault?: colorTypes
+  colorActive?: Color
+  colorDefault?: Color
   size?: sizeText
 }

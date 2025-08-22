@@ -1,11 +1,10 @@
-import * as Style from './styles'
+import { StyledButtonRadius } from './styles'
 import { ButtonRadiusProps } from '../../types/buttonTypes'
 
-export const ButtonRadius = (props: ButtonRadiusProps) => {
-  const { disabled, icon } = props
+export function ButtonRadius({ outlined, color, disabled, size, icon, ...props }: ButtonRadiusProps) {
   return (
-    <Style.ButtonRadius disabled={disabled} {...props}>
+    <StyledButtonRadius $outlined={outlined} $color={color} $disabled={disabled} $size={size} {...props}>
       {icon}
-    </Style.ButtonRadius>
+    </StyledButtonRadius>
   )
 }

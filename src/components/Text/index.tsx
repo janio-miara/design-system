@@ -1,36 +1,50 @@
-
-import * as Style from './styles'
+import { PTag, H1Tag, H2Tag, H3Tag, H4Tag, SpanTag } from './styles'
 import { TextPros } from '../../types/textTypes'
 
 export const Text = ({ color, children, element, size, transform, bold, ...props }: TextPros) => {
-  const handleElementP = () => {
-    return <p {...props}>{children}</p>
+  if (element === 'h1') {
+    return (
+      <H1Tag $color={color} $size={size} $transform={transform} $bold={bold} {...props}>
+        {children}
+      </H1Tag>
+    )
   }
-  const handleElementSpan = () => {
-    return <span {...props}>{children}</span>
+
+  if (element === 'h2') {
+    return (
+      <H2Tag $color={color} $size={size} $transform={transform} $bold={bold} {...props}>
+        {children}
+      </H2Tag>
+    )
   }
-  const handleElementH1 = () => {
-    return <h1 {...props}>{children}</h1>
+
+  if (element === 'h3') {
+    return (
+      <H3Tag $color={color} $size={size} $transform={transform} $bold={bold} {...props}>
+        {children}
+      </H3Tag>
+    )
   }
-  const handleElementH2 = () => {
-    return <h2 {...props}>{children}</h2>
+
+  if (element === 'h4') {
+    return (
+      <H4Tag $color={color} $size={size} $transform={transform} $bold={bold} {...props}>
+        {children}
+      </H4Tag>
+    )
   }
-  const handleElementH3 = () => {
-    return <h3 {...props}>{children}</h3>
-  }
-  const handleElementH4 = () => {
-    return <h4 {...props}>{children}</h4>
+
+  if (element === 'span') {
+    return (
+      <SpanTag $color={color} $size={size} $transform={transform} $bold={bold} {...props}>
+        {children}
+      </SpanTag>
+    )
   }
 
   return (
-    <Style.Container color={color} size={size} transform={transform} bold={bold}>
-      {element === 'h1' && handleElementH1()}
-      {element === 'h2' && handleElementH2()}
-      {element === 'h3' && handleElementH3()}
-      {element === 'h4' && handleElementH4()}
-      {element === 'p' && handleElementP()}
-      {!element && handleElementP()}
-      {element === 'span' && handleElementSpan()}
-    </Style.Container>
+    <PTag $color={color} $size={size} $transform={transform} $bold={bold} {...props}>
+      {children}
+    </PTag>
   )
 }

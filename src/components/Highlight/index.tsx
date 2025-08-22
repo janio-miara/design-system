@@ -1,13 +1,13 @@
  
 import { useMemo } from 'react'
 import * as Style from './styles'
-import { colorTypes } from '../../types/colorTypes'
+import { Color } from '../../types/colorTypes'
 import { sizeText } from '../../types/sizeTypes'
 
 export interface PropsHighlight {
   text: string
   searchWords: string[]
-  color?: colorTypes
+  color?: Color
   size?: sizeText
   fontWeight?: 'bold' | 'lighter' | 'normal'
 }

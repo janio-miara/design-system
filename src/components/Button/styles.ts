@@ -1,12 +1,17 @@
 import styled, { css, keyframes } from 'styled-components'
 
-import { ButtonPropsType } from '.'
 import { changeColorOutlined, changeBackground } from '../../utils/changeColorTheme'
 import { theme } from '../Themes'
 
-export type WrapperProps = {
-  hasIcon: boolean
-} & Pick<ButtonPropsType, 'size' | 'fullWidth' | 'minimal' | 'variant'>
+export type StyledButtonProps = {
+  $size?: 'small' | 'medium' | 'large'
+  $fullWidth?: boolean
+  $minimal?: boolean
+  $variant?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark'
+  $disabled?: boolean
+  $loading?: boolean
+  $hasIcon?: boolean
+}
 
 const wrapperModifiers = {
   small: () => css`
@@ -51,8 +56,8 @@ const rotate = keyframes`
   }
 `
 
-export const Wrapper = styled.button<WrapperProps>`
-  ${({ size, fullWidth, hasIcon, minimal, disabled, variant }) => css`
+export const StyledButton = styled.button<StyledButtonProps>`
+  ${({ $size, $fullWidth, $hasIcon, $minimal, $disabled, $variant }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -82,11 +87,11 @@ export const Wrapper = styled.button<WrapperProps>`
       animation: ${rotate} 2s linear infinite;
     }
 
-    ${!!size && wrapperModifiers[size]()};
-    ${!!fullWidth && wrapperModifiers.fullWidth()};
-    ${!!hasIcon && wrapperModifiers.withIcon()};
-    ${disabled && wrapperModifiers.disabled()};
-    ${!!minimal && changeColorOutlined[variant!]};
-    ${!minimal && changeBackground[variant!]}
+    ${!!$size && wrapperModifiers[$size]()};
+    ${!!$fullWidth && wrapperModifiers.fullWidth()};
+    ${!!$hasIcon && wrapperModifiers.withIcon()};
+    ${$disabled && wrapperModifiers.disabled()};
+    ${!!$minimal && $variant && changeColorOutlined[$variant]};
+    ${!$minimal && $variant && changeBackground[$variant]}
   `}
 `

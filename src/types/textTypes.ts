@@ -1,9 +1,9 @@
 import React from 'react'
 import { sizeText } from './sizeTypes'
-import { colorTypes } from './colorTypes'
+import { Color } from './colorTypes'
 
 export interface TextPros {
-  color?: colorTypes
+  color?: Color
   children?: React.ReactNode
   element?: 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4'
   props?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>

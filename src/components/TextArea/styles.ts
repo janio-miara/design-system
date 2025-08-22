@@ -57,7 +57,7 @@ export const WrapperTextArea = styled.textarea<ILabel>`
   background: rgb(250, 250, 251);
   box-shadow: rgb(229 231 235) 0px 0px 0px 1.2px inset;
   border: ${({ validate }) => !validate && `1px solid ${theme.colors.red30}`};
-  border-radius: 8px;
+  border-radius: var(--component-border-radius, 5px);
   padding: 16px;
   padding-right: ${({ autoClear }) => (autoClear ? '40px' : '12px')};
   color: ${({ validate }) => (validate ? theme.colors.shade80 : theme.colors.red40)};

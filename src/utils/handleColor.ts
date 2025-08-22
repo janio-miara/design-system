@@ -1,9 +1,9 @@
 import { theme } from '../components/Themes'
-import { colorTypes } from '../types/colorTypes'
+import { Color } from '../types/colorTypes'
 
 type variantTypes = 'contained' | 'outlined' | undefined
 
-const handleColor = (color: colorTypes, variant?: variantTypes) => {
+const handleColor = (color: Color, variant?: variantTypes) => {
   if (variant === 'outlined') {
     return 'transparent'
   }

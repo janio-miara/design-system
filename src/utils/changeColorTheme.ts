@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 import { theme } from '../components/Themes'
-import { colorTypes } from '../types/colorTypes'
+import { Color } from '../types/colorTypes'
 
 const changeBackground = {
   primary: css`
@@ -117,7 +117,7 @@ const changeColor = {
   dark: css`
     color: ${theme.colors.black};
   `,
-}
+} as const;
 
 export const changePaletaColor = {
   primary: css`
@@ -149,7 +149,7 @@ export const changePaletaColor = {
   `,
 }
 
-const handleColor = (color: colorTypes) => {
+const handleColor = (color: Color) => {
   if (color === 'primary') {
     return theme.colors.blue40
   }

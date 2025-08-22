@@ -4,10 +4,10 @@ const buttonColor = {
 }
 
 const blue = {
-  blue50: '#3A566E',
-  blue40: '#3A566E',
-  blue30: '#61788B',
-  blue20: '#A0AEB9',
+  blue50: '#1A3D7F',
+  blue40: '#1A3D7F',
+  blue30: '#6281BC',
+  blue20: '#A1AABA',
   blue10: '#EFF1F3',
 }
 
@@ -115,4 +115,4 @@ export const theme = {
     p3: '13px',
     p4: '11px',
   },
-}
+} as const;

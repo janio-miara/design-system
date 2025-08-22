@@ -1,11 +1,9 @@
-import React, { forwardRef, AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import { BiLoaderCircle } from 'react-icons/bi'
 
-import * as S from './styles'
+import { StyledButton } from './styles'
 
-type ButtonTypes = AnchorHTMLAttributes<HTMLAnchorElement> | ButtonHTMLAttributes<HTMLButtonElement>
-
-export type ButtonPropsType = {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'small' | 'medium' | 'large'
   fullWidth?: boolean
   minimal?: boolean
@@ -13,32 +11,30 @@ export type ButtonPropsType = {
   variant?: 'primary' | 'secondary' | 'success' | 'error' | 'default' | 'warning' | 'white' | 'dark' | 'lightDark'
   disable?: boolean
   loading?: boolean
-  as?: React.ElementType
-} & ButtonTypes
+  ref?: React.Ref<HTMLButtonElement>
+}
 
-const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonPropsType> = (
-  {
-    children,
-    icon,
-    size = 'medium',
-    fullWidth = false,
-    minimal = false,
-    disable = false,
-    loading = false,
-    variant = 'primary',
-    ...props
-  },
+export default function Button({
+  children,
+  icon,
+  size = 'medium',
+  fullWidth = false,
+  minimal = false,
+  disable = false,
+  loading = false,
+  variant = 'primary',
   ref,
-) => {
+  ...props
+}: ButtonProps) {
   return (
-    <S.Wrapper
-      size={size}
-      fullWidth={fullWidth}
-      hasIcon={!!icon}
-      minimal={minimal}
+    <StyledButton
+      $size={size}
+      $fullWidth={fullWidth}
+      $hasIcon={!!icon}
+      $minimal={minimal}
+      $disabled={disable}
+      $variant={variant}
       ref={ref}
-      disabled={disable}
-      variant={variant}
       {...props}
     >
       {loading && (
@@ -48,8 +44,6 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonPropsType> = 
       )}
       {icon}
       {!!children && <span className="text">{children}</span>}
-    </S.Wrapper>
+    </StyledButton>
   )
 }
-
-export default forwardRef(Button)

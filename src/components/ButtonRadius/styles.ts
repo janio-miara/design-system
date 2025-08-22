@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { ButtonRadiusProps } from '../../types/buttonTypes'
 import { changeBackground, changeColorOutlined } from '../../utils/changeColorTheme'
 import { sizeBasic } from '../../types/sizeTypes'
+import { Color } from '../../types/colorTypes'
 
 export const ContainerButtonRadius = styled.button`
   border-radius: 50%;
@@ -19,19 +19,28 @@ const sizeButton = (size: sizeBasic) => {
   return '30px'
 }
 
-export const ButtonRadius = styled(ContainerButtonRadius)<ButtonRadiusProps>`
+
+export interface StyledButtonRadiusProps {
+  $outlined?: boolean
+  $color?: Color
+  $disabled?: boolean
+  $size?: sizeBasic
+}
+
+
+export const StyledButtonRadius = styled(ContainerButtonRadius)<StyledButtonRadiusProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: ${({ outlined }) => (outlined ? '1px solid' : '0')};
-  ${({ outlined, color }) => outlined && changeColorOutlined[color || 'primary']};
-  ${({ color, outlined }) => !outlined && changeBackground[color || 'primary']};
-  width: ${({ size }) => (size ? sizeButton(size) : '30px')};
-  height: ${({ size }) => (size ? sizeButton(size) : '30px')};
+  border: ${({ $outlined }) => ($outlined ? '1px solid' : '0')};
+  ${({ $outlined, $color }) => $outlined && changeColorOutlined[$color || 'primary']};
+  ${({ $color, $outlined }) => !$outlined && changeBackground[$color || 'primary']};
+  width: ${({ $size }) => ($size ? sizeButton($size) : '30px')};
+  height: ${({ $size }) => ($size ? sizeButton($size) : '30px')};
 
   svg {
-    width: ${({ size }) => (size === 'small' ? '10px' : '14px')};
-    height: ${({ size }) => (size === 'small' ? '10px' : '14px')};
+    width: ${({ $size }) => ($size === 'small' ? '10px' : '14px')};
+    height: ${({ $size }) => ($size === 'small' ? '10px' : '14px')};
   }
 
   &:disabled {

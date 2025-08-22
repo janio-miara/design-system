@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import { theme } from '../Themes'
-import { colorTypes } from '../../types/colorTypes'
+import { Color } from '../../types/colorTypes'
 import handleColor from '../../utils/handleColor'
 
 interface PropsTabs {
-  colorActive?: colorTypes
+  $colorActive?: Color
 }
 
 export const Container = styled.div`
@@ -25,7 +25,7 @@ export const Wrapper = styled.div<PropsTabs>`
     border-radius: 5px;
     animation: 0.7s ease 0s 0.7 normal scale-in-hor-center;
     height: 2px;
-    background-color: ${({ colorActive }) => (colorActive ? handleColor(colorActive) : theme.colors.blue40)};
+    background-color: ${({ $colorActive }) => ($colorActive ? handleColor($colorActive) : theme.colors.blue40)};
   }
 
   &:hover {

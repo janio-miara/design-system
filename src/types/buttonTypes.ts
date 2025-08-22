@@ -1,10 +1,10 @@
 import { sizeBasic } from './sizeTypes'
-import { colorTypes } from './colorTypes'
+import { Color } from './colorTypes'
 
 
 export interface ButtonRadiusProps {
   outlined?: boolean
-  color?: colorTypes
+  color?: Color
   onClick?: () => void
   disabled?: boolean
   size?: sizeBasic

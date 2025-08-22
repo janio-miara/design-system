@@ -18,7 +18,7 @@ export const Heading = ({ ...props }: PropsHeading) => {
         <Text element={element || 'h4'} color="primary">
           {title}
         </Text>
-        <Text color="lightDark">{subTitle}</Text>
+        <Text color="dark">{subTitle}</Text>
       </div>
     </Container>
   )

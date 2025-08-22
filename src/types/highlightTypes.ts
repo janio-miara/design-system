@@ -1,9 +1,9 @@
 import { sizeText } from './sizeTypes'
-import { colorTypes } from './colorTypes'
+import { Color } from './colorTypes'
 
 export interface PropsHighlight {
   text: string
   searchWords: string[]
-  color?: colorTypes
+  color?: Color
   size?: sizeText
 }
