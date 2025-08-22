@@ -65,7 +65,7 @@ export const Highlight = ({ text, searchWords, color, size, fontWeight }: PropsH
   }, [text, searchWords])
 
   return (
-    <Style.Container color={color} size={size} fontWeight={fontWeight}>
+    <Style.Container $color={color} $size={size} $fontWeight={fontWeight}>
       {slices.map(slice => (
         <span key={slice.start} className={slice.lighted ? 'highlight' : ''}>
           {slice.text}

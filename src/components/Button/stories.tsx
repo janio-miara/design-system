@@ -1,9 +1,9 @@
 import { StoryFn, Meta } from '@storybook/react-vite'
 import { FiLayers } from 'react-icons/fi'
 
-import Button, { ButtonPropsType } from '.'
+import { Button, ButtonProps } from '.'
 
-const meta: Meta<ButtonPropsType> = {
+const meta: Meta<ButtonProps> = {
   title: 'Components/Buttons/Button',
   component: Button,
   args: {
@@ -38,29 +38,27 @@ const meta: Meta<ButtonPropsType> = {
 
 export default meta
 
-export const Default: StoryFn<ButtonPropsType> = args => <Button {...args} />
+export const Default: StoryFn<ButtonProps> = args => <Button {...args} />
 
 Default.args = {
   children: 'Solicitar',
 }
 
-export const withIcon: StoryFn<ButtonPropsType> = args => <Button {...args} />
+export const withIcon: StoryFn<ButtonProps> = args => <Button {...args} />
 
 withIcon.args = {
   children: 'Cotação',
   icon: <FiLayers />,
 }
 
-export const asLink: StoryFn<ButtonPropsType> = args => <Button {...args} />
+export const asLink: StoryFn<ButtonProps> = args => <Button {...args} />
 
 asLink.args = {
   size: 'large',
   children: 'Solicitar',
-  as: 'a',
-  href: '/link',
 }
 
-export const isDisabled: StoryFn<ButtonPropsType> = args => <Button {...args} />
+export const isDisabled: StoryFn<ButtonProps> = args => <Button {...args} />
 
 isDisabled.args = {
   children: 'Solicitar',

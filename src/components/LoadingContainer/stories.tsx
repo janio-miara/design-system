@@ -1,6 +1,6 @@
 import { StoryObj, Meta } from '@storybook/react-vite'
 
-import LoadingContainer, { propsLoading } from '.'
+import { LoadingContainer, LoadingContainerProps } from '.'
 
 const meta = {
   title: 'Components/Loaders/LoadingContainer',
@@ -9,8 +9,8 @@ const meta = {
     color: 'primary',
     loading: true,
   },
-} satisfies Meta<propsLoading>
+} satisfies Meta<LoadingContainerProps>
 
 export default meta
 
-export const Default: StoryObj<propsLoading> = { render: args => <LoadingContainer {...args} /> }
+export const Default: StoryObj<LoadingContainerProps> = { render: args => <LoadingContainer {...args} /> }

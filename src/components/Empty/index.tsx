@@ -22,7 +22,7 @@ const SelectAnimation = (animation: string) => {
   return notData
 }
 
-const Empty = ({
+export function Empty({
   title = 'Pagina não encontrada',
   subTitle,
   alertType = 'notData',
@@ -30,7 +30,7 @@ const Empty = ({
   width = 200,
   asLink = '#',
   linkText = '',
-}: EmptyProps) => {
+}: EmptyProps) {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -59,5 +59,3 @@ const Empty = ({
     </Style.Container>
   )
 }
-
-export default Empty

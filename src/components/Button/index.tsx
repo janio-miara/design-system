@@ -14,7 +14,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   ref?: React.Ref<HTMLButtonElement>
 }
 
-export default function Button({
+export function Button({
   children,
   icon,
   size = 'medium',

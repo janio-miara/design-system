@@ -25,7 +25,7 @@ export const Container = styled.div`
   }
 `
 export interface ContainerFilterProps {
-  side?: 'left' | 'right'
+  $side?: 'left' | 'right'
 }
 
 export const ContainerFilter = styled.div<ContainerFilterProps>`
@@ -33,13 +33,13 @@ export const ContainerFilter = styled.div<ContainerFilterProps>`
   display: flex;
   flex-direction: column;
   top: 0;
-  right: ${props => (props.side === 'right' ? '0' : 'unset')};
-  left: ${props => (props.side === 'left' ? '0' : 'unset')};
+  right: ${props => (props.$side === 'right' ? '0' : 'unset')};
+  left: ${props => (props.$side === 'left' ? '0' : 'unset')};
   background: white;
   width: 450px;
   height: 100%;
   box-shadow: 0px -4px 6px 1px #0000004a;
-  animation: ${({ side }) => side && handleAnimation(side)} 1s;
+  animation: ${({ $side }) => $side && handleAnimation($side)} 1s;
 
   .wrapper-heading {
     display: flex;

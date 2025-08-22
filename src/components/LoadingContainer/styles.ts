@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components'
 import { changeColor } from '../../utils/changeColorTheme'
-import { propsLoading } from '.'
+import { LoadingContainerProps } from '.'
 
-type stylePropsLoading = Pick<propsLoading, 'color'>
+export interface ContainerProps {
+  $color: LoadingContainerProps['color']
+}
 
-export const Container = styled.div<stylePropsLoading>`
-  ${({ color }) => css`
+export const Container = styled.div<ContainerProps>`
+  ${({ $color }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,10 +17,10 @@ export const Container = styled.div<stylePropsLoading>`
 
     p {
       margin: 8px;
-      ${!!color && changeColor[color!]}
+      ${!!$color && changeColor[$color!]}
     }
     svg {
-      ${!!color && changeColor[color!]}
+      ${!!$color && changeColor[$color!]}
       width: 50px;
       height: 50px;
       animation: normal rotate-center 1s ease-in-out infinite both;

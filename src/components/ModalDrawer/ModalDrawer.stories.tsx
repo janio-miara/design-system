@@ -10,8 +10,7 @@ const meta = {
 
 export default meta
 
- 
-const PlaygroundContent: StoryFn<typeof ModalDrawer> = (args) => {
+const PlaygroundContent: StoryFn<typeof ModalDrawer> = args => {
   const [open, setOpen] = useState<boolean>(false)
   return (
     <>
@@ -31,7 +30,7 @@ Playground.args = {
   children:
     ' sdifhiushdfiuh sdifhiusdf sidufhiusdfhsdiufh iusdfhiusdf  jsdfjh skdjfhjksd sdkfjksd sdkjfhkjsd sdkjkjsd kjsdfkj sdkjfhkjsdf skdjhf ksdhkj  kjsdfkj kjshdf ',
   subTitle: 'Teste subtitle',
-  action: () => (
+  action: (
     <Button size="small" color="primary">
       Salvar
     </Button>

@@ -1,7 +1,7 @@
 import { useRef, PropsWithChildren } from 'react'
 import ReactDOM from 'react-dom'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
-import Button from '../Button'
+import { Button } from '../Button'
 import { Text } from '../Text'
 import * as Style from './styles'
 
@@ -45,7 +45,7 @@ export const ModalDrawer = ({
   return open
     ? ReactDOM.createPortal(
         <Style.Container {...props}>
-          <Style.ContainerFilter ref={ref} side={side || 'right'} {...props}>
+          <Style.ContainerFilter ref={ref} $side={side || 'right'} {...props}>
             {!notHeader ? (
               <>
                 <div className="wrapper-heading">
@@ -68,14 +68,14 @@ export const ModalDrawer = ({
                 {children}
               </div>
             )}
-            { footer !== false &&
+            {footer !== false && (
               <div className="button-wrapp">
                 {action}
                 <Button size="small" minimal color="primary" onClick={closeModal}>
                   Fechar
                 </Button>
               </div>
-            }
+            )}
           </Style.ContainerFilter>
         </Style.Container>,
         document.body,

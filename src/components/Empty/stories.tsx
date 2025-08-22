@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react-vite'
-import Empty, { EmptyProps } from '.'
+import { Empty, EmptyProps } from '.'
 
 const meta = {
   title: 'Components/Empty',

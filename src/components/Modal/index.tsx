@@ -1,10 +1,9 @@
-
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import * as S from './styles'
 import { Text } from '../Text'
-import Button from '../Button'
+import { Button } from '../Button'
 import { ButtonRadius } from '../ButtonRadius'
 import { ModalProps } from '../../types/ModalTypes'
 

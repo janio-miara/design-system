@@ -5,9 +5,9 @@ import { sizeText } from '../../types/sizeTypes'
 import { changeBackground } from '../../utils/changeColorTheme'
 
 export interface PropsHighlight {
-  color?: Color
-  size?: sizeText
-  fontWeight?: 'bold' | 'lighter' | 'normal'
+  $color?: Color
+  $size?: sizeText
+  $fontWeight?: 'bold' | 'lighter' | 'normal'
 }
 
 export const changeFontWeight = {
@@ -31,12 +31,12 @@ const changeBackgroundNew = {
 
 export const Container = styled.div<PropsHighlight>`
   font-family: ${theme.fonts.join()};
-  ${({ fontWeight }) => changeFontWeight[fontWeight || 'normal']};
-  font-size: ${({ size }) => (size ? theme.fontSizes[size] : '12px')};
+  ${({ $fontWeight }) => changeFontWeight[$fontWeight || 'normal']};
+  font-size: ${({ $size }) => ($size ? theme.fontSizes[$size] : '12px')};
   .highlight {
     border-radius: 4px;
     padding: 2px 6px;
-    ${({ color }) => (color === 'lightDark' ? changeBackgroundNew.lightDark : changeBackground[color || 'primary'])};
+    ${({ $color }) => ($color === 'lightDark' ? changeBackgroundNew.lightDark : changeBackground[$color || 'primary'])};
     color: white;
   }
 `
