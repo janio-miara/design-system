@@ -26,3 +26,6 @@ yarn-error.log*
 *storybook.log
 dist/*
 storybook-static
+
+# graphify knowledge graph (local, não versionar)
+graphify-out/
